@@ -73,6 +73,7 @@ namespace TestProjects
                         myObj.ChangeNumber(Convert.ToInt64(Console.ReadLine()));
                         break;
                     default:
+                        Console.WriteLine("Nothing to change");
                         break;
                 }
                 Console.WriteLine("If u still want to change something press y otherwise n");

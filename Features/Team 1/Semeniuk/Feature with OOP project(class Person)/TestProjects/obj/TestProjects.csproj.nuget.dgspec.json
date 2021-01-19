@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Den25\\source\\repos\\TestProjects\\TestProjects\\TestProjects.csproj": {}
+    "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Features\\Team 1\\Semeniuk\\Feature with OOP project(class Person)\\TestProjects\\TestProjects.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Den25\\source\\repos\\TestProjects\\TestProjects\\TestProjects.csproj": {
+    "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Features\\Team 1\\Semeniuk\\Feature with OOP project(class Person)\\TestProjects\\TestProjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Den25\\source\\repos\\TestProjects\\TestProjects\\TestProjects.csproj",
+        "projectUniqueName": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Features\\Team 1\\Semeniuk\\Feature with OOP project(class Person)\\TestProjects\\TestProjects.csproj",
         "projectName": "TestProjects",
-        "projectPath": "C:\\Users\\Den25\\source\\repos\\TestProjects\\TestProjects\\TestProjects.csproj",
+        "projectPath": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Features\\Team 1\\Semeniuk\\Feature with OOP project(class Person)\\TestProjects\\TestProjects.csproj",
         "packagesPath": "C:\\Users\\Den25\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Den25\\source\\repos\\TestProjects\\TestProjects\\obj\\",
+        "outputPath": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Features\\Team 1\\Semeniuk\\Feature with OOP project(class Person)\\TestProjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Den25\\AppData\\Roaming\\NuGet\\NuGet.Config",
