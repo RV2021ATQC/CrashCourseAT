@@ -49,8 +49,8 @@ namespace TestProjects
             string sex = Console.ReadLine();
             long number = Convert.ToInt64(Console.ReadLine());
             Person myObj = new Person(age, name, sex, number);
-            Console.WriteLine("If u want to change something press y");
-            while (Console.ReadLine()=="y")
+            Console.WriteLine("If you want to change something press \"Y\"");
+            while (Console.ReadLine()=="y" || Console.ReadLine() == "Y")
             {
                 Console.WriteLine("Choose what to change age(1),name(2),sex(3),numer(4)");
                 int n = int.Parse(Console.ReadLine());
@@ -76,7 +76,7 @@ namespace TestProjects
                         Console.WriteLine("Nothing to change");
                         break;
                 }
-                Console.WriteLine("If u still want to change something press y otherwise n");
+                Console.WriteLine("Do you still want to change something? Press \"Y\"/\"N\"");
             }
             myObj.PrintPerson();
             Console.ReadKey();
