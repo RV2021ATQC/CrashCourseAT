@@ -1,0 +1,13 @@
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\bin\Debug\netcoreapp3.1\Lesson1.exe
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\bin\Debug\netcoreapp3.1\Lesson1.deps.json
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\bin\Debug\netcoreapp3.1\Lesson1.runtimeconfig.json
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\bin\Debug\netcoreapp3.1\Lesson1.runtimeconfig.dev.json
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\bin\Debug\netcoreapp3.1\Lesson1.dll
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\bin\Debug\netcoreapp3.1\Lesson1.pdb
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\obj\Debug\netcoreapp3.1\Lesson1.csprojAssemblyReference.cache
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\obj\Debug\netcoreapp3.1\Lesson1.AssemblyInfoInputs.cache
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\obj\Debug\netcoreapp3.1\Lesson1.AssemblyInfo.cs
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\obj\Debug\netcoreapp3.1\Lesson1.csproj.CoreCompileInputs.cache
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\obj\Debug\netcoreapp3.1\Lesson1.dll
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\obj\Debug\netcoreapp3.1\Lesson1.pdb
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\SimplePrograms\Lesson1\obj\Debug\netcoreapp3.1\Lesson1.genruntimeconfig.cache

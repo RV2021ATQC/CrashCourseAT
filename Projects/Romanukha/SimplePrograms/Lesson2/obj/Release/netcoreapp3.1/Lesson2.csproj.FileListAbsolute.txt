@@ -1,0 +1,13 @@
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\bin\Release\netcoreapp3.1\Lesson2.exe
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\bin\Release\netcoreapp3.1\Lesson2.deps.json
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\bin\Release\netcoreapp3.1\Lesson2.runtimeconfig.json
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\bin\Release\netcoreapp3.1\Lesson2.runtimeconfig.dev.json
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\bin\Release\netcoreapp3.1\Lesson2.dll
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\bin\Release\netcoreapp3.1\Lesson2.pdb
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\obj\Release\netcoreapp3.1\Lesson2.AssemblyInfoInputs.cache
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\obj\Release\netcoreapp3.1\Lesson2.AssemblyInfo.cs
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\obj\Release\netcoreapp3.1\Lesson2.csproj.CoreCompileInputs.cache
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\obj\Release\netcoreapp3.1\Lesson2.dll
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\obj\Release\netcoreapp3.1\Lesson2.pdb
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\obj\Release\netcoreapp3.1\Lesson2.genruntimeconfig.cache
+C:\CrashCourse\CrashCourseAT\Projects\Romanukha\ConsoleApp1\ConsoleApp3\obj\Release\netcoreapp3.1\Lesson2.csprojAssemblyReference.cache
