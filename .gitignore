@@ -23,9 +23,12 @@ _UpgradeReport_Files/
 ###############
 # Directories #
 ###############
+/.vs
 /node_modules
 bin/
 obj/
+/obj
+/bin
 TestResults/
 ###################
 # Web publish log #
