@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "HomeWork4.3/1.0.0": {
+        "runtime": {
+          "HomeWork4.3.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HomeWork4.3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

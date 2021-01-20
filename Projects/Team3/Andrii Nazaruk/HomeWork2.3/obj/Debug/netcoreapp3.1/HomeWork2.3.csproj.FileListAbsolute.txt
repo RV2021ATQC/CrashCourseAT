@@ -1,0 +1,12 @@
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\bin\Debug\netcoreapp3.1\HomeWork2.3.exe
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\bin\Debug\netcoreapp3.1\HomeWork2.3.deps.json
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\bin\Debug\netcoreapp3.1\HomeWork2.3.runtimeconfig.json
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\bin\Debug\netcoreapp3.1\HomeWork2.3.runtimeconfig.dev.json
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\bin\Debug\netcoreapp3.1\HomeWork2.3.dll
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\bin\Debug\netcoreapp3.1\HomeWork2.3.pdb
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\obj\Debug\netcoreapp3.1\HomeWork2.3.AssemblyInfoInputs.cache
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\obj\Debug\netcoreapp3.1\HomeWork2.3.AssemblyInfo.cs
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\obj\Debug\netcoreapp3.1\HomeWork2.3.csproj.CoreCompileInputs.cache
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\obj\Debug\netcoreapp3.1\HomeWork2.3.dll
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\obj\Debug\netcoreapp3.1\HomeWork2.3.pdb
+C:\Users\nazar\Desktop\SoftServe\CrashCourseAT\HomeWork2.3\obj\Debug\netcoreapp3.1\HomeWork2.3.genruntimeconfig.cache
