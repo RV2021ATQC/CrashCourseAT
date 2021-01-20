@@ -1,0 +1,52 @@
+C:\Users\Den25\source\repos\TestProjects\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.exe
+C:\Users\Den25\source\repos\TestProjects\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.deps.json
+C:\Users\Den25\source\repos\TestProjects\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.runtimeconfig.json
+C:\Users\Den25\source\repos\TestProjects\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.runtimeconfig.dev.json
+C:\Users\Den25\source\repos\TestProjects\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.dll
+C:\Users\Den25\source\repos\TestProjects\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.pdb
+C:\Users\Den25\source\repos\TestProjects\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.csprojAssemblyReference.cache
+C:\Users\Den25\source\repos\TestProjects\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.AssemblyInfoInputs.cache
+C:\Users\Den25\source\repos\TestProjects\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.AssemblyInfo.cs
+C:\Users\Den25\source\repos\TestProjects\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.csproj.CoreCompileInputs.cache
+C:\Users\Den25\source\repos\TestProjects\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.dll
+C:\Users\Den25\source\repos\TestProjects\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.pdb
+C:\Users\Den25\source\repos\TestProjects\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.genruntimeconfig.cache
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.exe
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.deps.json
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.runtimeconfig.json
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.runtimeconfig.dev.json
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.dll
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.pdb
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.csprojAssemblyReference.cache
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.AssemblyInfoInputs.cache
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.AssemblyInfo.cs
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.csproj.CoreCompileInputs.cache
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.dll
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.pdb
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Features\Team 1\Semeniuk\Feature with OOP project(class Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.genruntimeconfig.cache
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.csprojAssemblyReference.cache
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.AssemblyInfoInputs.cache
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.AssemblyInfo.cs
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.csproj.CoreCompileInputs.cache
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.dll
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.pdb
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.exe
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.deps.json
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.runtimeconfig.json
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.runtimeconfig.dev.json
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.dll
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.pdb
+C:\Users\Den25\OneDrive\Робочий стіл\Features\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.genruntimeconfig.cache
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.exe
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.deps.json
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.runtimeconfig.json
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.runtimeconfig.dev.json
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.dll
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.pdb
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.csprojAssemblyReference.cache
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.AssemblyInfoInputs.cache
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.AssemblyInfo.cs
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.csproj.CoreCompileInputs.cache
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.dll
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.pdb
+C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.genruntimeconfig.cache
