@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\Lesson2.csproj": {}
+    "C:\\Users\\toshk\\Documents\\GitHub\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\Lesson2.csproj": {}
   },
   "projects": {
-    "C:\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\Lesson2.csproj": {
+    "C:\\Users\\toshk\\Documents\\GitHub\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\Lesson2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\Lesson2.csproj",
+        "projectUniqueName": "C:\\Users\\toshk\\Documents\\GitHub\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\Lesson2.csproj",
         "projectName": "Lesson2",
-        "projectPath": "C:\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\Lesson2.csproj",
-        "packagesPath": "C:\\Users\\aromanuk\\.nuget\\packages\\",
-        "outputPath": "C:\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\obj\\",
+        "projectPath": "C:\\Users\\toshk\\Documents\\GitHub\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\Lesson2.csproj",
+        "packagesPath": "C:\\Users\\toshk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\toshk\\Documents\\GitHub\\CrashCourse\\CrashCourseAT\\Projects\\Romanukha\\SimplePrograms\\Lesson2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aromanuk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\toshk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -54,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

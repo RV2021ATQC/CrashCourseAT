@@ -1,0 +1,13 @@
+C:\Users\toshk\Documents\QA\2Task\2Task\obj\Debug\netcoreapp3.1\2Task.csprojAssemblyReference.cache
+C:\Users\toshk\Documents\QA\2Task\2Task\obj\Debug\netcoreapp3.1\2Task.AssemblyInfoInputs.cache
+C:\Users\toshk\Documents\QA\2Task\2Task\obj\Debug\netcoreapp3.1\2Task.AssemblyInfo.cs
+C:\Users\toshk\Documents\QA\2Task\2Task\obj\Debug\netcoreapp3.1\2Task.csproj.CoreCompileInputs.cache
+C:\Users\toshk\Documents\QA\2Task\2Task\bin\Debug\netcoreapp3.1\2Task.exe
+C:\Users\toshk\Documents\QA\2Task\2Task\bin\Debug\netcoreapp3.1\2Task.deps.json
+C:\Users\toshk\Documents\QA\2Task\2Task\bin\Debug\netcoreapp3.1\2Task.runtimeconfig.json
+C:\Users\toshk\Documents\QA\2Task\2Task\bin\Debug\netcoreapp3.1\2Task.runtimeconfig.dev.json
+C:\Users\toshk\Documents\QA\2Task\2Task\bin\Debug\netcoreapp3.1\2Task.dll
+C:\Users\toshk\Documents\QA\2Task\2Task\bin\Debug\netcoreapp3.1\2Task.pdb
+C:\Users\toshk\Documents\QA\2Task\2Task\obj\Debug\netcoreapp3.1\2Task.dll
+C:\Users\toshk\Documents\QA\2Task\2Task\obj\Debug\netcoreapp3.1\2Task.pdb
+C:\Users\toshk\Documents\QA\2Task\2Task\obj\Debug\netcoreapp3.1\2Task.genruntimeconfig.cache
