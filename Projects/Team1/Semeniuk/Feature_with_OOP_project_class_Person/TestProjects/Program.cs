@@ -1,44 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
+
 namespace TestProjects
 {
-    public class Person
-    {
-
-        private int age;
-        private string name;
-        private string sex;
-        private string number;
-
-        public Person(int age, string name, string sex, string number)
-        {
-            this.age = age;
-            this.name = name;
-            this.sex = sex;
-            this.number = number;
-        }
-        public void ChangeName(string name)
-        {
-            this.name = name;
-        }
-        public void ChangeSex(string sex)
-        {
-            this.sex = sex;
-        }
-        public void ChangeAge(int age)
-        {
-            this.age = age;
-        }
-        public void ChangeNumber(string number)
-        {
-            this.number = number;
-        }
-        public void PrintPerson()
-        {
-            Console.WriteLine($"Age is {age}, Name is {name}, Sex is {sex}, Phone number is {number}");
-        }
-
-    }
     class Program
     {
         static void Main(string[] args)
@@ -50,7 +15,7 @@ namespace TestProjects
             string number = Console.ReadLine();
             Person myObj = new Person(age, name, sex, number);
             Console.WriteLine("If you want to change something press \"y\"");
-            while (Console.ReadLine()=="y")
+            while (Console.ReadLine() == "y")
             {
                 Console.WriteLine("Choose what to change age(1),name(2),sex(3),numer(4)");
                 int n = int.Parse(Console.ReadLine());
