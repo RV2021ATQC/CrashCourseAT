@@ -53,7 +53,7 @@ namespace Overloading
 			}
 			else if (d < 0)
 			{
-				//rez = "Нема коренів "+d.ToString();
+				
 				Console.WriteLine("No roots" + d);
 				Console.ReadKey();
 			}
