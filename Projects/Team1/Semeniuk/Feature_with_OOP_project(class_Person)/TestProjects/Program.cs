@@ -5,10 +5,10 @@ namespace TestProjects
     public class Person
     {
 
-        int age { get; set; }
-        string name { get; set; }
-        string sex { get; set; }
-        string number { get; set; }
+        int age;
+        string name;
+        string sex;
+        string number;
 
         public Person(int age, string name, string sex, string number)
         {
