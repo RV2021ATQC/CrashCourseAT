@@ -43,14 +43,7 @@ namespace HomeWork4._3
             
 
 
-            Console.WriteLine($"Counts of repeat: {count}");
-            
-
-           
-            
-
-
-            
+            Console.WriteLine($"Counts of repeat: {count}"); 
         }
     }
 }
