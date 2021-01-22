@@ -50,6 +50,7 @@ C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\F
 C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.dll
 C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.pdb
 C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project(class_Person)\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.genruntimeconfig.cache
+<<<<<<< Updated upstream
 C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project_class_Person\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.exe
 C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project_class_Person\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.deps.json
 C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project_class_Person\TestProjects\bin\Debug\netcoreapp3.1\TestProjects.runtimeconfig.json
@@ -63,3 +64,5 @@ C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\F
 C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project_class_Person\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.dll
 C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project_class_Person\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.pdb
 C:\Users\Den25\OneDrive\Documents\GitHub\CrashCourseAT\Projects\Team1\Semeniuk\Feature_with_OOP_project_class_Person\TestProjects\obj\Debug\netcoreapp3.1\TestProjects.genruntimeconfig.cache
+=======
+>>>>>>> Stashed changes
