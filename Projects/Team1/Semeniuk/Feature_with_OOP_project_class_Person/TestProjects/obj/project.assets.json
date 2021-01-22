@@ -13,19 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project_class_Person\\TestProjects\\TestProjects.csproj",
       "projectName": "TestProjects",
       "projectPath": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project_class_Person\\TestProjects\\TestProjects.csproj",
       "packagesPath": "C:\\Users\\Den25\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project_class_Person\\TestProjects\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project(class_Person)\\TestProjects\\TestProjects.csproj",
-      "projectName": "TestProjects",
-      "projectPath": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project(class_Person)\\TestProjects\\TestProjects.csproj",
-      "packagesPath": "C:\\Users\\Den25\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project(class_Person)\\TestProjects\\obj\\",
->>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Den25\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -71,5 +63,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project_class_Person\\TestProjects\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

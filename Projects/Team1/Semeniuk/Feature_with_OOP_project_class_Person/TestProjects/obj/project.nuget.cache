@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
   "dgSpecHash": "+UsSqMpLXp7WzpnW6Xz3GQXBclyBXUgFE1ad10P0DZ0+9zHlp5QK0ml5+8Rgw7SHV6ohvpEdD+rfi7qCMW73ng==",
   "success": true,
   "projectFilePath": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project_class_Person\\TestProjects\\TestProjects.csproj",
-=======
-  "dgSpecHash": "di9Nfq+dZkvd/wDhWXM0ZvvgvUiXKvjTkEtdBZKpHg8ox2/uBwp7lXAuh5kBVMEoCq8twZTaEjStqdzw6wgYdA==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project(class_Person)\\TestProjects\\TestProjects.csproj",
->>>>>>> Stashed changes
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\Semeniuk\\Feature_with_OOP_project_class_Person\\TestProjects\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
