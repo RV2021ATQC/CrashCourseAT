@@ -1,0 +1,6 @@
+C:\Users\Vlad\source\repos\Overloading\Zav_2\bin\Debug\Zav_2.exe.config
+C:\Users\Vlad\source\repos\Overloading\Zav_2\bin\Debug\Zav_2.exe
+C:\Users\Vlad\source\repos\Overloading\Zav_2\bin\Debug\Zav_2.pdb
+C:\Users\Vlad\source\repos\Overloading\Zav_2\obj\Debug\Zav_2.csprojAssemblyReference.cache
+C:\Users\Vlad\source\repos\Overloading\Zav_2\obj\Debug\Zav_2.exe
+C:\Users\Vlad\source\repos\Overloading\Zav_2\obj\Debug\Zav_2.pdb

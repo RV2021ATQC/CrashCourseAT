@@ -12,6 +12,7 @@
 *.dll.config
 *.cache
 *.suo
+.suo
 # Include dlls if they’re in the NuGet packages directory
 !/packages/*/lib/*.dll
 # Include dlls if they're in the CommonReferences directory
@@ -23,9 +24,13 @@ _UpgradeReport_Files/
 ###############
 # Directories #
 ###############
+/.vs
+.vs/
 /node_modules
 bin/
 obj/
+/obj
+/bin
 TestResults/
 ###################
 # Web publish log #
@@ -181,3 +186,4 @@ csx/
 
 # Visual Studio 6 workspace options file
 *.opt
+*.v2
