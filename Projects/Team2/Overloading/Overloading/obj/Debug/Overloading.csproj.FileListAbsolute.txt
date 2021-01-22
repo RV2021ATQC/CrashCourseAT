@@ -1,6 +1,0 @@
-C:\Users\Vlad\source\repos\Overloading\Overloading\bin\Debug\Overloading.exe.config
-C:\Users\Vlad\source\repos\Overloading\Overloading\bin\Debug\Overloading.exe
-C:\Users\Vlad\source\repos\Overloading\Overloading\bin\Debug\Overloading.pdb
-C:\Users\Vlad\source\repos\Overloading\Overloading\obj\Debug\Overloading.csprojAssemblyReference.cache
-C:\Users\Vlad\source\repos\Overloading\Overloading\obj\Debug\Overloading.exe
-C:\Users\Vlad\source\repos\Overloading\Overloading\obj\Debug\Overloading.pdb
