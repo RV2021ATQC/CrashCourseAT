@@ -74,18 +74,14 @@ namespace ConsoleAppOOP2
             {
                 c = 2;
             }
-            switch (c)
+            if(c == 1)
             {
-                case 1:
-                    Console.WriteLine("Enter new string: ");
-                    a = Console.ReadLine();
-                    sdtr = a;
-                    Console.WriteLine("New string " + sdtr + " length " + sdtr?.Length);
-                    break;
-                case 2:
-                    return;
-                default: return;
+                Console.WriteLine("Enter new string: ");
+                a = Console.ReadLine();
+                sdtr = a;
+                Console.WriteLine("New string " + sdtr + " length " + sdtr?.Length);
             }
+            else return;           
             Console.ReadKey();
         }
 

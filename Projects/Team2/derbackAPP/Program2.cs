@@ -30,25 +30,25 @@ namespace ConsoleAppOOP1
                 Console.WriteLine($"Name: {name}\nAge: {age}\nSex: {sexinfo}\nTelephone: {telephonenumber}");
                 Console.ReadKey();
             }
-            public string Name()
+            public string SetName()
             {
                 Console.WriteLine("Enter name: ");
                 name = Console.ReadLine();
                 return name;
             }
-            public string Age()
+            public string SetAge()
             {
                 Console.WriteLine("Enter age: ");
                 age = Convert.ToInt32(Console.ReadLine());
                 return age.ToString();
             }
-            public string Sex()
+            public string SetSex()
             {
                 Console.WriteLine("Enter sex 1 = man/2 = woman: ");
                 sex = Convert.ToInt32(Console.ReadLine());
                 return sex.ToString();
             }
-            public string Telephone()
+            public string SetTelephone()
             {
                 Console.WriteLine("Enter telephone: ");
                 telephonenumber = Convert.ToInt64(Console.ReadLine());
@@ -66,19 +66,19 @@ namespace ConsoleAppOOP1
             switch(count)
             {
                 case 1:
-                    vetal.Name();
+                    vetal.SetName();
                     vetal.PersonPrint();
                     goto Povtor;
                 case 2:
-                    vetal.Age();
+                    vetal.SetAge();
                     vetal.PersonPrint();
                     goto Povtor;
                 case 3:
-                    vetal.Sex();
+                    vetal.SetSex();
                     vetal.PersonPrint();
                     goto Povtor;
                 case 4:
-                    vetal.Telephone();
+                    vetal.SetTelephone();
                     vetal.PersonPrint();
                     goto Povtor;
                 default:
