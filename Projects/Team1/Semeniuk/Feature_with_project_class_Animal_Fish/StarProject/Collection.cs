@@ -20,15 +20,13 @@ namespace StarProject
         //функція запису полів та їх значень у текстовий файл
         static void WriteonFile(string path, string filename, List<Animals> AnimalCollection)
         {
-            int i = 0;
             try
             {
                 using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, filename), true))
                 {
                     foreach (object obj in AnimalCollection)
                     {
-                        i++;
-                        outputFile.WriteLine($"Object {i}");
+                        outputFile.WriteLine($"Object {AnimalCollection.IndexOf((Animals)obj) + 1}");
                         foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(obj))
                         {
                             string name = descriptor.Name;
@@ -39,7 +37,7 @@ namespace StarProject
                     Console.WriteLine("Successfuly writed!");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine($"Some exception: {ex}!");
             }
