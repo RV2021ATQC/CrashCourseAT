@@ -13,9 +13,7 @@ namespace Converter
             {
                 if (base_ <= 1 || base_ > 36) throw new System.Exception("Invalid base provided");
                 string alphabeth = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                if (num < base_)
-                    return alphabeth[num].ToString();
-                else return convert(num / base_, base_) + alphabeth[num % base_];
+                return num < base_ ? alphabeth[num].ToString() : convert(num / base_, base_) + alphabeth[num % base_]; 
             }
             catch (System.Exception e)
             {
