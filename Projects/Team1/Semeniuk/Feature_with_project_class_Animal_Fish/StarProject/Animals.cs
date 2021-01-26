@@ -43,7 +43,7 @@ namespace StarProject
         }
         public string Voice()
         {
-            return "Ruf";
+            return "Ruf!!!";
         }
     }
 }

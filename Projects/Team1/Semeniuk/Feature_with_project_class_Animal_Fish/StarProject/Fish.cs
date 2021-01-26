@@ -18,6 +18,7 @@ namespace StarProject
                 _kind = value;
             }
         }
+        //перезаписане поле із виведенням іншої інформації(на ввідміну від батьківського класу) при заповненні
         public override double born_year
         {
             set
@@ -42,6 +43,7 @@ namespace StarProject
                 _species = value;
             }
         }
+        //конструктор
         public Fish(int born_year, string color, string kind, string species)    
             : base(born_year, color)
         {
