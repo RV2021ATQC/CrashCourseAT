@@ -62,7 +62,7 @@ namespace Lesson2
             animalsCollection.Add(cat1);
             animalsCollection.Add(cat2);
             animalsCollection.Add(animal1);
-
+            animalsCollection.Add(new Cats(8,6,3));
 
             var catsCollection = new List<Cats>();
 
@@ -79,7 +79,8 @@ namespace Lesson2
                     //можливі помилки, якщо знайде помилки, то поверне їх у поточний try блок
                     method2();
 
-                    throw new Exception("Age is not ....");
+                    // Створюємо власне виключення
+                    if ( animal.age < 5)  throw new Exception("Age is not ....");
 
                 }
                 catch (DivideByZeroException ex)
@@ -101,7 +102,7 @@ namespace Lesson2
 
             }
 
-
+     
             //обробка виключень при роботі з файлами
             try
             {
@@ -131,7 +132,14 @@ namespace Lesson2
             //LINQ
             Cats catNew = catsCollection.First((x) => x.voise == "Meow!");
 
-            Console.WriteLine($"The cat from List = {catNew.age}, {catNew.speed}, {catNew.voise}");
+            Console.WriteLine($"The cat that have voice  = Meow! is the nex: {catNew.age}, {catNew.speed}, {catNew.voise} \n");
+
+
+            //коротка форма вибірки з animalsCollection лише об'єктів типу Cats і сортування по віку
+            foreach (var cat in animalsCollection.OfType<Cats>().OrderBy(x => x.age).ToList())
+            {
+                Console.WriteLine($"The sorted cat from List = {cat.age}, {cat.speed}, {cat.voise}");
+            }
 
             var myFavoritFood = new Restaurant();
 
