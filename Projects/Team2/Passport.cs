@@ -5,9 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Passport
+
 {
 	class Passport
 	{
+		/*
+           Створіть клас Passport (паспорт), який буде містити паспортну інформацію про громадянина України. 
+		   За допомогою механізму наслідування, реалізуйте клас ForeignPassport (закордонний паспорт) похідний від Passport. 
+		   Нагадаємо, що закордонний паспорт містить крім паспортних даних, також дані про візи, номер закордонного паспорта.
+        */
 		public string name { get; set; }
 
 		public string lastName { get; set; }
