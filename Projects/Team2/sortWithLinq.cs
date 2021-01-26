@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq;
+
 
 namespace funSortArray
 {
@@ -12,7 +12,8 @@ namespace funSortArray
 		/*Написати функцію, яка сортує масив  розмірністю 10 елементів за зростанням або за спаданням,
 		в залежності від третього параметра функції.
 		Якщо він дорівнює 1, сортування йде за спаданням, якщо 0, то по зростанню. 
-		Перші 2 параметра функції - це масив і його розмір, третій параметр за замовчуванням дорівнює 1.
+		Перші 2 параметра функції - це масив і його розмір, третій параметр за замовчуванням дорівнює 1. 
+		Реалізація за допомогою Ling.
 		*/
 		static void Main(string[] args)
 		{
@@ -23,47 +24,37 @@ namespace funSortArray
 			Console.WriteLine("\nRandomly generated array: ");
 			for (int y = 0; y < size; y++)
 			{
-				array[y] = rand.Next(3, 6);
+				array[y] = rand.Next(1, 100);
 				Console.Write(array[y] + " ");
-
 			}
 			Console.WriteLine("\n\nMode(0 or 1)");
 			int mode = Int32.Parse(Console.ReadLine());
-			var leng = array.Where(s => s == 5);
-			Console.WriteLine(leng);
-			mySort(array, size, mode);
-		}
-		public static void mySort(int[] a, int size, int mode = 1)
+			Sort(array, mode);
+			}
+		public static void Sort(int[] array,  int mode)
 		{
-			int x, i, j;
+			
+			var leng = from i in array
+					   orderby i
+					   select i;
 			if (mode == 0)
 			{
-				for (i = 0; i < size; i++)
+				foreach (int i in leng)
 				{
-					x = a[i];
-					for (j = i - 1; j >= 0 && a[j] > x; j--)
-				    a[j + 1] = a[j];
-					a[j + 1] = x;
+					Console.Write(i + " ");
 				}
+				Console.ReadKey();
 			}
-			
-
 			else if (mode == 1)
 			{
-				for (i = 0; i < size; i++)
+				var reverse = leng.Reverse();
+				foreach (int i in reverse)
 				{
-					x = a[i];
-					for (j = i - 1; j >= 0 && a[j] < x; j--)
-				    a[j + 1] = a[j];
-					a[j + 1] = x;
+					Console.Write(i + " ");
 				}
+				Console.ReadKey();
 			}
-			for (int y = 0; y < a.Length; y++)
-			{
-				Console.Write(a[y] + " ");
-			};
-			Console.ReadKey();
 		}
-
+		
 	}
 }
