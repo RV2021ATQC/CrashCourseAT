@@ -70,7 +70,7 @@ namespace StarProject
         //    file.Close();
         //}
         //функція консольного виведення полів і значень тварин старших за n
-        static void PrintOlderThen(List<Animals> AnimalCollection, int n)
+        static void PrintOlderThen(List<Animals> AnimalCollection, int YearsOld)
         {
             foreach (object obj in AnimalCollection)
             {
@@ -78,7 +78,7 @@ namespace StarProject
                 {
                     string name = descriptor.Name;
                     object value = descriptor.GetValue(obj);
-                    if (name == "born_year" && Convert.ToInt32(DateTime.Now.Year) - Convert.ToInt32(value) < n)
+                    if (name == "born_year" && Convert.ToInt32(DateTime.Now.Year) - Convert.ToInt32(value) < YearsOld)
                         break;
                     else
                         Console.WriteLine("Now {0} = {1}. obj({2})", name, value, AnimalCollection.IndexOf((Animals)obj) + 1);
