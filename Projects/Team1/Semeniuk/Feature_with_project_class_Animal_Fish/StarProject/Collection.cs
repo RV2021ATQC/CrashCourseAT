@@ -75,6 +75,7 @@ namespace StarProject
                 }
             }
         }
+        //функція серіалізації
         public static void WriteXML(List<Animals> AnimalCollection)
         {
             try
@@ -101,6 +102,7 @@ namespace StarProject
                 Console.WriteLine($"Some exception: {ex}");
             }
         }
+        //функція десеріалізації
         public static void ReadXML(List<Animals> AnimalCollection)
         {
             try
@@ -271,7 +273,9 @@ namespace StarProject
             //запис усіх тварин
             WriteonFile(folder, fileName, AnimalCollection);
             //Sort(AnimalCollection);
+            //серіалізація
             WriteXML(AnimalCollection);
+            //десеріалізація
             ReadXML(AnimalCollection);
             //Serialization(AnimalCollection);
             Console.ReadKey();
