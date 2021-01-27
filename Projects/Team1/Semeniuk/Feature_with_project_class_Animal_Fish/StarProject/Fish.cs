@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace StarProject
 {
-    class Fish : Animals
+    [Serializable]
+    public class Fish : Animals
     {
         private string _kind;
         public string kind
@@ -43,13 +45,15 @@ namespace StarProject
                 _species = value;
             }
         }
+        public Fish() { }
         //конструктор
-        public Fish(int born_year, string color, string kind, string species)    
+        public Fish(int born_year, string color, string kind, string species)
             : base(born_year, color)
         {
             this.kind = kind;
             this.species = species;
         }
+        
 
     }
 }

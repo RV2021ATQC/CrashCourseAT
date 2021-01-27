@@ -12,8 +12,8 @@ using NUnit;
 
 namespace StarProject
 {
-
-    class Collection
+    
+    public class Collection
     {
         //folder
         static string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -44,6 +44,24 @@ namespace StarProject
                 Console.WriteLine($"Some exception: {ex}!");
             }
         }
+        //серіалізація
+        //static void Serialization(List<Animals> AnimalCollection)
+        //{
+        //    try
+        //    {
+        //        XmlSerializer formatter = new XmlSerializer(typeof(Animals));
+        //        using (FileStream fs = new FileStream("Animals.xml", FileMode.OpenOrCreate))
+        //        {
+        //            formatter.Serialize(fs, AnimalCollection[0]);
+        //            Console.WriteLine("Collection serialized!");
+        //        }
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        Console.WriteLine($"Some exception: {ex}");
+        //    }
+            
+        //}
         //функція консольного виведення полів і значень
         static void GetValues(List<Animals> AnimalCollection)
         {
@@ -57,18 +75,59 @@ namespace StarProject
                 }
             }
         }
-        //public static void WriteXML(List<Animals> AnimalCollection)
-        //{
-        //    AnimalCollection.title = "Serialization Overview";
-        //    System.Xml.Serialization.XmlSerializer writer =
-        //        new System.Xml.Serialization.XmlSerializer(typeof(Animals));
+        public static void WriteXML(List<Animals> AnimalCollection)
+        {
+            try
+            {
+                XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
 
-        //    var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
-        //    System.IO.FileStream file = System.IO.File.Create(path);
+                using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+                {
+                    formatter.Serialize(fs, AnimalCollection);
+                }
+                Console.WriteLine("Serialized!");
+                //using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+                //{
+                //    List<Animals> newanimals = (List<Animals>)formatter.Deserialize(fs);
 
-        //    writer.Serialize(file, AnimalCollection);
-        //    file.Close();
-        //}
+                //    foreach (Animals p in newanimals)
+                //    {
+                //        Console.WriteLine($"Year: {p.born_year} --- Color: {p.color}");
+                //    }
+                //}
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Some exception: {ex}");
+            }
+        }
+        public static void ReadXML(List<Animals> AnimalCollection)
+        {
+            try
+            {
+                XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
+
+                //using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+                //{
+                //    formatter.Serialize(fs, AnimalCollection);
+                //}
+                //Console.WriteLine("Serialized");
+                using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+                {
+                    List<Animals> newanimals = (List<Animals>)formatter.Deserialize(fs);
+
+                    foreach (Animals p in newanimals)
+                    {
+                        Console.WriteLine($"Year: {p.born_year} --- Color: {p.color}");
+                    }
+                }
+                Console.WriteLine("Deserialized!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Some exception: {ex}");
+            }
+        }
         //функція консольного виведення полів і значень тварин старших за n
         static void PrintOlderThen(List<Animals> AnimalCollection, int YearsOld)
         {
@@ -95,8 +154,8 @@ namespace StarProject
             AnimalCollection.Add(new Animals(2020, "blue"));
             AnimalCollection.Add(new Animals(4321, "brown"));
             AnimalCollection.Add(new Animals(234, "yellow"));
-            AnimalCollection.Add(new Fish(1234, "black", "river fish", "mutant"));
-            AnimalCollection.Add(new Fish(2015, "white", "sea fish", "normal"));
+            //AnimalCollection.Add(new Fish(1234, "black", "river fish", "mutant"));
+            //AnimalCollection.Add(new Fish(2015, "white", "sea fish", "normal"));
             //перевірка на пустоту список
             if ((AnimalCollection != null) && (!AnimalCollection.Any()))
             {
@@ -212,6 +271,9 @@ namespace StarProject
             //запис усіх тварин
             WriteonFile(folder, fileName, AnimalCollection);
             //Sort(AnimalCollection);
+            WriteXML(AnimalCollection);
+            ReadXML(AnimalCollection);
+            //Serialization(AnimalCollection);
             Console.ReadKey();
         }
     }

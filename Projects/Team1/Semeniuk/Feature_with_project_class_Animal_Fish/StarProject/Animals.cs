@@ -1,8 +1,9 @@
 ﻿using System;
-
+using System.Xml.Serialization;
 namespace StarProject
 {
-    class Animals
+    [Serializable]
+    public class Animals
     {
         //поле
         protected double _born_year;
@@ -31,6 +32,7 @@ namespace StarProject
             this.born_year = born_year;
             this.color = color;
         }
+        public Animals() { }
         //виведення повних років
         public int GetAge()
         {
