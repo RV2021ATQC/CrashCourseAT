@@ -1,20 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Xml.Serialization;
 
 namespace Lesson2
 {
-    public class Animals
+    [Serializable]
+    //Позначаємо для Xml серіалізації, що клас Animal може включати об'єкти класу Cat
+    [XmlInclude(typeof(Cat))]
+    public class Animal
     {
         //різні модифікатори доступу
         private int _form; // доступний лише всередині класу
+        
+        [XmlElement()] //позначаємо кожне поле, яке має бути серіалізоване
         public int age;  // доуступний для інших класів
-
+        [XmlElement()]
         protected int weight; // доступний з класів нащадків
+        [XmlElement()]
+        public int speed;
 
         const string CLASS_NAME = "ТВАРИНИ";
-
-        public int speed;
 
         //---------------------------СТАТИЧНІ ПОЛЯ І МЕТОДИ--------------------------------------------
         //статичні поля і методи належать класу а не конкретному об'єкту цього класу
@@ -40,10 +44,10 @@ namespace Lesson2
 
 
         //конструктор "по замовчуванню" - без параметрів
-        public Animals() { }         
+        public Animal() { }         
 
         // як і інші методи ми може мо мати перегружені конструктори
-        public Animals(int age, int speed, int weight)
+        public Animal(int age, int speed, int weight)
         {
             //в даному випадку відразу задаємо значення для полів об'єкту
             this.age = age;
@@ -52,10 +56,14 @@ namespace Lesson2
 
 
             //виклик статичного методу, що належить класу Animals
-            Animals.increaseCountOfAnimals();
+            Animal.increaseCountOfAnimals();
 
         }
 
+        public int GetWeight()
+        {
+            return this.weight;
+        }
 
         //---------------------------------------------------------------------------------
 

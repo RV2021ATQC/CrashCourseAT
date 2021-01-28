@@ -1,23 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-
-using System.Text;
+using System.Xml.Serialization;
 
 namespace Lesson2
 {
-    public class Cats : Animals  // клас Cat наслідується від батьківсього класу Animal - принцип ООП наслідування.
+    [Serializable]
+    public class Cat : Animal  // клас Cat наслідується від батьківсього класу Animal - принцип ООП наслідування.
                                  // Клас нащадок успадковує від батьківського класу усі (protected + public) поля і методи.
     {
+        [XmlElement()]
         public string voise;
 
         //конструктор без параметрів
-        public Cats()
+        public Cat()
         {
             this.age = 7;
         }
 
         //конструктор з параметрами  можемо викликати будь з яких оголошених конструкторів
-        public Cats(int a, int b, int c)
+        public Cat(int a, int b, int c)
         {
             base.age = a;
             base.speed = b;
@@ -25,7 +25,7 @@ namespace Lesson2
 
             this.voise = "Meow!";
             //виклик статичного методу, що належить класу Animals
-            Animals.increaseCountOfAnimals();
+            Animal.increaseCountOfAnimals();
         }
 
         //переписали (override) метод move в нащадку 
