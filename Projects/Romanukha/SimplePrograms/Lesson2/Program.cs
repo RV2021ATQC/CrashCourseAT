@@ -98,6 +98,7 @@ namespace Lesson2
             }
         }
         #endregion Functions
+        
         public static async Task Main(string[] args)
         {
             //виклик перезавантажених методів

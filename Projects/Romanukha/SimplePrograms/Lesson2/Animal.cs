@@ -14,7 +14,7 @@ namespace Lesson2
         [XmlElement()] //позначаємо кожне поле, яке має бути серіалізоване
         public int age;  // доуступний для інших класів
         [XmlElement()]
-        protected int weight; // доступний з класів нащадків
+        public int weight; // доступний з класів нащадків
         [XmlElement()]
         public int speed;
 
