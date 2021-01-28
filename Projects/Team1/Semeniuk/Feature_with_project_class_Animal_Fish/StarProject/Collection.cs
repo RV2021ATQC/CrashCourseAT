@@ -91,7 +91,7 @@ namespace StarProject
                     //{
                     //    Console.WriteLine($"Year: {p.born_year} --- Color: {p.color}");
                     //}
-                    List<Animals> newfish = (List<Animals>)formatter.Deserialize(fs);
+                    var newfish = (List<Animals>)formatter.Deserialize(fs);
 
                     foreach (var f in newfish)
                     {
