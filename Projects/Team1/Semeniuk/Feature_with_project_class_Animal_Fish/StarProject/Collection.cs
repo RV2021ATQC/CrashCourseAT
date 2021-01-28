@@ -7,11 +7,13 @@ using System.ComponentModel;
 using System.Collections;
 using System.IO;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
+using NUnit;
 
 namespace StarProject
 {
-
-    class Collection
+    
+    public class Collection
     {
         //folder
         static string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -37,7 +39,7 @@ namespace StarProject
                     Console.WriteLine("Successfuly writed!");
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Console.WriteLine($"Some exception: {ex}!");
             }
@@ -55,8 +57,56 @@ namespace StarProject
                 }
             }
         }
+        //функція серіалізації
+        public static void WriteXML(List<Animals> AnimalCollection)
+        {
+            try
+            {
+                //XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
+                XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>), new[] { typeof(List<Fish>) });
+
+                using (FileStream fs = new FileStream("animals.xml", FileMode.OpenOrCreate))
+                {
+                    formatter.Serialize(fs, AnimalCollection);
+                }
+                Console.WriteLine("Serialized!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Some exception: {ex}");
+            }
+        }
+        //функція десеріалізації
+        public static void ReadXML(List<Animals> AnimalCollection)
+        {
+            try
+            {
+                //XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
+                XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>), new[] { typeof(List<Fish>) });
+                using (FileStream fs = new FileStream("animals.xml", FileMode.OpenOrCreate))
+                {
+                    List<Animals> newanimals = (List<Animals>)formatter.Deserialize(fs);
+
+                    foreach (Animals p in newanimals)
+                    {
+                        Console.WriteLine($"Year: {p.born_year} --- Color: {p.color}");
+                    }
+                    //var newfish = (List<Fish>)formatter.Deserialize(fs);
+
+                    //foreach (var f in newfish)
+                    //{
+                    //    Console.WriteLine($"Year: {f.born_year} --- Color: {f.color}");
+                    //}
+                }
+                Console.WriteLine("Deserialized!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Some exception: {ex}");
+            }
+        }
         //функція консольного виведення полів і значень тварин старших за n
-        static void PrintOlderThen(List<Animals> AnimalCollection, int n)
+        static void PrintOlderThen(List<Animals> AnimalCollection, int YearsOld)
         {
             foreach (object obj in AnimalCollection)
             {
@@ -64,10 +114,10 @@ namespace StarProject
                 {
                     string name = descriptor.Name;
                     object value = descriptor.GetValue(obj);
-                    if (name == "born_year" && Convert.ToInt32(DateTime.Now.Year) - Convert.ToInt32(value) < n)
+                    if (name == "born_year" && Convert.ToInt32(DateTime.Now.Year) - Convert.ToInt32(value) < YearsOld)
                         break;
                     else
-                        Console.WriteLine("Now {0} = {1}.", name, value);
+                        Console.WriteLine("Now {0} = {1}. obj({2})", name, value, AnimalCollection.IndexOf((Animals)obj) + 1);
                 }
             }
         }
@@ -76,12 +126,13 @@ namespace StarProject
             //створення колекції(списку) тварин
             var AnimalCollection = new List<Animals>();
             //попередньо введені дані
-            AnimalCollection.Add(new Animals(1234.5,"red"));
+            AnimalCollection.Add(new Animals(1234.5, "red"));
             Console.WriteLine(AnimalCollection[0].GetAge());
             AnimalCollection.Add(new Animals(2020, "blue"));
             AnimalCollection.Add(new Animals(4321, "brown"));
             AnimalCollection.Add(new Animals(234, "yellow"));
-            AnimalCollection.Add(new Fish(1234, "black","river fish","mutant"));
+            AnimalCollection.Add(new Fish(1234, "black", "river fish", "mutant"));
+            AnimalCollection.Add(new Fish(2015, "white", "sea fish", "normal"));
             //перевірка на пустоту список
             if ((AnimalCollection != null) && (!AnimalCollection.Any()))
             {
@@ -96,7 +147,7 @@ namespace StarProject
                 //перевівка на цілочисельне введення
                 try
                 {
-                   n  = int.Parse(Console.ReadLine());
+                    n = int.Parse(Console.ReadLine());
                 }
                 catch (FormatException)
                 {
@@ -117,7 +168,7 @@ namespace StarProject
                             catch (FormatException)
                             {
                                 Console.WriteLine("Wrong input format!");
-                            } 
+                            }
                             break;
                         }
                     case 2:
@@ -168,7 +219,7 @@ namespace StarProject
                             int k = int.Parse(Console.ReadLine());
                             AnimalCollection.RemoveAt(k - 1);
                         }
-                        catch(FormatException ex)
+                        catch (FormatException ex)
                         {
                             Console.WriteLine("Wrong input format!");
                         }
@@ -180,34 +231,28 @@ namespace StarProject
                         Console.WriteLine("You choosed not possible variant!");
                         break;
                 }
-                Console.WriteLine("Something else to change? \"y\"/\"n\""); 
+                Console.WriteLine("Something else to change? \"y\"/\"n\"");
             }
             //GetValues(AnimalCollection);
             //кількість років за які треба бути старше
             int older = 3;
-            Console.WriteLine("Animals that older then {0}", older);
+            Console.WriteLine("Animals that older then {0}:", older);
             PrintOlderThen(AnimalCollection, older);
             //створення списку риб для сортування
             var FishCollection = new List<Fish>();
-            //витягання "риб" із "тварин"
-            foreach (var animal in AnimalCollection)
+            //витягання "риб" із "тварин" i сортування за ознаками
+            foreach (var fish in AnimalCollection.OfType<Fish>().OrderBy(x => x.species).ToList())
             {
-                try
-                {
-                    FishCollection.Add((Fish)animal);
-                }
-                catch(Exception ex)
-                {
-                    //Console.WriteLine($"Exeption {ex}");
-                }
+                Console.WriteLine($"The sorted fish from collection(by species) : {fish.born_year}, {fish.color}, {fish.kind}, {fish.species}");
             }
-            //сортування за ознаками
-            var result = FishCollection.OrderBy(u => u.species);
-            foreach (Fish u in result)
-                Console.WriteLine(u);
             //запис усіх тварин
             WriteonFile(folder, fileName, AnimalCollection);
             //Sort(AnimalCollection);
+            //серіалізація
+            WriteXML(AnimalCollection);
+            //десеріалізація
+            ReadXML(AnimalCollection);
+            //Serialization(AnimalCollection);
             Console.ReadKey();
         }
     }

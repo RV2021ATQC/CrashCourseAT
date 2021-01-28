@@ -1,12 +1,15 @@
 ﻿using System;
-
+using System.Xml.Serialization;
 namespace StarProject
 {
-    class Animals
+    [Serializable]
+    [XmlInclude(typeof(Fish))]
+    public class Animals
     {
         //поле
         protected double _born_year;
         //властивість поля
+        [XmlElementAttribute]
         public virtual double born_year 
         { 
             set 
@@ -20,6 +23,7 @@ namespace StarProject
             }
         }
         protected string _color;
+        [XmlElementAttribute]
         public string color
         {
             get { return _color; }
@@ -31,6 +35,7 @@ namespace StarProject
             this.born_year = born_year;
             this.color = color;
         }
+        public Animals() { }
         //виведення повних років
         public int GetAge()
         {
@@ -43,7 +48,7 @@ namespace StarProject
         }
         public string Voice()
         {
-            return "Ruf";
+            return "Ruf!!!";
         }
     }
 }
