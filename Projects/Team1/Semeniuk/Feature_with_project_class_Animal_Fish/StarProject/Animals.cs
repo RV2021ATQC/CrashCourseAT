@@ -2,7 +2,7 @@
 using System.Xml.Serialization;
 namespace StarProject
 {
-    [Serializable]
+    [XmlInclude(typeof(Fish))]
     public class Animals
     {
         //поле

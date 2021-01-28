@@ -80,7 +80,8 @@ namespace StarProject
         {
             try
             {
-                XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
+                //XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
+                XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>), new[] { typeof(List<Fish>) });
 
                 using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
                 {
@@ -107,8 +108,8 @@ namespace StarProject
         {
             try
             {
-                XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
-
+                //XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
+                XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>), new[] { typeof(List<Fish>) });
                 //using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
                 //{
                 //    formatter.Serialize(fs, AnimalCollection);
@@ -156,8 +157,8 @@ namespace StarProject
             AnimalCollection.Add(new Animals(2020, "blue"));
             AnimalCollection.Add(new Animals(4321, "brown"));
             AnimalCollection.Add(new Animals(234, "yellow"));
-            //AnimalCollection.Add(new Fish(1234, "black", "river fish", "mutant"));
-            //AnimalCollection.Add(new Fish(2015, "white", "sea fish", "normal"));
+            AnimalCollection.Add(new Fish(1234, "black", "river fish", "mutant"));
+            AnimalCollection.Add(new Fish(2015, "white", "sea fish", "normal"));
             //перевірка на пустоту список
             if ((AnimalCollection != null) && (!AnimalCollection.Any()))
             {
