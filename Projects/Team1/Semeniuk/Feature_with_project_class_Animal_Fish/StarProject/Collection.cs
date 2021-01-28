@@ -85,18 +85,18 @@ namespace StarProject
                 XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>), new[] { typeof(List<Fish>) });
                 using (FileStream fs = new FileStream("animals.xml", FileMode.OpenOrCreate))
                 {
-                    //List<Animals> newanimals = (List<Animals>)formatter.Deserialize(fs);
+                    List<Animals> newanimals = (List<Animals>)formatter.Deserialize(fs);
 
-                    //foreach (Animals p in newanimals)
-                    //{
-                    //    Console.WriteLine($"Year: {p.born_year} --- Color: {p.color}");
-                    //}
-                    var newfish = (List<Animals>)formatter.Deserialize(fs);
-
-                    foreach (var f in newfish)
+                    foreach (Animals p in newanimals)
                     {
-                        Console.WriteLine($"Year: {f.born_year} --- Color: {f.color}");
+                        Console.WriteLine($"Year: {p.born_year} --- Color: {p.color}");
                     }
+                    //var newfish = (List<Fish>)formatter.Deserialize(fs);
+
+                    //foreach (var f in newfish)
+                    //{
+                    //    Console.WriteLine($"Year: {f.born_year} --- Color: {f.color}");
+                    //}
                 }
                 Console.WriteLine("Deserialized!");
             }
