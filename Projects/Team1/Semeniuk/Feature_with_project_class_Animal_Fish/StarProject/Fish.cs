@@ -9,6 +9,7 @@ namespace StarProject
     public class Fish : Animals
     {
         private string _kind;
+        [XmlElementAttribute]
         public string kind
         {
             get
@@ -21,6 +22,7 @@ namespace StarProject
             }
         }
         //перезаписане поле із виведенням іншої інформації(на ввідміну від батьківського класу) при заповненні
+        [XmlElementAttribute]
         public override double born_year
         {
             set

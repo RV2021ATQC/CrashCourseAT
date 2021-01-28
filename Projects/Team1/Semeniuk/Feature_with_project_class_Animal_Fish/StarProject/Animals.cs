@@ -2,12 +2,14 @@
 using System.Xml.Serialization;
 namespace StarProject
 {
+    [Serializable]
     [XmlInclude(typeof(Fish))]
     public class Animals
     {
         //поле
         protected double _born_year;
         //властивість поля
+        [XmlElementAttribute]
         public virtual double born_year 
         { 
             set 
@@ -21,6 +23,7 @@ namespace StarProject
             }
         }
         protected string _color;
+        [XmlElementAttribute]
         public string color
         {
             get { return _color; }
