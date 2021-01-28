@@ -44,24 +44,6 @@ namespace StarProject
                 Console.WriteLine($"Some exception: {ex}!");
             }
         }
-        //серіалізація
-        //static void Serialization(List<Animals> AnimalCollection)
-        //{
-        //    try
-        //    {
-        //        XmlSerializer formatter = new XmlSerializer(typeof(Animals));
-        //        using (FileStream fs = new FileStream("Animals.xml", FileMode.OpenOrCreate))
-        //        {
-        //            formatter.Serialize(fs, AnimalCollection[0]);
-        //            Console.WriteLine("Collection serialized!");
-        //        }
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        Console.WriteLine($"Some exception: {ex}");
-        //    }
-            
-        //}
         //функція консольного виведення полів і значень
         static void GetValues(List<Animals> AnimalCollection)
         {
@@ -83,20 +65,11 @@ namespace StarProject
                 //XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
                 XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>), new[] { typeof(List<Fish>) });
 
-                using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream("animals.xml", FileMode.OpenOrCreate))
                 {
                     formatter.Serialize(fs, AnimalCollection);
                 }
                 Console.WriteLine("Serialized!");
-                //using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
-                //{
-                //    List<Animals> newanimals = (List<Animals>)formatter.Deserialize(fs);
-
-                //    foreach (Animals p in newanimals)
-                //    {
-                //        Console.WriteLine($"Year: {p.born_year} --- Color: {p.color}");
-                //    }
-                //}
             }
             catch (Exception ex)
             {
@@ -110,18 +83,19 @@ namespace StarProject
             {
                 //XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>));
                 XmlSerializer formatter = new XmlSerializer(typeof(List<Animals>), new[] { typeof(List<Fish>) });
-                //using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
-                //{
-                //    formatter.Serialize(fs, AnimalCollection);
-                //}
-                //Console.WriteLine("Serialized");
-                using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream("animals.xml", FileMode.OpenOrCreate))
                 {
                     List<Animals> newanimals = (List<Animals>)formatter.Deserialize(fs);
 
                     foreach (Animals p in newanimals)
                     {
                         Console.WriteLine($"Year: {p.born_year} --- Color: {p.color}");
+                    }
+                    List<Animals> newfish = (List<Animals>)formatter.Deserialize(fs);
+
+                    foreach (Fish f in newfish)
+                    {
+                        Console.WriteLine($"Year: {f.born_year} --- Color: {f.color}");
                     }
                 }
                 Console.WriteLine("Deserialized!");
