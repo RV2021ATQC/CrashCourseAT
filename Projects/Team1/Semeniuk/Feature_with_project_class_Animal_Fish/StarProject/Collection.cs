@@ -38,7 +38,7 @@ namespace StarProject
                             outputFile.WriteLine("{0} = {1}.", name, value);
                         }
                     }
-                    Console.WriteLine("Successfuly writed!");
+                    Console.WriteLine("Successfuly wrote!");
                 }
             }
             catch(Exception ex)
