@@ -49,7 +49,7 @@ namespace StarProject
         }
         public Fish() { }
         //конструктор
-        public Fish(int born_year, string color, string kind, string species)
+        public Fish(double born_year, string color, string kind, string species)
             : base(born_year, color)
         {
             this.kind = kind;

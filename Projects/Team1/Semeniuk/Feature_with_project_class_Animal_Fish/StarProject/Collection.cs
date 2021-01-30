@@ -20,12 +20,13 @@ namespace StarProject
         // Filename  
         static string fileName = "Animal_collection.txt";
 
-        #region Funcs
+        #region Funсtions
         //функція запису полів та їх значень у текстовий файл
-        static void WriteonFile(string path, string filename, List<Animals> AnimalCollection)
+        static string WriteonFile(string path, string filename, List<Animals> AnimalCollection)
         {
             try
             {
+                string Output;
                 using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, filename), true))
                 {
                     foreach (object obj in AnimalCollection)
@@ -36,10 +37,12 @@ namespace StarProject
                             string name = descriptor.Name;
                             object value = descriptor.GetValue(obj);
                             outputFile.WriteLine("{0} = {1}.", name, value);
+                            Output.Append("{0} = {1}.", name, value);
                         }
                     }
                     Console.WriteLine("Successfuly writed!");
                 }
+                return Output;
             }
             catch(Exception ex)
             {

@@ -20,7 +20,7 @@ namespace StarProject
 
             //Then
             Console.WriteLine("TestGetAge() execution");
-            Assert.IsTrue(ActualValue == ExpectedValue);
+            Assert.AreEqual(ExpectedValue, ActualValue);
         }
         [Test]
         [Category("AnimalsТest")]
@@ -28,14 +28,14 @@ namespace StarProject
         {
             //Given
             var animal = new Animals();
-            string ExpectedValue = "Ruf!!!";
+            string ExpectedValue = String.Format("Voice: Ruf!!!");
 
             //When
-            var ActualValue = animal.Voice();
+            var ActualValue = animal.ToString();
 
             //Then
-            Console.WriteLine("TestGetAge() execution");
-            Assert.AreSame(ExpectedValue, animal.ToString());
+            Console.WriteLine("TestVoice() execution");
+            Assert.IsTrue(ExpectedValue == ActualValue);
         }
     }
 }
