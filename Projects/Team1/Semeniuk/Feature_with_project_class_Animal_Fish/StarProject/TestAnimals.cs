@@ -22,5 +22,20 @@ namespace StarProject
             Console.WriteLine("TestGetAge() execution");
             Assert.IsTrue(ActualValue == ExpectedValue);
         }
+        [Test]
+        [Category("AnimalsТest")]
+        public void TestVoice()
+        {
+            //Given
+            var animal = new Animals();
+            string ExpectedValue = "Ruf!!!";
+
+            //When
+            var ActualValue = animal.Voice();
+
+            //Then
+            Console.WriteLine("TestGetAge() execution");
+            Assert.AreSame(ExpectedValue, animal.ToString());
+        }
     }
 }
