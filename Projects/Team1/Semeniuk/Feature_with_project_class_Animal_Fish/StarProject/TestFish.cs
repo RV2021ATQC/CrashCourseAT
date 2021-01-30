@@ -29,7 +29,7 @@ namespace StarProject
         {
             //Given
             var fish = new Animals();
-            string ExpectedValue = String.Format("Voice: Ruf!!!");
+            string ExpectedValue = String.Format("Voice: Blop!!!");
 
             //When
             var ActualValue = fish.ToString();

@@ -55,7 +55,9 @@ namespace StarProject
             this.kind = kind;
             this.species = species;
         }
-        
-
+        public override string Voice()
+        {
+            return "Blop!!!";
+        }
     }
 }

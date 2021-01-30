@@ -46,7 +46,7 @@ namespace StarProject
         {
             return String.Format("Voice: {0}", Voice());
         }
-        public string Voice()
+        public virtual string Voice()
         {
             return "Ruf!!!";
         }

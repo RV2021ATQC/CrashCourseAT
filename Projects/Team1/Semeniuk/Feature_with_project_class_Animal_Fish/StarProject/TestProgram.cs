@@ -25,7 +25,7 @@ namespace StarProject
             var ExpectedValue = $"The sorted fish from collection(by species) : 1234, black, river fish, mutant, \r\nThe sorted fish from collection(by species) : 2015, white, sea fish, normal, \r\n";
 
             //When
-            var ActualValue = Collection.SortDySpecies(AnimalCollection);
+            var ActualValue = Collection.SortBySpecies(AnimalCollection);
 
             //Then
             Assert.AreEqual(ActualValue, ExpectedValue);

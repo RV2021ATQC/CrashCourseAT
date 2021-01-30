@@ -22,7 +22,7 @@ namespace StarProject
 
         #region Funсtions
         //функція запису полів та їх значень у текстовий файл
-        public static void WriteonFile(string path, string filename, List<Animals> Collection)
+        public static void WriteInFile(string path, string filename, List<Animals> Collection)
         {
             try
             {
@@ -259,7 +259,7 @@ namespace StarProject
             //витягання "риб" із "тварин" i сортування за ознаками
             Console.WriteLine(SortDySpecies(AnimalCollection));
             //запис усіх тварин
-            WriteonFile(folder, fileName, AnimalCollection);
+            WriteInFile(folder, fileName, AnimalCollection);
             //Sort(AnimalCollection);
             //серіалізація
             WriteXML(AnimalCollection);
