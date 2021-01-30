@@ -128,7 +128,7 @@ namespace StarProject
             return result.ToString();
         }
         //функція сортування за полем особливості
-        public static string SortDySpecies(List<Animals> Collection)
+        public static string SortBySpecies(List<Animals> Collection)
         {
             StringBuilder result = new StringBuilder(); 
             foreach (var fish in Collection.OfType<Fish>().OrderBy(x => x.species).ToList())
@@ -257,7 +257,7 @@ namespace StarProject
             //вивід старших
             Console.WriteLine(PrintOlderThen(AnimalCollection, older));
             //витягання "риб" із "тварин" i сортування за ознаками
-            Console.WriteLine(SortDySpecies(AnimalCollection));
+            Console.WriteLine(SortBySpecies(AnimalCollection));
             //запис усіх тварин
             WriteInFile(folder, fileName, AnimalCollection);
             //Sort(AnimalCollection);

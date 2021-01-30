@@ -28,7 +28,7 @@ namespace StarProject
         public void TestVoice()
         {
             //Given
-            var fish = new Animals();
+            var fish = new Fish();
             string ExpectedValue = String.Format("Voice: Blop!!!");
 
             //When
