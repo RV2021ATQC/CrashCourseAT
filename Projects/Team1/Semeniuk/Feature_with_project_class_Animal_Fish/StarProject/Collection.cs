@@ -22,11 +22,10 @@ namespace StarProject
 
         #region Funсtions
         //функція запису полів та їх значень у текстовий файл
-        static string WriteonFile(string path, string filename, List<Animals> AnimalCollection)
+        public static void WriteonFile(string path, string filename, List<Animals> AnimalCollection)
         {
             try
             {
-                string Output;
                 using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, filename), true))
                 {
                     foreach (object obj in AnimalCollection)
@@ -37,20 +36,19 @@ namespace StarProject
                             string name = descriptor.Name;
                             object value = descriptor.GetValue(obj);
                             outputFile.WriteLine("{0} = {1}.", name, value);
-                            Output.Append("{0} = {1}.", name, value);
                         }
                     }
                     Console.WriteLine("Successfuly writed!");
                 }
-                return Output;
             }
             catch(Exception ex)
             {
                 Console.WriteLine($"Some exception: {ex}!");
             }
         }
+
         //функція консольного виведення полів і значень
-        static void GetValues(List<Animals> AnimalCollection)
+        public static void GetValues(List<Animals> AnimalCollection)
         {
             foreach (object obj in AnimalCollection)
             {
@@ -111,7 +109,7 @@ namespace StarProject
             }
         }
         //функція консольного виведення полів і значень тварин старших за n
-        static void PrintOlderThen(List<Animals> AnimalCollection, int YearsOld)
+        public static void PrintOlderThen(List<Animals> AnimalCollection, int YearsOld)
         {
             foreach (object obj in AnimalCollection)
             {
@@ -126,7 +124,7 @@ namespace StarProject
                 }
             }
         }
-        static void SortDySpecies(List<Animals> AnimalCollection)
+        public static void SortDySpecies(List<Animals> AnimalCollection)
         {
             foreach (var fish in AnimalCollection.OfType<Fish>().OrderBy(x => x.species).ToList())
             {
