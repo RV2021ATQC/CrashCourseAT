@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace StarProject
 {
@@ -9,13 +7,13 @@ namespace StarProject
     public class TestAnimals
     {
         [Test]
-        //[Category("Animals")]
+        [Category("AnimalsТest")]
         public void TestGetAge()
         {
             //Given
-            double year = 2013.5;
+            double year = 2013;
             var animal = new Animals(year, "red");
-            int ExpectedValue = Convert.ToInt32(DateTime.Now.Year) - (int)year;
+            int ExpectedValue = (int)(Convert.ToInt32(DateTime.Now.Year) - year);
 
             //When
             var ActualValue = animal.GetAge();
