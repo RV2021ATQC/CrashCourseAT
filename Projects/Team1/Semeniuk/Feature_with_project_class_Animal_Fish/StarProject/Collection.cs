@@ -19,6 +19,8 @@ namespace StarProject
         static string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         // Filename  
         static string fileName = "Animal_collection.txt";
+
+        #region Funcs
         //функція запису полів та їх значень у текстовий файл
         static void WriteonFile(string path, string filename, List<Animals> AnimalCollection)
         {
@@ -121,6 +123,14 @@ namespace StarProject
                 }
             }
         }
+        static void SortDySpecies(List<Animals> AnimalCollection)
+        {
+            foreach (var fish in AnimalCollection.OfType<Fish>().OrderBy(x => x.species).ToList())
+            {
+                Console.WriteLine($"The sorted fish from collection(by species) : {fish.born_year}, {fish.color}, {fish.kind}, {fish.species}");
+            }
+        }
+        #endregion
         static void Main(string[] args)
         {
             //створення колекції(списку) тварин
@@ -241,10 +251,7 @@ namespace StarProject
             //створення списку риб для сортування
             var FishCollection = new List<Fish>();
             //витягання "риб" із "тварин" i сортування за ознаками
-            foreach (var fish in AnimalCollection.OfType<Fish>().OrderBy(x => x.species).ToList())
-            {
-                Console.WriteLine($"The sorted fish from collection(by species) : {fish.born_year}, {fish.color}, {fish.kind}, {fish.species}");
-            }
+            SortDySpecies(AnimalCollection);
             //запис усіх тварин
             WriteonFile(folder, fileName, AnimalCollection);
             //Sort(AnimalCollection);
