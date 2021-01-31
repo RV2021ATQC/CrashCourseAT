@@ -8,6 +8,7 @@ using System.Collections;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using System.Threading.Tasks;
 using NUnit;
 using System.Globalization;
 
@@ -259,11 +260,10 @@ namespace StarProject
             Console.WriteLine(PrintOlderThen(AnimalCollection, older));
             //витягання "риб" із "тварин" i сортування за ознаками
             Console.WriteLine(SortBySpecies(AnimalCollection));
-            //запис усіх тварин
-            WriteInFile(folder, fileName, AnimalCollection);
+            //запис усіх тваринта паралельна серіалізація
+            Parallel.Invoke(() => WriteInFile(folder, fileName, AnimalCollection)  , () => WriteXML(AnimalCollection));
             //Sort(AnimalCollection);
-            //серіалізація
-            WriteXML(AnimalCollection);
+            //серіалізація 
             //десеріалізація
             ReadXML(AnimalCollection);
             Console.ReadKey();
