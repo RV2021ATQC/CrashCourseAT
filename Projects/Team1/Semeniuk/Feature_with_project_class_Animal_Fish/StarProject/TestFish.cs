@@ -13,7 +13,7 @@ namespace StarProject
         [TestCase(10, ExpectedResult = 1)]
         [TestCase(20, ExpectedResult = 2)]
         [TestCase(70, ExpectedResult = 7)]
-        public double CalculatePriceTest(double foodstuff)
+        public double DataDrivenTestFeed(double foodstuff)
         {
             //Given
             var fish = new Fish();
