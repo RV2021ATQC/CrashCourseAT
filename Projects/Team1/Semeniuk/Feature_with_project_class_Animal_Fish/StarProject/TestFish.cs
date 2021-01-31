@@ -7,22 +7,23 @@ namespace StarProject
 {
     class TestFish
     {
-        //[Test]
-        //[Category("FishТest")]
-        //public void TestGetAge()
-        //{
-        //    //Given
-        //    double year = 2010;
-        //    var fish = new Fish(year, "yellow", "river fish", "big");
-        //    int ExpectedValue = (int)(Convert.ToInt32(DateTime.Now.Year) - year);
+        [Test]
+        [Category("FishТest")]
+        [TestCase(1, ExpectedResult = 0.1)]
+        [TestCase(10, ExpectedResult = 1)]
+        [TestCase(20, ExpectedResult = 2)]
+        [TestCase(70, ExpectedResult = 7)]
+        public double CalculatePriceTest(double foodstuff)
+        {
+            //Given
+            var fish = new Fish();
 
-        //    //When
-        //    var ActualValue = fish.GetAge();
+            //When
+            double WeightIncrease = fish.Feed(foodstuff);
 
-        //    //Then
-        //    Console.WriteLine("TestGetAge() execution");
-        //    Assert.AreEqual(ExpectedValue, ActualValue);
-        //}
+            //Then
+            return WeightIncrease;
+        }
         [Test]
         [Category("FishТest")]
         public void TestVoice()

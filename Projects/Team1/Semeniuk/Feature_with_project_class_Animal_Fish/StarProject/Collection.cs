@@ -9,6 +9,7 @@ using System.IO;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 using NUnit;
+using System.Globalization;
 
 namespace StarProject
 {
@@ -133,7 +134,7 @@ namespace StarProject
             StringBuilder result = new StringBuilder(); 
             foreach (var fish in Collection.OfType<Fish>().OrderBy(x => x.species).ToList())
             {
-                result.Append($"The sorted fish from collection(by species) : {fish.born_year}, {fish.color}, {fish.kind}, {fish.species}, {System.Environment.NewLine}");
+                result.Append($"The sorted fish from collection(by species) : {fish.born_year}, {fish.color}, {fish.kind}, {fish.species}, {fish.weight} {System.Environment.NewLine}");
             }
             return result.ToString();
         }
@@ -265,7 +266,6 @@ namespace StarProject
             WriteXML(AnimalCollection);
             //десеріалізація
             ReadXML(AnimalCollection);
-            //Serialization(AnimalCollection);
             Console.ReadKey();
         }
     }
