@@ -24,15 +24,15 @@ namespace StarProject
 
         #region Funсtions
         //функція запису полів та їх значень у текстовий файл
-        public static void WriteInFile(string path, string filename, List<Animals> Collection)
+        public static void WriteInFile(string path, string filename, List<Animals> collection)
         {
             try
             {
                 using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, filename), true))
                 {
-                    foreach (object obj in Collection)
+                    foreach (object obj in collection)
                     {
-                        outputFile.WriteLine($"Object {Collection.IndexOf((Animals)obj) + 1}");
+                        outputFile.WriteLine($"Object {collection.IndexOf((Animals)obj) + 1}");
                         foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(obj))
                         {
                             string name = descriptor.Name;
@@ -50,9 +50,9 @@ namespace StarProject
         }
 
         //функція консольного виведення полів і значень
-        public static void GetValues(List<Animals> Collection)
+        public static void GetValues(List<Animals> collection)
         {
-            foreach (object obj in Collection)
+            foreach (object obj in collection)
             {
                 foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(obj))
                 {
@@ -63,7 +63,7 @@ namespace StarProject
             }
         }
         //функція серіалізації
-        public static void WriteXML(List<Animals> Collection)
+        public static void WriteXML(List<Animals> collection)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace StarProject
 
                 using (FileStream fs = new FileStream("animals.xml", FileMode.OpenOrCreate))
                 {
-                    formatter.Serialize(fs, Collection);
+                    formatter.Serialize(fs, collection);
                 }
                 Console.WriteLine("Serialized!");
             }
@@ -82,7 +82,7 @@ namespace StarProject
             }
         }
         //функція десеріалізації
-        public static void ReadXML(List<Animals> AnimalCollection)
+        public static void ReadXML()
         {
             try
             {
@@ -111,29 +111,29 @@ namespace StarProject
             }
         }
         //функція консольного виведення полів і значень тварин старших за n
-        public static string PrintOlderThen(List<Animals> Collection, int YearsOld)
+        public static string PrintOlderThen(List<Animals> collection, int yearsOld)
         {
             StringBuilder result = new StringBuilder();
-            foreach (object obj in Collection)
+            foreach (object obj in collection)
             {
                 foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(obj))
                 {
                     string name = descriptor.Name;
                     object value = descriptor.GetValue(obj);
-                    if (name == "born_year" && Convert.ToInt32(DateTime.Now.Year) - Convert.ToInt32(value) < YearsOld)
+                    if (name == "born_year" && Convert.ToInt32(DateTime.Now.Year) - Convert.ToInt32(value) < yearsOld)
                         break;
                     else
-                        result.Append($"Now {name} = {value}. obj({Collection.IndexOf((Animals)obj) + 1})\n");
+                        result.Append($"Now {name} = {value}. obj({collection.IndexOf((Animals)obj) + 1})\n");
 
                 }
             }
             return result.ToString();
         }
         //функція сортування за полем особливості
-        public static string SortBySpecies(List<Animals> Collection)
+        public static string SortBySpecies(List<Animals> collection)
         {
             StringBuilder result = new StringBuilder(); 
-            foreach (var fish in Collection.OfType<Fish>().OrderBy(x => x.species).ToList())
+            foreach (var fish in collection.OfType<Fish>().OrderBy(x => x.species).ToList())
             {
                 result.Append($"The sorted fish from collection(by species) : {fish.born_year}, {fish.color}, {fish.kind}, {fish.species}, {fish.weight} {System.Environment.NewLine}");
             }
