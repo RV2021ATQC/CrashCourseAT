@@ -265,7 +265,7 @@ namespace StarProject
             //Sort(AnimalCollection);
             //серіалізація 
             //десеріалізація
-            ReadXML(AnimalCollection);
+            ReadXML();
             Console.ReadKey();
         }
     }
