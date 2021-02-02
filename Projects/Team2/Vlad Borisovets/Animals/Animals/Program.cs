@@ -33,7 +33,6 @@ namespace Animals
 		public static List<Animals> animals = new List<Animals>();
 		static void Main(string[] args)
 		{
-			//var animals = new List<Animals>();
 			animals.Add(new Animals(2001, "red"));
 			animals.Add(new Animals(2002, "green"));
 			animals.Add(new Animals(2003, "red"));
@@ -89,24 +88,42 @@ namespace Animals
 		//Add new Animal
 		public static void GettersAnimal()
 		{
-			Console.WriteLine("Write year of bith your animal: ");
-			int YearOfBirth = Int32.Parse(Console.ReadLine());
-			Console.WriteLine("Write color your animal: ");
-			string Color = Console.ReadLine();
-			animals.Add(new Animals(YearOfBirth, Color));
+			try
+			{
+				Console.WriteLine("Write the year of birth your animal: ");
+				int YearOfBirth = Int32.Parse(Console.ReadLine());
+				Console.WriteLine("Write the color your animal: ");
+				string Color = Console.ReadLine();
+				animals.Add(new Animals(YearOfBirth, Color));
+			}
+			catch
+			{
+				Console.WriteLine("The string had the wrong format, please try again");
+				Console.ReadKey();
+				GettersAnimal();
+			}
 		}
 		//Add new Fish
 		public static void GettersFish()
 		{
-			Console.WriteLine("Write year of bith fish: ");
-			int YearOfBirth = Int32.Parse(Console.ReadLine());
-			Console.WriteLine("Write color fish: ");
-			string Color = Console.ReadLine();
-			Console.WriteLine("Write kind fish: ");
-			string Kind = Console.ReadLine();
-			Console.WriteLine("Write species your fish: ");
-			string Species = Console.ReadLine();
-			animals.Add(new Fish(YearOfBirth, Color, Kind, Species));
+			try
+			{
+				Console.WriteLine("Write the year of birth fish: ");
+				int YearOfBirth = Int32.Parse(Console.ReadLine());
+				Console.WriteLine("Write the color fish: ");
+				string Color = Console.ReadLine();
+				Console.WriteLine("Write the kind fish: ");
+				string Kind = Console.ReadLine();
+				Console.WriteLine("Write the species your fish: ");
+				string Species = Console.ReadLine();
+				animals.Add(new Fish(YearOfBirth, Color, Kind, Species));
+			}
+			catch
+			{
+				Console.WriteLine("The string had the wrong format, please try again");
+				Console.ReadKey();
+				GettersFish();
+			}
 		}
 		//Get full years
 		public static int GetAge(int age)

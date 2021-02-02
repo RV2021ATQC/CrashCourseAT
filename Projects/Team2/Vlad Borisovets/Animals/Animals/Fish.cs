@@ -23,5 +23,13 @@ namespace Animals
 			this.kind = kind;
 			this.species = species;
 		}
+		public override string ToString()
+		{
+			return String.Format("Voice: {0}", Voice());
+		}
+		public new string Voice()
+		{
+			return "Boop";
+		}
 	}
 }
