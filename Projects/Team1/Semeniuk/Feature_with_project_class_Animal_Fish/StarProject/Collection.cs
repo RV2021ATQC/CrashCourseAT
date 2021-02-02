@@ -8,7 +8,9 @@ using System.Collections;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
+using System.Threading.Tasks;
 using NUnit;
+using System.Globalization;
 
 namespace StarProject
 {
@@ -19,16 +21,18 @@ namespace StarProject
         static string folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         // Filename  
         static string fileName = "Animal_collection.txt";
+
+        #region Funсtions
         //функція запису полів та їх значень у текстовий файл
-        static void WriteonFile(string path, string filename, List<Animals> AnimalCollection)
+        public static void WriteInFile(string path, string filename, List<Animals> collection)
         {
             try
             {
                 using (StreamWriter outputFile = new StreamWriter(Path.Combine(path, filename), true))
                 {
-                    foreach (object obj in AnimalCollection)
+                    foreach (object obj in collection)
                     {
-                        outputFile.WriteLine($"Object {AnimalCollection.IndexOf((Animals)obj) + 1}");
+                        outputFile.WriteLine($"Object {collection.IndexOf((Animals)obj) + 1}");
                         foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(obj))
                         {
                             string name = descriptor.Name;
@@ -36,7 +40,7 @@ namespace StarProject
                             outputFile.WriteLine("{0} = {1}.", name, value);
                         }
                     }
-                    Console.WriteLine("Successfuly writed!");
+                    Console.WriteLine("Successfuly wrote!");
                 }
             }
             catch(Exception ex)
@@ -44,10 +48,11 @@ namespace StarProject
                 Console.WriteLine($"Some exception: {ex}!");
             }
         }
+
         //функція консольного виведення полів і значень
-        static void GetValues(List<Animals> AnimalCollection)
+        public static void GetValues(List<Animals> collection)
         {
-            foreach (object obj in AnimalCollection)
+            foreach (object obj in collection)
             {
                 foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(obj))
                 {
@@ -58,7 +63,7 @@ namespace StarProject
             }
         }
         //функція серіалізації
-        public static void WriteXML(List<Animals> AnimalCollection)
+        public static void WriteXML(List<Animals> collection)
         {
             try
             {
@@ -67,7 +72,7 @@ namespace StarProject
 
                 using (FileStream fs = new FileStream("animals.xml", FileMode.OpenOrCreate))
                 {
-                    formatter.Serialize(fs, AnimalCollection);
+                    formatter.Serialize(fs, collection);
                 }
                 Console.WriteLine("Serialized!");
             }
@@ -77,7 +82,7 @@ namespace StarProject
             }
         }
         //функція десеріалізації
-        public static void ReadXML(List<Animals> AnimalCollection)
+        public static void ReadXML()
         {
             try
             {
@@ -106,21 +111,35 @@ namespace StarProject
             }
         }
         //функція консольного виведення полів і значень тварин старших за n
-        static void PrintOlderThen(List<Animals> AnimalCollection, int YearsOld)
+        public static string PrintOlderThen(List<Animals> collection, int yearsOld)
         {
-            foreach (object obj in AnimalCollection)
+            StringBuilder result = new StringBuilder();
+            foreach (object obj in collection)
             {
                 foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(obj))
                 {
                     string name = descriptor.Name;
                     object value = descriptor.GetValue(obj);
-                    if (name == "born_year" && Convert.ToInt32(DateTime.Now.Year) - Convert.ToInt32(value) < YearsOld)
+                    if (name == "born_year" && Convert.ToInt32(DateTime.Now.Year) - Convert.ToInt32(value) < yearsOld)
                         break;
                     else
-                        Console.WriteLine("Now {0} = {1}. obj({2})", name, value, AnimalCollection.IndexOf((Animals)obj) + 1);
+                        result.Append($"Now {name} = {value}. obj({collection.IndexOf((Animals)obj) + 1})\n");
+
                 }
             }
+            return result.ToString();
         }
+        //функція сортування за полем особливості
+        public static string SortBySpecies(List<Animals> collection)
+        {
+            StringBuilder result = new StringBuilder(); 
+            foreach (var fish in collection.OfType<Fish>().OrderBy(x => x.species).ToList())
+            {
+                result.Append($"The sorted fish from collection(by species) : {fish.born_year}, {fish.color}, {fish.kind}, {fish.species}, {fish.weight} {System.Environment.NewLine}");
+            }
+            return result.ToString();
+        }
+        #endregion
         static void Main(string[] args)
         {
             //створення колекції(списку) тварин
@@ -237,22 +256,16 @@ namespace StarProject
             //кількість років за які треба бути старше
             int older = 3;
             Console.WriteLine("Animals that older then {0}:", older);
-            PrintOlderThen(AnimalCollection, older);
-            //створення списку риб для сортування
-            var FishCollection = new List<Fish>();
+            //вивід старших
+            Console.WriteLine(PrintOlderThen(AnimalCollection, older));
             //витягання "риб" із "тварин" i сортування за ознаками
-            foreach (var fish in AnimalCollection.OfType<Fish>().OrderBy(x => x.species).ToList())
-            {
-                Console.WriteLine($"The sorted fish from collection(by species) : {fish.born_year}, {fish.color}, {fish.kind}, {fish.species}");
-            }
-            //запис усіх тварин
-            WriteonFile(folder, fileName, AnimalCollection);
+            Console.WriteLine(SortBySpecies(AnimalCollection));
+            //запис усіх тваринта паралельна серіалізація
+            Parallel.Invoke(() => WriteInFile(folder, fileName, AnimalCollection)  , () => WriteXML(AnimalCollection));
             //Sort(AnimalCollection);
-            //серіалізація
-            WriteXML(AnimalCollection);
+            //серіалізація 
             //десеріалізація
-            ReadXML(AnimalCollection);
-            //Serialization(AnimalCollection);
+            ReadXML();
             Console.ReadKey();
         }
     }
