@@ -56,7 +56,7 @@ namespace OOP_star
         {
             if (brand_new == true)
                 base.SetNewInfo();
-            ChangeAge();
+            //ChangeAge();
             try
             {
                 Console.Write("Enter properties of a house\nLiving space: ");
@@ -74,7 +74,7 @@ namespace OOP_star
             House h = new House();
             h.Adress = building.Adress;
             h.Comm_date = building.Comm_date;
-            h.Age = building.Age;
+            //h.Age = building.Age;
             return h;
         }
     }

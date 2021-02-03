@@ -22,6 +22,10 @@ namespace OOP_star
     
     public static void Main()
         {
+            var h1 = new House();
+            var h2 = new House();
+            Console.WriteLine(JsonConvert.SerializeObject(h1) == JsonConvert.SerializeObject(h2));
+
             var buildings = new List<Building>();
             
             //building #1
@@ -36,7 +40,7 @@ namespace OOP_star
             buildings.Add(house1);
 
             var adress = new AdressInfo("New York", "Manhattan");
-            var date = DateTime.Parse("02/02/1940");
+            var date = DateTime.Parse("02/02/2022");
             
             //building #2
             Building building2 = new Building(adress, date);
@@ -75,13 +79,12 @@ namespace OOP_star
             }
 
             //List of builgings which lifespan are more then 40 years
-            var Olderthen40 = new List<Building>(from it in buildings
-                                                 where it.Age > 40
-                                                 select it);
             Console.WriteLine("\n\n" +
                 "----------List of builgings which lifespan are more then 40 years----------\n");
 
-            foreach (var it in Olderthen40.Select((x, i) => new { item = x, index = i }))
+            foreach (var it in new List<Building>(from it in buildings
+                                                  where it.Age > 40
+                                                  select it).Select((x, i) => new { item = x, index = i }))
             {
                 Console.Write($"\n{it.item.GetType().Name} #{it.index}");
                 it.item.Display();
