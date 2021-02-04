@@ -21,6 +21,20 @@ namespace StarProject
                 _kind = value;
             }
         }
+        private double _weight;
+        [XmlElementAttribute]
+        public double weight
+        {
+            get
+            {
+                return _weight;
+            }
+            set
+            {
+                _weight = value;
+            }
+        }
+
         //перезаписане поле із виведенням іншої інформації(на ввідміну від батьківського класу) при заповненні
         [XmlElementAttribute]
         public override double born_year
@@ -49,13 +63,22 @@ namespace StarProject
         }
         public Fish() { }
         //конструктор
-        public Fish(int born_year, string color, string kind, string species)
+        public Fish(double born_year, string color, string kind, string species)
             : base(born_year, color)
         {
             this.kind = kind;
             this.species = species;
+            this.weight = 0.1;
         }
-        
-
+        public double Feed(double foodstuff)
+        {
+            double WeightIncrease = foodstuff * 0.1;
+            this.weight += WeightIncrease;
+            return WeightIncrease;
+        }
+        public override string Voice()
+        {
+            return "Blop!!!";
+        }
     }
 }

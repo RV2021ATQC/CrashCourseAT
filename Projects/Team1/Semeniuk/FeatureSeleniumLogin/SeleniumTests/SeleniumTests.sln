@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCTask1", "CCTask1\CCTask1.csproj", "{26828053-ADC6-4DEF-94BB-315D85ABB035}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumTests", "SeleniumTests\SeleniumTests.csproj", "{14EA855D-3561-4118-8633-FB9900550D75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{26828053-ADC6-4DEF-94BB-315D85ABB035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26828053-ADC6-4DEF-94BB-315D85ABB035}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26828053-ADC6-4DEF-94BB-315D85ABB035}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26828053-ADC6-4DEF-94BB-315D85ABB035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14EA855D-3561-4118-8633-FB9900550D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14EA855D-3561-4118-8633-FB9900550D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14EA855D-3561-4118-8633-FB9900550D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14EA855D-3561-4118-8633-FB9900550D75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CEF2CEB5-CF96-4909-BEF5-7597C96C095C}
+		SolutionGuid = {0E62CC3D-351F-43BA-80C5-3A5F84D22BF2}
 	EndGlobalSection
 EndGlobal

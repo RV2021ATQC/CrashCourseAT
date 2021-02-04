@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson1", "Lesson1\Lesson1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson2", "Lesson2\Lesson2.csproj", "{4DD4398A-8198-431A-BC18-F0DC99738B0F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumTests", "SeleniumTests\SeleniumTests.csproj", "{AE620316-0EC0-4648-AD2A-2E0D0F191818}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4DD4398A-8198-431A-BC18-F0DC99738B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DD4398A-8198-431A-BC18-F0DC99738B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DD4398A-8198-431A-BC18-F0DC99738B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE620316-0EC0-4648-AD2A-2E0D0F191818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE620316-0EC0-4648-AD2A-2E0D0F191818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE620316-0EC0-4648-AD2A-2E0D0F191818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE620316-0EC0-4648-AD2A-2E0D0F191818}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
