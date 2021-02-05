@@ -31,22 +31,48 @@ namespace HomeWork_OOP_1_2
             {
                 Console.WriteLine("Enter Product Name (String)");
                 NameOfProduct = Console.ReadLine();
+
+
                 Console.WriteLine("Enter Purchase Price (Double) ");
-                PurchasePrice = Convert.ToDouble(Console.ReadLine());
+                string PurchasePrice = Console.ReadLine();
+                if (double.TryParse(PurchasePrice, out double _purchasePrice))
+                {
+                    Console.WriteLine($"Purchase price parsed , Purchase Price = {PurchasePrice}");
+                    this.PurchasePrice = _purchasePrice;
+                }
+                else
+                    Console.WriteLine($"You enter a wrong value");
+
+
                 Console.WriteLine("Enter Purchase Date (DateTime like '2010.1.6') ");
-                PurchaseDate = Convert.ToDateTime(Console.ReadLine());
-                Console.WriteLine("Enter Stock Balance (int) ");
-                StockBalance = Convert.ToInt32(Console.ReadLine());
+                string PurchaseDate = Console.ReadLine();
+                if (DateTime.TryParse(PurchaseDate, out DateTime _purchaseDate))
+                {
+                    Console.WriteLine($"Purchase Date parsed , Purchase Date : {PurchaseDate}");
+                    this.PurchaseDate = _purchaseDate;
+                }
+                else
+                    Console.WriteLine($"You input a wrong format");
+
+
+                Console.WriteLine("Enter Stock Balance (int)");
+                string StockBalance = Console.ReadLine();
+                if (int.TryParse(StockBalance, out int _stockbalance))
+                {
+                    Console.WriteLine($"Stock Balance parsed , Stock Balance = {StockBalance}");
+                    this.StockBalance = _stockbalance;
+                }
+
                 Console.WriteLine($"Name Of Product : {this.NameOfProduct}");
                 Console.WriteLine($"Purchase Price : {this.PurchasePrice}");
                 Console.WriteLine($"Purchase Date : {this.PurchaseDate}");
                 Console.WriteLine($"Stock Balance : {this.StockBalance}");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            
+
         }
      
         public virtual void Print(List<Product> products)
