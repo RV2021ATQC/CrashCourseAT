@@ -22,7 +22,6 @@ namespace SeleniumTests
         {
             driver = new ChromeDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            
         }
 
 
@@ -35,7 +34,6 @@ namespace SeleniumTests
         public void FirstTest()
         {
             //Given
-            //CreatePage((ChromeDriver)driver,"login-email", "login-password", "https://vseosvita.ua/", "https://vseosvita.ua/user/id1277827", "/html/body/header/div/div/div[1]/a[2]", "/html/body/div[4]/div/div/div[3]/center/div/a", "body > header > div > div > div.v-hide-on-mobile.vr-hide-on-mobile-new > div > div.n-row-menu.n-row-top-menu > div.n-menu-col.n-menu-col-kabinet > div.a-registration > a:nth-child(2)");
             string email = "den25051999@gmail.com";
             string password = "admin1234";
             string webSite = "https://vseosvita.ua/";
