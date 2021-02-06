@@ -22,6 +22,7 @@ namespace SeleniumTests
         {
             driver = new ChromeDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            
         }
 
 
@@ -30,11 +31,11 @@ namespace SeleniumTests
         {
             driver.Quit();
         }
-
         [Test]
         public void FirstTest()
         {
             //Given
+            //CreatePage((ChromeDriver)driver,"login-email", "login-password", "https://vseosvita.ua/", "https://vseosvita.ua/user/id1277827", "/html/body/header/div/div/div[1]/a[2]", "/html/body/div[4]/div/div/div[3]/center/div/a", "body > header > div > div > div.v-hide-on-mobile.vr-hide-on-mobile-new > div > div.n-row-menu.n-row-top-menu > div.n-menu-col.n-menu-col-kabinet > div.a-registration > a:nth-child(2)");
             string email = "den25051999@gmail.com";
             string password = "admin1234";
             string webSite = "https://vseosvita.ua/";
@@ -44,24 +45,31 @@ namespace SeleniumTests
             //When
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
             //Launching test page
             driver.Navigate().GoToUrl(webSite);
+
+            Page page = new Page(driver, email, password);
             //Click on drop-down menu
-            driver.FindElement(By.XPath("/html/body/header/div/div/div[1]/a[2]")).Click();
+            page.dropDownMenu.Click();
+
+
             //go to login page
-            driver.FindElement(By.CssSelector("body > header > div > div > div.v-hide-on-mobile.vr-hide-on-mobile-new > div > div.n-row-menu.n-row-top-menu > div.n-menu-col.n-menu-col-kabinet > div.a-registration > a:nth-child(2)")).Click();
+            page.loginPageButton.Click();
+
             //e-mail
-            driver.FindElement(By.Id("login-email")).SendKeys(email);
+            page.email.SendKeys(email);
+
             //password
-            driver.FindElement(By.Id("login-password")).SendKeys(password + Keys.Enter);
+            page.password.SendKeys(password + Keys.Enter);
             Thread.Sleep(2000);
+
             //Checking for new(after login) functions
             driver.Navigate().GoToUrl(personalOffice);
             Thread.Sleep(2000);
-            IWebElement actual = driver.FindElement(By.XPath("/html/body/div[4]/div/div/div[3]/center/div/a"));
 
             //Then
-            Assert.AreEqual(actual.Text, buttonText);
+            Assert.AreEqual(page.check.Text, buttonText);
         }
     }
 }
