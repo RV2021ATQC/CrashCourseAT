@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Edge;
+
 
 namespace SeleniumTests
 {
@@ -25,6 +28,9 @@ namespace SeleniumTests
         public IWebElement personalOffice;
         public IWebElement check
         { get { return driver.FindElement(By.XPath("/html/body/div[4]/div/div/div[3]/center/div/a")); } }
+        public IWebElement cofirmLogin
+        { get { return driver.FindElement(By.CssSelector(".btn")); } }
+
 
         public Page(IWebDriver driver, string email, string password)
         {
