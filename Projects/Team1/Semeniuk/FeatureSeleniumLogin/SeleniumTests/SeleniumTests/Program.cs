@@ -22,6 +22,7 @@ namespace SeleniumTests
         {
             driver = new ChromeDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            //driver.Manage().Timeouts().PageLoad();
         }
 
 
@@ -31,14 +32,11 @@ namespace SeleniumTests
             driver.Quit();
         }
         [Test]
-        public void FirstTest()
+        [TestCase("den25051999@gmail.com", "admin1234", "https://vseosvita.ua/", "https://vseosvita.ua/user/id1277827", "+ Додати матеріал")]
+        public void FirstTest(string email, string password, string webSite, string personalOffice, string buttonText)
         {
             //Given
-            string email = "den25051999@gmail.com";
-            string password = "admin1234";
-            string webSite = "https://vseosvita.ua/";
-            string personalOffice = "https://vseosvita.ua/user/id1277827";
-            string buttonText = "+ Додати матеріал";
+            Page page = new Page(driver, email, password);
 
             //When
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
@@ -47,7 +45,7 @@ namespace SeleniumTests
             //Launching test page
             driver.Navigate().GoToUrl(webSite);
 
-            Page page = new Page(driver, email, password);
+            
             //Click on drop-down menu
             page.dropDownMenu.Click();
 
@@ -60,11 +58,11 @@ namespace SeleniumTests
 
             //password
             page.password.SendKeys(password + Keys.Enter);
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
 
             //Checking for new(after login) functions
             driver.Navigate().GoToUrl(personalOffice);
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
 
             //Then
             Assert.AreEqual(page.check.Text, buttonText);
