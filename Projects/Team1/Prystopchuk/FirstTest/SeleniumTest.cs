@@ -19,7 +19,7 @@ namespace FirstTest
             driver.Navigate().GoToUrl("https://www.cultbeauty.co.uk/customer/account/login/");
             new LoginPage(driver).PerformLogin(username, password);
 
-            Thread.Sleep(20000);
+            //Thread.Sleep(20000);
             return driver.FindElementSafe(By.XPath("/html/body/div[1]/div[1]/div[7]/div/div/div[2]/div[1]/div/form/div")).Exists();
         }
 
