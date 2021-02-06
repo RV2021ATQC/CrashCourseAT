@@ -38,7 +38,10 @@ namespace MyFirstNUnitTest
 
             Assert.True(element1.Text.Contains("Софт (0)"));
             Assert.True(element2.Text.Contains("Планешти (1)"));
-            Assert.True(element3.Text.Contains("Мобільні телефони (3)"));                                    
-        }       
+            Assert.True(element3.Text.Contains("Мобільні телефони (3)"));
+
+            driver.Quit();
+        }
+        
     }
 }
