@@ -22,7 +22,6 @@ namespace NUnitTestLogin
             chrome_driver.Manage().Window.Maximize();
             firefox_driver.Manage().Window.Maximize();
         }
-
         [Test]
         public void Login()
         {
@@ -43,7 +42,6 @@ namespace NUnitTestLogin
             chrome_page.CheckValue();
             firefox_page.CheckValue();
         }
-
         [TearDown]
         public void TearDown()
         {
