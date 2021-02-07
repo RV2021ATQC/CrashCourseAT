@@ -22,31 +22,27 @@ namespace NUnitTestLogin
             chrome_driver.Manage().Window.Maximize();
             firefox_driver.Manage().Window.Maximize();
         }
+
         [Test]
         public void Login()
         {
-            HomePage chrome_page = new HomePage(chrome_driver);
-            HomePage firefox_page = new HomePage(firefox_driver);
-            chrome_page.goToPage();
-            chrome_page.login();
-            chrome_page.CheckValue();
+            HomePage driver = new HomePage(chrome_driver, firefox_driver);
 
-            firefox_page.goToPage();
-            firefox_page.login();
-            firefox_page.CheckValue();
+            driver.goToPage();
+            driver.login();
+            driver.CheckValue();
         }
         public void CheckText()
         {
-            HomePage chrome_page = new HomePage(chrome_driver);
-            HomePage firefox_page = new HomePage(firefox_driver);
-            chrome_page.CheckValue();
-            firefox_page.CheckValue();
+            HomePage driver = new HomePage(chrome_driver, firefox_driver);
+            driver.CheckValue();
         }
+
         [TearDown]
         public void TearDown()
         {
             chrome_driver.Quit();
             firefox_driver.Quit();
-        }            
+        }
     }
 }
