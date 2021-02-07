@@ -30,7 +30,6 @@ namespace SeleniumTests
         {
             driver = new TWebDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
-            //driver.Manage().Timeouts().PageLoad();
         }
 
         [TearDown]
@@ -52,9 +51,9 @@ namespace SeleniumTests
             //Launching test page
             driver.Navigate().GoToUrl(webSite);
 
-            
-            //Click on drop-down menu
-            if (driver.GetType() == typeof(ChromeDriver))
+
+            //Click on drop-down menu if it exists(depends on screen size)
+            if (page.dropDownMenu.Displayed)
                 page.dropDownMenu.Click();
 
 
