@@ -10,7 +10,12 @@ namespace FirstTest
             {
                 return driver.FindElement(by);
             }
-            catch (NoSuchElementException){ return null; }
+            catch (Exception ex)
+            {
+                if (ex is NoSuchElementException || ex is ElementNotVisibleException || ex is InvalidSelectorException)
+                    return null;
+                else throw;
+            }
         }
         
         public static bool Exists(this IWebElement element)

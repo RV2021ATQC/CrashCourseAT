@@ -5,38 +5,38 @@ using OpenQA.Selenium;
 
 namespace FirstTest
 {
-   
-    [Parallelizable]
-    public class TestChrome : TestBase
+   // [Parallelizable/*(ParallelScope.All)*/]
+    [TestFixture]
+    public class Tests : TestBase
     {
-        public TestChrome() : base(BrowserType.Chrome) { }
-
-        [Test, Parallelizable]
-        [TestCase("hhaarrlleeyy.qquuiiinn@gmail.com", "WrongPassword", ExpectedResult = true)]
-        [TestCase("hhaarrlleeyy.qquuiiinn@gmail.com", "CorrectPassword", ExpectedResult = false)]
-        public bool Test1(string username, string password)
+        [Test, Parallelizable(ParallelScope.Children)]
+        [TestCase(BrowserType.Chrome, "hhaarrlleeyy.qquuiiinn@gmail.com", "WrongPassword", ExpectedResult = true)]
+        [TestCase(BrowserType.FireFox, "hhaarrlleeyy.qquuiiinn@gmail.com", "WrongPassword", ExpectedResult = true)]
+        public bool Test1(BrowserType browser, string username, string password)
         {
-            driver.Navigate().GoToUrl("https://www.cultbeauty.co.uk/customer/account/login/");
-            new LoginPage(driver).PerformLogin(username, password);
-
-            Thread.Sleep(20000);
-            return driver.FindElementSafe(By.XPath("/html/body/div[1]/div[1]/div[7]/div/div/div[2]/div[1]/div/form/div")).Exists();
+            SetDriver(browser);
+            var page = new LoginPage(driver);
+            page.PerformLogin(username, password);
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+            //Thread.Sleep(1000);
+            var result = page.WrongPassMsg.Exists();
+            driver.Quit();
+            return result;
         }
 
-        [TestFixture]
-        [Parallelizable]
-        public class TestFox : TestBase
+        //[Test, Parallelizable(ParallelScope.Children)]
+        [TestCase(BrowserType.Chrome, "hhaarrlleeyy.qquuiiinn@gmail.com", "CorrectPassword", ExpectedResult = true)]
+        [TestCase(BrowserType.FireFox, "hhaarrlleeyy.qquuiiinn@gmail.com", "CorrectPassword", ExpectedResult = true)]
+        public bool Test2(BrowserType browser, string username, string password)
         {
-            public TestFox() : base(BrowserType.FireFox) { }
-            [Test, Parallelizable]
-            [TestCase("hhaarrlleeyy.qquuiiinn@gmail.com", "WrongPassword", ExpectedResult = true)]
-            [TestCase("hhaarrlleeyy.qquuiiinn@gmail.com", "CorrectPassword", ExpectedResult = false)]
-            public bool Test2(string username, string password)
-            {
-                driver.Navigate().GoToUrl("https://www.cultbeauty.co.uk/customer/account/login/");
-                new LoginPage(driver).PerformLogin(username, password);
-                return driver.FindElementSafe(By.XPath("/html/body/div[1]/div[1]/div[7]/div/div/div[2]/div[1]/div/form/div")).Exists();
-            }
+            SetDriver(browser);
+            var page = new LoginPage(driver);
+            page.PerformLogin(username, password);
+            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+            //Thread.Sleep(10000);
+            var result = page.CorrectPassMsg.Exists();
+            driver.Quit();
+            return result;
         }
     }
 }
