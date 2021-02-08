@@ -55,7 +55,6 @@ namespace SeleniumTests
 
             //go to login page
             page.loginPageButton.Click();
-            //Thread.Sleep(2000);
 
             //e-mail and password
             page.Login();
@@ -65,7 +64,6 @@ namespace SeleniumTests
 
             //Checking for new(after login) functions
             driver.Navigate().GoToUrl(personalOffice);
-            //Thread.Sleep(2000);
 
             //Then
             Assert.AreEqual(page.check.Text, buttonText);
