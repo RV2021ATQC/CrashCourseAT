@@ -32,5 +32,10 @@ namespace SeleniumTests
             _email = email;
             _password = password;
         }
+        public void Login()
+        {
+            email.SendKeys(_email);
+            password.SendKeys(_password);
+        }
     }
 }

@@ -61,12 +61,9 @@ namespace SeleniumTests
             page.loginPageButton.Click();
             //Thread.Sleep(2000);
 
-            //e-mail
-            page.email.SendKeys(email);
-
-            //password
-            page.password.SendKeys(password);
-
+            //e-mail and password
+            page.Login();
+            
             //login
             page.cofirmLogin.Click();
 
