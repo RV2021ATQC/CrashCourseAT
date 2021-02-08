@@ -14,10 +14,6 @@ using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
-    class Program
-    {
-        public static async Task Main(string[] args) => Console.ReadKey();
-    }
     [Parallelizable]
     [TestFixture(typeof(ChromeDriver))]
     [TestFixture(typeof(FirefoxDriver))]
