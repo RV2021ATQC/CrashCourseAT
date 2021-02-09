@@ -12,14 +12,14 @@ namespace UnitTestProject
 	{
 		public IWebDriver driverChrome;
 		public IWebDriver driverFirefox;
-		
+
 		[OneTimeTearDown]
 		public void EndTest()
 		{
 			driverChrome.Quit();
 			driverFirefox.Quit();
 		}
-		
+
 		[Test]
 		[Parallelizable]
 		public void LoginChrome()
@@ -31,14 +31,14 @@ namespace UnitTestProject
 
 			// action
 			AuthorizationPage account = new AuthorizationPage("vladb707@gmail.com", "test_worked");
-			AuthorizationPage.Logout(driverChrome, account);
+			AuthorizationPage.Autorization(driverChrome, account);
 
 
 			// verification      
 			string url = "https://naurok.ua/student/dashboard";
 			Assert.AreEqual(url, driverChrome.Url);
 		}
-		
+
 		[Test]
 		[Parallelizable]
 		public void LoginFirefox()
@@ -50,7 +50,7 @@ namespace UnitTestProject
 
 			// action
 			AuthorizationPage account = new AuthorizationPage("vladb707@gmail.com", "test_worked");
-			AuthorizationPage.Logout(driverFirefox, account);
+			AuthorizationPage.Autorization(driverFirefox, account);
 
 
 			// verification      
