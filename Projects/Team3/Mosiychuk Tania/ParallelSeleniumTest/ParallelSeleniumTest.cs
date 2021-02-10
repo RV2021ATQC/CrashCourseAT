@@ -8,36 +8,29 @@ using System;
 namespace ParallelSeleniunTest
 {
     public class Tests
-    {
-        public IWebDriver chromedriver;
-        public IWebDriver firefoxdriver;
-       
+    {   
         public string url = "https://ilearn.org.ua/login";
 
-        [OneTimeTearDown]
-        public void AfterAllMethods()
-        {
-            chromedriver.Quit();
-            firefoxdriver.Quit();
-        }
         [Test]
         [Parallelizable(ParallelScope.All)]
         public void LoginChrome()
         {
-            chromedriver = new ChromeDriver();
-            LoginPage.GoToSite(chromedriver, url);
-            LoginPage.Login(chromedriver);
-            LoginPage.ChekText(chromedriver);
+            LoginPage chromepage = new LoginPage { driver = new ChromeDriver() };
+            chromepage.GoToSite(url);
+            chromepage.Login();
+            chromepage.ChekText();
+            chromepage.driver.Quit();
         }
 
         [Test]
         [Parallelizable(ParallelScope.All)]
         public void LoginFirefox()
         {
-            firefoxdriver = new FirefoxDriver();
-            LoginPage.GoToSite(firefoxdriver, url);
-            LoginPage.Login(firefoxdriver);
-            LoginPage.ChekText(firefoxdriver);
+            LoginPage firefoxpage = new LoginPage { driver = new FirefoxDriver() };
+            firefoxpage.GoToSite(url);
+            firefoxpage.Login();
+            firefoxpage.ChekText();
+            firefoxpage.driver.Quit();
         }
     }
 }
