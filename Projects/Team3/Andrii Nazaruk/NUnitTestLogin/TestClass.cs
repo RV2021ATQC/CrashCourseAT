@@ -9,6 +9,7 @@ namespace NUnitTestLogin
     public class Tests
     {
         private IWebDriver driver;
+        public UserData user = new UserData("celef64828@tigasu.com", "Property12345");
         public void Setup(string browserName)
         {
             if (browserName.Contains("firefox"))
@@ -29,24 +30,21 @@ namespace NUnitTestLogin
             Setup(browserName);
             HomePage homePage = new HomePage(driver);
             homePage.goToPage();
-            homePage.login();
+            homePage.login(user);
         }
-
         [Test]
         [TestCaseSource(typeof(BrowserTypes), "BrowserToRunWith")]
         [Parallelizable]
+        
         public void CheckValue(string browserName)
         {
             Setup(browserName);
             HomePage homePage = new HomePage(driver);
             homePage.goToPage();
-            homePage.login();
-
-            IWebElement chrome_dashboard_webElement = driver.FindElement(By.XPath("/html/body/div[1]/header/nav/div/ul/li[4]/a"));
-            IWebElement firefox_dashboard_webElement = driver.FindElement(By.XPath("/html/body/div[1]/header/nav/div/ul/li[4]/a"));
-
-            Assert.True(chrome_dashboard_webElement.Text.Contains("Submissions"));
-            Assert.True(firefox_dashboard_webElement.Text.Contains("Submissions"));
+            homePage.login(user);
+          
+            Assert.True(homePage.chrome_dashboard_webElement.Text.Contains("Submissions"));
+            Assert.True(homePage.firefox_dashboard_webElement.Text.Contains("Submissions"));      
         }
         [TearDown]
         public void TearDown()
