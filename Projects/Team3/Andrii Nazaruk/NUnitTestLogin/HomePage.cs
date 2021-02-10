@@ -22,7 +22,7 @@ namespace NUnitTestLogin
         public void login(UserData user)
         {
             driver.FindElement(By.XPath("/html/body/div[1]/header/nav/div/ul/li[3]/a")).Click();
-            driver.FindElement(By.XPath("/html/body/div[5]/div[2]/div/div[1]/div/div/form/input[3]")).SendKeys(user.userName);
+            driver.FindElement(By.XPath("/html/body/div[5]/div[2]/div/div[1]/div/div/form/input[3]")).SendKeys(user.userEmail);
             driver.FindElement(By.XPath("/html/body/div[5]/div[2]/div/div[1]/div/div/form/input[4]")).SendKeys(user.userPassword);
             driver.FindElement(By.XPath("/html/body/div[5]/div[2]/div/div[1]/div/div/form/div[2]/button")).Click();
         }   

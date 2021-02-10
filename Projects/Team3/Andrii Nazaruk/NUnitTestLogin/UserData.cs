@@ -2,12 +2,12 @@
 {
     public class UserData
     {
-        public UserData(string _userName, string _userPassword)
+        public UserData(string _userEmail, string _userPassword)
         {
-            this.userName = _userName;
+            this.userEmail = _userEmail;
             this.userPassword = _userPassword;
         }
-        public string userName { get; set; }
+        public string userEmail { get; set; }
         public string userPassword { get; set; }
     }
 }
