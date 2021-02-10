@@ -2,47 +2,56 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System;
-using System.Threading;
 
 namespace NUnitTestLogin
 {
-
-    [Parallelizable(ParallelScope.All)]
+    [Parallelizable(scope: ParallelScope.All)]
     public class Tests
     {
-        private IWebDriver chrome_driver;
-        private IWebDriver firefox_driver;
-
-        [SetUp]
-        public void SetUp()
+        private IWebDriver driver;
+        public void Setup(string browserName)
         {
-            chrome_driver = new ChromeDriver();
-            firefox_driver = new FirefoxDriver();
-            chrome_driver.Manage().Window.Maximize();
-            firefox_driver.Manage().Window.Maximize();
+            if (browserName.Contains("firefox"))
+            {
+                driver = new FirefoxDriver();
+            }
+            else if (browserName.Contains("chrome"))
+            {
+                driver = new ChromeDriver();
+            }
+            driver.Manage().Window.Maximize();
+        }
+        [Test]
+        [Parallelizable]
+        [TestCaseSource(typeof(BrowserTypes), "BrowserToRunWith")]
+        public void Login(string browserName)
+        {
+            Setup(browserName);
+            HomePage homePage = new HomePage(driver);
+            homePage.goToPage();
+            homePage.login();
         }
 
         [Test]
-        public void Login()
+        [TestCaseSource(typeof(BrowserTypes), "BrowserToRunWith")]
+        [Parallelizable]
+        public void CheckValue(string browserName)
         {
-            HomePage driver = new HomePage(chrome_driver, firefox_driver);
+            Setup(browserName);
+            HomePage homePage = new HomePage(driver);
+            homePage.goToPage();
+            homePage.login();
 
-            driver.goToPage();
-            driver.login();
-            driver.CheckValue();
-        }
-        public void CheckText()
-        {
-            HomePage driver = new HomePage(chrome_driver, firefox_driver);
-            driver.CheckValue();
-        }
+            IWebElement chrome_dashboard_webElement = driver.FindElement(By.XPath("/html/body/div[1]/header/nav/div/ul/li[4]/a"));
+            IWebElement firefox_dashboard_webElement = driver.FindElement(By.XPath("/html/body/div[1]/header/nav/div/ul/li[4]/a"));
 
+            Assert.True(chrome_dashboard_webElement.Text.Contains("Submissions"));
+            Assert.True(firefox_dashboard_webElement.Text.Contains("Submissions"));
+        }
         [TearDown]
         public void TearDown()
         {
-            chrome_driver.Quit();
-            firefox_driver.Quit();
+            driver.Quit();
         }
     }
 }
