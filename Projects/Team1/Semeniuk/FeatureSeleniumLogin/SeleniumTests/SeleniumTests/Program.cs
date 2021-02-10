@@ -7,61 +7,66 @@ using OpenQA.Selenium;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
-using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests
 {
-    class SeleniumFirst
+    [Parallelizable]
+    [TestFixture(typeof(ChromeDriver))]
+    [TestFixture(typeof(FirefoxDriver))]
+    class SeleniumFirst<TWebDriver> where TWebDriver : IWebDriver, new()
     {
-        public static async Task Main(string[] args) { Console.ReadKey(); }
+        [ThreadStatic]
         private IWebDriver driver;
-
-        [OneTimeSetUp]
+        [SetUp]
         public void BeforeAllMethods()
         {
-            driver = new ChromeDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver = new TWebDriver();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
         }
 
-
-        [OneTimeTearDown]
+        [TearDown]
         public void AfterAllMethods()
         {
             driver.Quit();
         }
 
         [Test]
-        public void FirstTest()
+        [TestCase("den25051999@gmail.com", "admin1234", "https://vseosvita.ua/", "https://vseosvita.ua/user/id1277827", "+ Додати матеріал")]
+        public void FirstTest(string email, string password, string webSite, string personalOffice, string buttonText)
         {
             //Given
-            string email = "den25051999@gmail.com";
-            string password = "admin1234";
-            string webSite = "https://vseosvita.ua/";
-            string personalOffice = "https://vseosvita.ua/user/id1277827";
-            string buttonText = "+ Додати матеріал";
+            Page page = new Page(driver, email, password);
 
             //When
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
             //Launching test page
             driver.Navigate().GoToUrl(webSite);
-            //Click on drop-down menu
-            driver.FindElement(By.XPath("/html/body/header/div/div/div[1]/a[2]")).Click();
+
+
+            //Click on drop-down menu if it exists(depends on screen size)
+            if (page.dropDownMenu.Displayed)
+                page.dropDownMenu.Click();
+
+
             //go to login page
-            driver.FindElement(By.CssSelector("body > header > div > div > div.v-hide-on-mobile.vr-hide-on-mobile-new > div > div.n-row-menu.n-row-top-menu > div.n-menu-col.n-menu-col-kabinet > div.a-registration > a:nth-child(2)")).Click();
-            //e-mail
-            driver.FindElement(By.Id("login-email")).SendKeys(email);
-            //password
-            driver.FindElement(By.Id("login-password")).SendKeys(password + Keys.Enter);
-            Thread.Sleep(2000);
+            page.loginPageButton.Click();
+
+            //e-mail and password
+            page.Login();
+            
+            //login
+            page.cofirmLogin.Click();
+
             //Checking for new(after login) functions
             driver.Navigate().GoToUrl(personalOffice);
-            Thread.Sleep(2000);
-            IWebElement actual = driver.FindElement(By.XPath("/html/body/div[4]/div/div/div[3]/center/div/a"));
 
             //Then
-            Assert.AreEqual(actual.Text, buttonText);
+            Assert.AreEqual(page.check.Text, buttonText);
         }
     }
 }
