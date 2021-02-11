@@ -18,10 +18,10 @@ namespace ParallelSeleniunTest
             driver.Navigate().GoToUrl(site);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
         }
-        public void Login()
+        public void Login(string login, string password)
         {
-            driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div[1]/div[1]/form/div[1]/input")).SendKeys("tania2002mosiy@gmail.com");
-            driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div[1]/div[1]/form/div[2]/input")).SendKeys("sm6ozi802" + Keys.Enter);
+            driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div[1]/div[1]/form/div[1]/input")).SendKeys(login);
+            driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div[1]/div[1]/form/div[2]/input")).SendKeys(password + Keys.Enter);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
         }
         

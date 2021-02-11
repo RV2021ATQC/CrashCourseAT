@@ -10,6 +10,8 @@ namespace ParallelSeleniunTest
     public class Tests
     {   
         public string url = "https://ilearn.org.ua/login";
+        public string login = "tania2002mosiy@gmail.com";
+        public string password = "sm6ozi802";
 
         [Test]
         [Parallelizable(ParallelScope.All)]
@@ -17,7 +19,7 @@ namespace ParallelSeleniunTest
         {
             LoginPage chromepage = new LoginPage { driver = new ChromeDriver() };
             chromepage.GoToSite(url);
-            chromepage.Login();
+            chromepage.Login(login, password);
             chromepage.ChekText();
             chromepage.driver.Quit();
         }
@@ -28,7 +30,7 @@ namespace ParallelSeleniunTest
         {
             LoginPage firefoxpage = new LoginPage { driver = new FirefoxDriver() };
             firefoxpage.GoToSite(url);
-            firefoxpage.Login();
+            firefoxpage.Login(login, password);
             firefoxpage.ChekText();
             firefoxpage.driver.Quit();
         }
