@@ -12,6 +12,7 @@ namespace UnitTestProject
 	{
 		public IWebDriver driverChrome;
 		public IWebDriver driverFirefox;
+		private string checkLink = "https://naurok.ua/student/dashboard";
 
 		[OneTimeTearDown]
 		public void EndTest()
@@ -35,8 +36,7 @@ namespace UnitTestProject
 
 
 			// verification      
-			string url = "https://naurok.ua/student/dashboard";
-			Assert.AreEqual(url, driverChrome.Url);
+			Assert.AreEqual(checkLink, driverChrome.Url);
 		}
 
 		[Test]
@@ -54,8 +54,7 @@ namespace UnitTestProject
 
 
 			// verification      
-			string url = "https://naurok.ua/student/dashboard";
-			Assert.AreEqual(url, driverFirefox.Url);
+			Assert.AreEqual(checkLink, driverFirefox.Url);
 		}
 
 
