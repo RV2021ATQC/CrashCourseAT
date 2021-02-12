@@ -17,7 +17,6 @@ namespace FirstTest
             var page = new LoginPage(driver);
             page.PerformLogin(username, password);
             return page.WrongPassMsg.Exists();
-           // driver.Quit();
         }       
        
     }
@@ -34,7 +33,6 @@ namespace FirstTest
             var page = new LoginPage(driver);
             page.PerformLogin(username, password);
             return page.CorrectPassMsg.Exists();
-            //driver.Quit();
         }
     }
 }
