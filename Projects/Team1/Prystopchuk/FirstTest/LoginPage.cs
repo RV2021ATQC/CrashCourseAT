@@ -8,11 +8,9 @@ namespace FirstTest
     public class LoginPage
     {
         private IWebDriver driver;
-        //private WebDriverWait wait;
 
         public LoginPage(IWebDriver driver)
         {
-            //this.wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             this.driver = driver;
             driver.Navigate().GoToUrl("https://www.cultbeauty.co.uk/customer/account/login/");
         }
