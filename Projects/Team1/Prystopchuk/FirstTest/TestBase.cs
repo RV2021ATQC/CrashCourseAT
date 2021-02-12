@@ -19,17 +19,16 @@ namespace FirstTest {
         //    SetDriver(browser);
         //}
 
-        //[SetUp]
         protected void SetDriver(BrowserType type)
         {
             if (type == BrowserType.Chrome)  driver = new ChromeDriver();
             if (type == BrowserType.FireFox) driver = new FirefoxDriver();
         }
 
-        //[OneTimeTearDown]
-        //public void Quitdriver()
-        //{
-        //    driver.Quit();
-        //}
+        [TearDown]
+        public void Quitdriver()
+        {
+            driver.Quit();
+        }
     }
 }

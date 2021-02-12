@@ -12,7 +12,7 @@ namespace FirstTest
             }
             catch (Exception ex)
             {
-                if (ex is NoSuchElementException || ex is ElementNotVisibleException || ex is InvalidSelectorException)
+                if (ex is NoSuchElementException || ex is NullReferenceException)
                     return null;
                 else throw;
             }
