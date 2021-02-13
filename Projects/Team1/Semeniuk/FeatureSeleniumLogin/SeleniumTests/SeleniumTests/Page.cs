@@ -20,7 +20,7 @@ namespace SeleniumTests
         public IWebElement password => driver.FindElement(By.Id("login-password"));
         public IWebElement loginPageButton => driver.FindElement(By.CssSelector("body > header > div > div > div.v-hide-on-mobile.vr-hide-on-mobile-new > div > div.n-row-menu.n-row-top-menu > div.n-menu-col.n-menu-col-kabinet > div.a-registration > a:nth-child(2)"));
         public IWebElement mainPage;
-        public IWebElement dropDownMenu => driver.FindElement(By.XPath("/html/body/header/div/div/div[1]/a[2]"));
+        public IWebElement dropDownMenu => driver.FindElement(By.XPath("//a[@class='v-toggle-button vr-toggle-button-new']"));
         public IWebElement personalOffice;
         public IWebElement check => driver.FindElement(By.XPath("/html/body/div[4]/div/div/div[3]/center/div/a"));
         public IWebElement cofirmLogin => driver.FindElement(By.CssSelector(".btn"));
