@@ -5,7 +5,8 @@ using OpenQA.Selenium.Firefox;
 
 namespace NUnitTestLogin
 {
-    [Parallelizable(scope: ParallelScope.All)]
+    
+    [Parallelizable(ParallelScope.All)]
     public class Tests
     {
         private IWebDriver driver;
@@ -22,11 +23,12 @@ namespace NUnitTestLogin
             }
             driver.Manage().Window.Maximize();
         }
+       
         [Test]
         [Parallelizable]
         [TestCaseSource(typeof(BrowserTypes), "BrowserToRunWith")]
         public void Login(string browserName)
-        {
+        {           
             Setup(browserName);
             HomePage homePage = new HomePage(driver);
             homePage.goToPage();
@@ -43,8 +45,7 @@ namespace NUnitTestLogin
             homePage.goToPage();
             homePage.login(user);
           
-            Assert.True(homePage.chrome_dashboard_webElement.Text.Contains("Submissions"));
-            Assert.True(homePage.firefox_dashboard_webElement.Text.Contains("Submissions"));      
+            Assert.True(homePage.dashboard_webElement.Text.Contains("Submissions"));           
         }
         [TearDown]
         public void TearDown()
