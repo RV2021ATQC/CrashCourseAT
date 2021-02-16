@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson2", "Lesson2\Lesson2.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumTests", "SeleniumTests\SeleniumTests.csproj", "{AE620316-0EC0-4648-AD2A-2E0D0F191818}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI", "RestAPI\RestAPI.csproj", "{70B51129-2C69-4411-82BC-12A7E8912E4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AE620316-0EC0-4648-AD2A-2E0D0F191818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE620316-0EC0-4648-AD2A-2E0D0F191818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE620316-0EC0-4648-AD2A-2E0D0F191818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B51129-2C69-4411-82BC-12A7E8912E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B51129-2C69-4411-82BC-12A7E8912E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B51129-2C69-4411-82BC-12A7E8912E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B51129-2C69-4411-82BC-12A7E8912E4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
