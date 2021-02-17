@@ -178,16 +178,15 @@
 					"script": {
 						"exec": [
 							"const responseJson = pm.response.json();\r",
-							"pm.test(\"response should be okay to process\", function () {\r",
-							"    pm.response.to.have.jsonBody(\"products[0].cart_id\");\r",
-							"});\r",
 							"pm.test(\"Checking successfully addind\", function(){\r",
 							"    pm.response.to.have.status(200)})\r",
 							"\r",
 							"pm.test(\"Response time is less than 200ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});\r",
-							"pm.test(\"Set card id\",function(){pm.environment.set(\"cart_id\", responseJson.products[0].cart_id)})\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);});\r",
+							"pm.test(\"Check on empties\", function () {\r",
+							"    try{pm.environment.set(\"cart_id\", responseJson.products[0].cart_id)}\r",
+							"    catch {console.log(\"End\")\r",
+							"    postman.setNextRequest(null);}})\r",
 							""
 						],
 						"type": "text/javascript"
@@ -344,7 +343,9 @@
 							"});\r",
 							"pm.test(\"Response time is less than 200ms\", function () {\r",
 							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});"
+							"});\r",
+							"pm.environment.set(\"cart_id\", null);\r",
+							"postman.setNextRequest(\"GetProducts\")"
 						],
 						"type": "text/javascript"
 					}
@@ -406,82 +407,6 @@
 						{
 							"key": "route",
 							"value": "api/cart/remove"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GetProductsEmpty",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"const responseJson = pm.response.json();\r",
-							"pm.test(\"response should be okay to process\", function () {\r",
-							"    pm.response.to.not.have.jsonBody(\"products[0].cart_id\");\r",
-							"});\r",
-							"pm.test(\"Checking successfully addind\", function(){\r",
-							"    pm.response.to.have.status(200)})\r",
-							"\r",
-							"pm.test(\"Response time is less than 200ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "apikey",
-					"apikey": [
-						{
-							"key": "in",
-							"value": "query",
-							"type": "string"
-						},
-						{
-							"key": "value",
-							"value": "{{token}}",
-							"type": "string"
-						},
-						{
-							"key": "key",
-							"value": "api_token",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": []
-				},
-				"url": {
-					"raw": "http://127.0.0.1/OpencartStore/index.php?route=api/cart/products/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"path": [
-						"OpencartStore",
-						"index.php"
-					],
-					"query": [
-						{
-							"key": "route",
-							"value": "api/cart/products/"
 						}
 					]
 				}
