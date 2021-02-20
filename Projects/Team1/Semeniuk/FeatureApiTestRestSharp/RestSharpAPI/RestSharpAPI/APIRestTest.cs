@@ -127,7 +127,7 @@ namespace RestSharpAPI
             var command = DBTest.CheckSession(JsonToken);
 
             //Then
-            Assert.AreEqual(RemoveSomeFromEnd(1, command), RemoveSomeFromEnd(1, expectedResult));
+            Assert.AreEqual(RemoveSomeFromEnd(3, command), RemoveSomeFromEnd(3, expectedResult));
         }
         [Test]
         [Order(3)]
@@ -142,7 +142,7 @@ namespace RestSharpAPI
             var command = DBTest.CheckAddingToCart(JsonToken);
 
             //Then
-            Assert.AreEqual( expectedResult, command);
+            Assert.AreEqual(expectedResult, command);
         }
         //[Test]
         //[Order(5)]
