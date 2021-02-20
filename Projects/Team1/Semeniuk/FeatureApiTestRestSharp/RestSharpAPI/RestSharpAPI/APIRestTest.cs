@@ -139,10 +139,10 @@ namespace RestSharpAPI
             log.Info("Start ReadDatabase test");
 
             //When
-            var command = DBTest.CheckCartOutput(JsonToken);
+            var command = DBTest.CheckAddingToCart(JsonToken);
 
             //Then
-            Assert.AreEqual(command, expectedResult);
+            Assert.AreEqual( expectedResult, command);
         }
         //[Test]
         //[Order(5)]
