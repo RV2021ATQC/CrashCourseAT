@@ -18,6 +18,8 @@ namespace RestSharpAPI
         public Logger log = LogManager.GetCurrentClassLogger();
         private string JsonToken;
         private int cartId;
+        private readonly string host = "127.0.0.1/OpencartStore";
+        private readonly string file = "index.php";
         public static string RemoveSomeFromEnd(int count, string str)
         {
             if (str.Length > 0)
@@ -50,8 +52,8 @@ namespace RestSharpAPI
         }
         [Test]
         [Order(2)]
-        [TestCase("127.0.0.1/OpencartStore", "index.php", "api/cart/add", "route=", "api_token=", 41, 4)]
-        public void AddProduct(string host, string file, string path, string firstQuery, string secondQuery, int product_id, int quantity)
+        [TestCase("api/cart/add", "route=", "api_token=", 41, 4)]
+        public void AddProduct(string path, string firstQuery, string secondQuery, int product_id, int quantity)
         {
             var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
@@ -62,12 +64,12 @@ namespace RestSharpAPI
             request.AlwaysMultipartFormData = true;
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
-            GetProducts("127.0.0.1/OpencartStore", "index.php", "api/cart/products", "route=", "api_token=");
+            GetProducts("api/cart/products", "route=", "api_token=");
         }
         [Test]
         [Order(4)]
-        [TestCase("127.0.0.1/OpencartStore", "index.php", "api/cart/products", "route=", "api_token=")]
-        public void GetProducts(string host, string file, string path, string firstQuery, string secondQuery)
+        [TestCase("api/cart/products", "route=", "api_token=")]
+        public void GetProducts(string path, string firstQuery, string secondQuery)
         {
             var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
@@ -87,8 +89,8 @@ namespace RestSharpAPI
         }
         [Test]
         [Order(6)]
-        [TestCase("127.0.0.1/OpencartStore", "index.php", "api/cart/edit", "route=", "api_token=", 6)]
-        public void ChangeProduct(string host, string file, string path, string firstQuery, string secondQuery, int quantity)
+        [TestCase("api/cart/edit", "route=", "api_token=", 6)]
+        public void ChangeProduct(string path, string firstQuery, string secondQuery, int quantity)
         {
             var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
@@ -102,8 +104,8 @@ namespace RestSharpAPI
         }
         [Test]
         [Order(8)]
-        [TestCase("127.0.0.1/OpencartStore", "index.php", "api/cart/remove", "route=", "api_token=")]
-        public void RemoveProduct(string host, string file, string path, string firstQuery, string secondQuery)
+        [TestCase("api/cart/remove", "route=", "api_token=")]
+        public void RemoveProduct( string path, string firstQuery, string secondQuery)
         {
             var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
@@ -113,7 +115,7 @@ namespace RestSharpAPI
             request.AlwaysMultipartFormData = true;
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
-            GetProducts("127.0.0.1/OpencartStore", "index.php", "api/cart/products", "route=", "api_token=");
+            GetProducts("api/cart/products", "route=", "api_token=");
         }
         [Test]
         [Order(1)]
