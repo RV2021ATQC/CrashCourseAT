@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "97ec30eb-bd0a-4c8e-9791-75dd81a7513d",
+		"name": "first_opencart_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "Default",
+						"type": "text"
+					},
+					{
+						"key": "key",
+						"value": "KdkzNAXmWtp1fu94gzC45ZLfvTLVCyvjUv0tku0zL2ka6SCsPQNHNG9uQTw1FYX0smb0xktnNcQYmz6rGEkaTwsWL8YRlwzYPFqLZUTfhasX0i9Wtgqb7XY3rP9zVaxY1QfT3Irbfxr5chF1T73mDd8GHOMqu8f31lpXmHFAqroau2xpqOa8UEOLUIIGSRY9uIXRW4drWndbrOTHqReiFo94cm4jdwUXlfIPTrKzckOKRbd9WBL40B1sk2tDwMvA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "Default",
+							"type": "text"
+						},
+						{
+							"key": "key",
+							"value": "KdkzNAXmWtp1fu94gzC45ZLfvTLVCyvjUv0tku0zL2ka6SCsPQNHNG9uQTw1FYX0smb0xktnNcQYmz6rGEkaTwsWL8YRlwzYPFqLZUTfhasX0i9Wtgqb7XY3rP9zVaxY1QfT3Irbfxr5chF1T73mDd8GHOMqu8f31lpXmHFAqroau2xpqOa8UEOLUIIGSRY9uIXRW4drWndbrOTHqReiFo94cm4jdwUXlfIPTrKzckOKRbd9WBL40B1sk2tDwMvA",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1/opencart/index.php?route=api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"opencart",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api/login"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_card_products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedStatus=200;\r",
+							"const expectedResponseTime=500;\r",
+							"let result=pm.response;\r",
+							"let jsonData=pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('${pm.info.requestName}:Response status is ${expectedStatus}',\r",
+							"function(){pm.response.to.have.status(expectedStatus);});\r",
+							"\r",
+							"pm.test('${pm.info.requestName}:Response time is less than ${expectedResponseTime}ms',function(){pm.expect(pm.response.responseTime).to.be.below(expectedResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{token}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1/opencart/index.php?route=api/cart/products/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"opencart",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api/cart/products/"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_add_product_card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{token}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "40",
+							"type": "text"
+						},
+						{
+							"key": "quantuty",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1/opencart/index.php?route=api/cart/add",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"opencart",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api/cart/add"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_remove_product_card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData=pm.response.json();\r",
+							"\r",
+							"pm.test('${pm.info.requestName} : Cart is empty',\r",
+							"function(){pm.expect(jsonData.products).to.be.empty;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{token}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_token",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_id",
+							"value": "40",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1/opencart/index.php?route=api/cart/remove",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"opencart",
+						"index.php"
+					],
+					"query": [
+						{
+							"key": "route",
+							"value": "api/cart/remove"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
