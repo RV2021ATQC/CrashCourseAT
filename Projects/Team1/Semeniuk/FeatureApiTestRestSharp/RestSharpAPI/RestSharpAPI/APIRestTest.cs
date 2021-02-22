@@ -33,20 +33,21 @@ namespace RestSharpAPI
         [OneTimeSetUp]
         public void GetToken()
         {
+            //When
             log.Info("Start");
-            var client = new RestClient("http://127.0.0.1/OpencartStore/index.php?route=api/login");
+            var client = new RestClient($"http://{host}/index.php?route=api/login");
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
-            //request.AddHeader("username", "Default");
-            //request.AddHeader("key", "w5VWX4p5lex9kU7Nj2abyBHAV1fnaD1zTr58wN8eNXedhs1RbWaK7yx6QrMLk7RimooeWKS33OcuWpJ4ODVQXp1rHkS88o1pau1MHeNE1aSai4EVTqLPTK6kWoJ39Ybs8xl9VZ2WBKpW517fNczKFzUuvk12o4v8WreBLVSpWe50ES8omiM0UnwWKZqIWx9RtYSZ8k9PsvGOQpDpyjjCcQfdCh5KlTm5gGtxTOkIFBP5CA7KTHYZlrCvhwN6hbKl");
             request.AddParameter("username", "Default");
             request.AddParameter("key", "w5VWX4p5lex9kU7Nj2abyBHAV1fnaD1zTr58wN8eNXedhs1RbWaK7yx6QrMLk7RimooeWKS33OcuWpJ4ODVQXp1rHkS88o1pau1MHeNE1aSai4EVTqLPTK6kWoJ39Ybs8xl9VZ2WBKpW517fNczKFzUuvk12o4v8WreBLVSpWe50ES8omiM0UnwWKZqIWx9RtYSZ8k9PsvGOQpDpyjjCcQfdCh5KlTm5gGtxTOkIFBP5CA7KTHYZlrCvhwN6hbKl");
+
+            //Then
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
-
             string source = response.Content;
             dynamic data = JsonConvert.DeserializeObject(source);
 
+            //And
             JsonToken = data.api_token;
             Console.WriteLine(data.api_token);
         }
@@ -84,7 +85,6 @@ namespace RestSharpAPI
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
 
-
             //Then
             var command = DBTest.CheckAddingToCart(JsonToken);
 
@@ -105,14 +105,17 @@ namespace RestSharpAPI
             IRestResponse response = client.Execute(request);
             string source = response.Content;
             dynamic data = JsonConvert.DeserializeObject(source);
-            try { if (data.products[0].cart_id != null) 
+
+            //Then
+            try
+            { if (data.products[0].cart_id != null) 
                 { cartId = Convert.ToInt32(data.products[0].cart_id);
                     Console.WriteLine($"Id= {data.products[0].cart_id}");
                 }; }
             catch { Console.WriteLine("Cart is empty()"); }
             finally { Console.WriteLine(response.Content); }
 
-            //Then
+            //And
             Assert.Pass();
         }
         [Order(4)]
@@ -159,7 +162,6 @@ namespace RestSharpAPI
             request.AlwaysMultipartFormData = true;
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
-            GetProducts("api/cart/products", "route=", "api_token=");
 
             //Then
             var command = DBTest.CheckCartEmpty(JsonToken);
