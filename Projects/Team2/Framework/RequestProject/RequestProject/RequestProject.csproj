@@ -9,7 +9,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BEF188AA-3E2D-4557-8E83-8D75FF1DD07F}</ProjectGuid>
+    <ProjectGuid>{D9365D47-5D91-464D-8B7A-7684EB3BC73A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RequestProkect</RootNamespace>
@@ -125,7 +125,7 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="Sql_request.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ApiTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

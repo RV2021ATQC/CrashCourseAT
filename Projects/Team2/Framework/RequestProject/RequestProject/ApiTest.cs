@@ -15,22 +15,30 @@ using RequestProject;
 namespace RequestProject
 {
 	[TestFixture]
-	public class UnitTest1
+	public class ApiTest
 	{
 		public Logger log = LogManager.GetCurrentClassLogger();
 		public string apiToken;
+		private const string host = "http://localhost/Store/";
+		private const string login = "index.php?route=api/login";
+		private const string getCartforProduct = "index.php?route=api/cart/products/&api_token=";
+		private const string addProduct = "index.php?route=api/cart/add&api_token=";
+		private const string removeProduct = "index.php?route=api/cart/remove&api_token=";
+		private const string readPath = @"D:\apiData.txt";
+		private const string cookie = "OCSESSID = 4694d5e74bbdbca0950ab5d503; currency=USD; language=en-gb";
+		private const string keyForApi = "1amQatTd3bw7lVVKXYIgaD115IQcOGmZENRRsDYo8qPdjBSSVIDfsEDCf8Gsd15tUAkvNJtwcOQBZDyr5QiFALE3SugVEUncpiD16ujMpV1YqqBrjUa02qUzNwnrcHQUdbrQsNbjMalS7CLz4HgK19PpDusb3LNnlkasZTP4zQyGUF5bS5MgMRejdo2Hr9aqKxQrBKjarQEHXP9PiOc0EA5ZAzk410X3Qbaf4XgKlEbGpOKJ8AUEsXSvzwCXELe6";
 
 		[Test, Order(1)]
 		public void getToken()
 		{
 			log.Info("Start Get Token test");
-			var client = new RestClient("http://localhost/Store/index.php?route=api/login");
+			var client = new RestClient($"{host}{login}");
 			client.Timeout = -1;
 			var request = new RestRequest(Method.POST);
 			request.AddHeader("username", "Default");
-			request.AddHeader("key", "1amQatTd3bw7lVVKXYIgaD115IQcOGmZENRRsDYo8qPdjBSSVIDfsEDCf8Gsd15tUAkvNJtwcOQBZDyr5QiFALE3SugVEUncpiD16ujMpV1YqqBrjUa02qUzNwnrcHQUdbrQsNbjMalS7CLz4HgK19PpDusb3LNnlkasZTP4zQyGUF5bS5MgMRejdo2Hr9aqKxQrBKjarQEHXP9PiOc0EA5ZAzk410X3Qbaf4XgKlEbGpOKJ8AUEsXSvzwCXELe6");
+			request.AddHeader("key", keyForApi);
 			request.AddParameter("username", "Default");
-			request.AddParameter("key", "1amQatTd3bw7lVVKXYIgaD115IQcOGmZENRRsDYo8qPdjBSSVIDfsEDCf8Gsd15tUAkvNJtwcOQBZDyr5QiFALE3SugVEUncpiD16ujMpV1YqqBrjUa02qUzNwnrcHQUdbrQsNbjMalS7CLz4HgK19PpDusb3LNnlkasZTP4zQyGUF5bS5MgMRejdo2Hr9aqKxQrBKjarQEHXP9PiOc0EA5ZAzk410X3Qbaf4XgKlEbGpOKJ8AUEsXSvzwCXELe6");
+			request.AddParameter("key", keyForApi);
 			IRestResponse response = client.Execute(request);
 			Console.WriteLine(response.Content);
 
@@ -54,12 +62,10 @@ namespace RequestProject
 			}
 			log.Info("End Get Token test");
 			Console.WriteLine($"parsed  {apiToken}");
-
 		}
 		private void readToken()
 		{
 			log.Info("Read file from apiData.txt");
-			string readPath = @"D:\apiData.txt";
 			try
 			{
 				using (StreamReader sr = new StreamReader(readPath))
@@ -73,21 +79,21 @@ namespace RequestProject
 				log.Error("The file was not read. Kode("+ e.Message+")");
 				Console.WriteLine(e.Message);
 			}
-
+			log.Info("Read token successful");
 		}
 		[Test,Order(2)]
 		public void getCart()
 		{
 			log.Info("Start read cart test");
 			readToken();
-			var client = new RestClient("http://localhost/Store/index.php?route=api/cart/products/&api_token=" + apiToken);
+			var client = new RestClient($"{host}{getCartforProduct}{apiToken}" );
 			client.Timeout = -1;
 			var request = new RestRequest(Method.GET);
 			try
 			{
 				log.Info("Try read cart");
 				request.AddHeader("api_token", apiToken);
-				request.AddHeader("Cookie", "OCSESSID=4694d5e74bbdbca0950ab5d503; currency=USD; language=en-gb");
+				request.AddHeader("Cookie", cookie);
 				IRestResponse response = client.Execute(request);
 				Console.WriteLine(response.Content);
 			}
@@ -105,7 +111,7 @@ namespace RequestProject
 		{
 			log.Info("Start add product test");
 			readToken();
-			var client = new RestClient($"http://localhost/Store/index.php?route=api/cart/add&api_token=" + apiToken);
+			var client = new RestClient($"{host}{addProduct}{apiToken}" );
 			client.Timeout = -1;
 			var request = new RestRequest(Method.POST);
 			try
@@ -113,7 +119,7 @@ namespace RequestProject
 				log.Info("Try add product to cart");
 				request.AddHeader("api_token", apiToken);
 				request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-				request.AddHeader("Cookie", "OCSESSID=4694d5e74bbdbca0950ab5d503; currency=USD; language=en-gb");
+				request.AddHeader("Cookie", cookie);
 				request.AddParameter("product_id", "28");
 				request.AddParameter("quantuty", "1");
 				IRestResponse response = client.Execute(request);
@@ -130,13 +136,13 @@ namespace RequestProject
 		{
 			log.Info("Start remove product test");
 			readToken();
-			var client = new RestClient("http://localhost/Store/index.php?route=api/cart/remove&api_token=" + apiToken);
+			var client = new RestClient($"{host}{removeProduct}{apiToken}");
 			client.Timeout = -1;
 			var request = new RestRequest(Method.POST);
 			string productID = Sql_request.getPructID(apiToken);
 			try
 			{
-				request.AddHeader("Cookie", "OCSESSID=4694d5e74bbdbca0950ab5d503; currency=USD; language=en-gb");
+				request.AddHeader("Cookie", cookie);
 				request.AddParameter("key", productID);
 				IRestResponse response = client.Execute(request);
 			}
@@ -162,9 +168,7 @@ namespace RequestProject
 
 			//verefication
 			Assert.AreEqual(result, expertedResult);
-
 			log.Info("End check product test");
-
 		}
 		[Test]
 		public void checkRemoveProduct()
@@ -182,8 +186,5 @@ namespace RequestProject
 			Assert.AreEqual(result, expertedResult);
 			log.Info("End check remove product test");
 		}
-
-
-
 	}
 }
