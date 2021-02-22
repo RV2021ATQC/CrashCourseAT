@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "7d1a3cc5-04b9-40f1-b4e8-b45091fc812d",
+		"name": "Rest Api OpenCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Session",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"const expertedStatusCode = 200;\r",
+							"\r",
+							"\r",
+							"if (pm.response.to.have.status(expertedStatusCode)){\r",
+							"    pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"    postman.setEnvironmentVariable (\"X-Oc-Session\", jsonData.data.session);\r",
+							"});}\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Oc-Merchant-Id",
+						"value": "123",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.opencart-api.com/api/rest/session",
+					"protocol": "https",
+					"host": [
+						"api",
+						"opencart-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"session"
+					],
+					"query": [
+						{
+							"key": "X-Oc-Merchant-Id",
+							"value": "123",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"\r",
+							"pm.test(\"Successfully\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Cart is empty\",function(){\r",
+							"    pm.expect(jsonData.data).to.be.empty;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Oc-Session",
+						"value": "{{X-Oc-Session}}"
+					},
+					{
+						"key": "X-Oc-Merchant-Id",
+						"value": "123"
+					}
+				],
+				"url": {
+					"raw": "https://api.opencart-api.com/api/rest/cart",
+					"protocol": "https",
+					"host": [
+						"api",
+						"opencart-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add item to cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Item was add\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time was less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Oc-Session",
+						"value": "{{X-Oc-Session}}"
+					},
+					{
+						"key": "X-Oc-Merchant-Id",
+						"value": "123"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"product_id\": 36,  \"quantity\": 2}"
+				},
+				"url": {
+					"raw": "https://api.opencart-api.com/api/rest/cart",
+					"protocol": "https",
+					"host": [
+						"api",
+						"opencart-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update cart item quantity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Item was update\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time was less than 200mss\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Oc-Session",
+						"value": "{{X-Oc-Session}}"
+					},
+					{
+						"key": "X-Oc-Merchant-Id",
+						"value": "123"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"key\": \"120\",  \"quantity\": 2}"
+				},
+				"url": {
+					"raw": "https://api.opencart-api.com/api/rest/cart",
+					"protocol": "https",
+					"host": [
+						"api",
+						"opencart-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete cart item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Item was delete\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time was less than 200mss\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Oc-Session",
+						"value": "{{X-Oc-Session}}"
+					},
+					{
+						"key": "X-Oc-Merchant-Id",
+						"value": "123"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \"key\": \"120\"}"
+				},
+				"url": {
+					"raw": "https://api.opencart-api.com/api/rest/cart",
+					"protocol": "https",
+					"host": [
+						"api",
+						"opencart-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Cart was adding\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Oc-Session",
+						"value": "{{X-Oc-Session}}"
+					},
+					{
+						"key": "X-Oc-Merchant-Id",
+						"value": "123"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[  {    \"product_id\": 34,    \"quantity\": 2  }]"
+				},
+				"url": {
+					"raw": "https://api.opencart-api.com/api/rest/cart_bulk",
+					"protocol": "https",
+					"host": [
+						"api",
+						"opencart-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"cart_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Delete all information\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Oc-Session",
+						"value": "{{X-Oc-Session}}"
+					},
+					{
+						"key": "X-Oc-Merchant-Id",
+						"value": "123"
+					}
+				],
+				"url": {
+					"raw": "https://api.opencart-api.com/api/rest/cart/empty",
+					"protocol": "https",
+					"host": [
+						"api",
+						"opencart-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"cart",
+						"empty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All productss",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"The list of all goods is loaded\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Oc-Merchant-Id",
+						"value": "123"
+					},
+					{
+						"key": "X-Oc-Session",
+						"value": "{{X-Oc-Session}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.opencart-api.com/api/rest/products",
+					"protocol": "https",
+					"host": [
+						"api",
+						"opencart-api",
+						"com"
+					],
+					"path": [
+						"api",
+						"rest",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
