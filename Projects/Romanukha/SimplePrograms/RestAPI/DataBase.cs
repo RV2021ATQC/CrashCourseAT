@@ -37,7 +37,7 @@ namespace RestAPI
                 // Execute the query
                 var result = command.ExecuteScalar().ToString();
                 Console.WriteLine($"Result = {result}");
-                
+                throw new Exception("Test exception");
                 return result;
             }
             catch (Exception ex)
