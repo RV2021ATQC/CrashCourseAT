@@ -51,10 +51,29 @@ namespace RestSharpAPI
             Console.WriteLine(data.api_token);
         }
         [Test]
+        [Order(1)]
+        public void TokenValidation()
+        {
+            //Given
+            var expectedResult = DateTime.Now.ToString();
+            log.Info("Start ReadDatabase test");
+
+            //When
+            var command = DBTest.CheckSession(JsonToken);
+
+            //Then
+            Assert.AreEqual(RemoveSomeFromEnd(3, command), RemoveSomeFromEnd(3, expectedResult));
+        }
+        [Test]
         [Order(2)]
         [TestCase("api/cart/add", "route=", "api_token=", 41, 4)]
         public void AddProduct(string path, string firstQuery, string secondQuery, int product_id, int quantity)
         {
+            //Given
+            var expectedResult = product_id.ToString() + quantity.ToString();
+            log.Info("Start ReadDatabase test");
+
+            //When
             var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
@@ -64,13 +83,20 @@ namespace RestSharpAPI
             request.AlwaysMultipartFormData = true;
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
-            GetProducts("api/cart/products", "route=", "api_token=");
+
+
+            //Then
+            var command = DBTest.CheckAddingToCart(JsonToken);
+
+            //And
+            Assert.AreEqual(expectedResult, command);
         }
+        [Order(3)]
         [Test]
-        [Order(4)]
         [TestCase("api/cart/products", "route=", "api_token=")]
         public void GetProducts(string path, string firstQuery, string secondQuery)
         {
+            //When
             var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
@@ -86,27 +112,45 @@ namespace RestSharpAPI
             catch { Console.WriteLine("Cart is empty()"); }
             finally { Console.WriteLine(response.Content); }
 
+            //Then
+            Assert.Pass();
         }
+        [Order(4)]
         [Test]
-        [Order(6)]
         [TestCase("api/cart/edit", "route=", "api_token=", 6)]
         public void ChangeProduct(string path, string firstQuery, string secondQuery, int quantity)
         {
+            //Given
+            var expectedResult = quantity.ToString();
+            log.Info("Start ReadDatabase test");
+
+            //When
             var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
             request.AddParameter("key", cartId);
-            request.AddParameter("quantity", quantity.ToString());
+            request.AddParameter("quantity", quantity);
             request.AddHeader("Cookie", "currency=USD; language=en-gb");
             request.AlwaysMultipartFormData = true;
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
+
+            //Then
+            var command = DBTest.CheckCartChange(JsonToken);
+
+            //And
+            Assert.AreEqual(command, expectedResult);
         }
+        [Order(5)]
         [Test]
-        [Order(8)]
         [TestCase("api/cart/remove", "route=", "api_token=")]
         public void RemoveProduct( string path, string firstQuery, string secondQuery)
         {
+            //Given
+            var expectedResult = "Empty";
+            log.Info("Start ReadDatabase test");
+
+            //When
             var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
@@ -116,77 +160,11 @@ namespace RestSharpAPI
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
             GetProducts("api/cart/products", "route=", "api_token=");
-        }
-        [Test]
-        [Order(1)]
-        public void TokenValidation()
-        {
-            //Given
-            var expectedResult = DateTime.Now.ToString();
-            log.Info("Start ReadDatabase test");
-
-            //When
-            var command = DBTest.CheckSession(JsonToken);
 
             //Then
-            Assert.AreEqual(RemoveSomeFromEnd(3, command), RemoveSomeFromEnd(3, expectedResult));
-        }
-        [Test]
-        [Order(3)]
-        [TestCase(41, 4)]
-        public void ProductAddingValidation(int product_id, int quantity)
-        {
-            //Given
-            var expectedResult = product_id.ToString() + quantity.ToString();
-            log.Info("Start ReadDatabase test");
-
-            //When
-            var command = DBTest.CheckAddingToCart(JsonToken);
-
-            //Then
-            Assert.AreEqual(expectedResult, command);
-        }
-        //[Test]
-        //[Order(5)]
-        public void ProductOutputValidation()
-        {
-            //Given
-            var expectedResult = "";
-            log.Info("Start ReadDatabase test");
-
-            //When
-            var command = DBTest.CheckCartOutput(JsonToken);
-
-            //Then
-            Assert.AreEqual(command, expectedResult);
-        }
-        [Test]
-        [Order(7)]
-        [TestCase(6)]
-        public void ProductChangingValidation(int quantity)
-        {
-            //Given
-            var expectedResult = quantity.ToString();
-            log.Info("Start ReadDatabase test");
-
-            //When
-            var command = DBTest.CheckCartChange(JsonToken);
-
-            //Then
-            Assert.AreEqual(command, expectedResult);
-        }
-        [Test]
-        [Order(9)]
-        public void ProductDeletingValidation()
-        {
-            //Given
-            var expectedResult = "Empty";
-            log.Info("Start ReadDatabase test");
-
-            //When
             var command = DBTest.CheckCartEmpty(JsonToken);
 
-            //Then
+            //And
             Assert.AreEqual(command, expectedResult);
         }
     }
