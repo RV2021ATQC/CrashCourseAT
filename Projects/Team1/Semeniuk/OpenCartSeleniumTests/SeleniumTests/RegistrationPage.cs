@@ -12,7 +12,7 @@ using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumTests 
 {
-    public class RegistrationPage : BasePage
+    public class RegistrationPage : ABasePage
     {
         
         public IWebElement firstName => driver.FindElement(By.Id("input-firstname"));
@@ -27,6 +27,7 @@ namespace SeleniumTests
 
         public RegistrationPage(IWebDriver driver):base(driver)
         {
+            VerifyWebElements();
         }
         public void InputFirstName(string firstNameText) => firstName.SendKeys(firstNameText);
         public void InputLastName(string lastNameText) => lastName.SendKeys(lastNameText);
@@ -44,6 +45,21 @@ namespace SeleniumTests
             InputPasswordConfirm(passwordText);
             privacyPolicyCheck.Click();
             submitRegistrationButton.Click();
+        }
+        private void VerifyWebElements()
+        {
+            IWebElement temp = firstName;
+            temp = lastName;
+            temp = email;
+            temp = telephone;
+            temp = password;
+            temp = passwordConfirm;
+            temp = privacyPolicyCheck;
+            temp = submitRegistrationButton;
+        }
+        public bool SuccessfulyRegistration()
+        {
+            return successfulyRegistration.Displayed;
         }
     }
 }

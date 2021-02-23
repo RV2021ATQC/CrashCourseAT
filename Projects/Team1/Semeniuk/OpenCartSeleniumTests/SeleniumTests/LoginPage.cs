@@ -9,9 +9,9 @@ using SeleniumExtras.WaitHelpers;
 
 namespace SeleniumTests
 {
-    public class LoginPage : BasePage
+    public class LoginPage : ABasePage
     {
-        public LoginPage(IWebDriver driver) : base(driver) { }
+        public LoginPage(IWebDriver driver) : base(driver) { VerifyWebElements(); }
         public IWebElement email => driver.FindElement(By.Id("input-email"));
         public IWebElement password => driver.FindElement(By.Id("input-password"));
         public IWebElement loginButton => driver.FindElement(By.XPath("//input[@class='btn btn-primary']"));
@@ -29,6 +29,16 @@ namespace SeleniumTests
             InputEmail(emailText);
             InputPassword(passwordText);
             loginButton.Click();
+        }
+        public bool SuccessfulyLogin()
+        {
+            return successfulyLogin.Displayed;
+        }
+        private void VerifyWebElements()
+        {
+            IWebElement temp = email;
+            temp = password;
+            temp = loginButton;
         }
     }
 }

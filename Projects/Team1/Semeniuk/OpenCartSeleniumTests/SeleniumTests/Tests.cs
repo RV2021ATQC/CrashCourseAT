@@ -39,23 +39,21 @@ namespace SeleniumTests
         [TestCase("qwerty", "qwerty", "qwertys@qwerty.qw", "12345678", "qwerty")]
         public void Registration(string firstNameText, string lastNameText, string emailText, string telephoneText, string passwordText)
         {
-
-            //When
-            var main = new MainPage(driver);
-            var registration = new RegistrationPage(driver);
+            //Given
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
             emailText = driver.GetType().ToString() + emailText;
 
-            //Then
-            main.GoToMain();
-            Thread.Sleep(1000);
+            //When
+            var main = new MainPage(driver);
             main.StartRegistration();
-            Thread.Sleep(1000);
+            Thread.Sleep(1000);//ChromeFail
+
+            //Then
+            var registration = new RegistrationPage(driver);
             registration.Registration(firstNameText, lastNameText, emailText, telephoneText, passwordText);
-            Thread.Sleep(1000);
 
             //And
-            if (registration.successfulyRegistration.Displayed)
+            if (registration.SuccessfulyRegistration())
             {
                 DBWork.DeleteCustomer(firstNameText, lastNameText, emailText, telephoneText);
             }
@@ -66,48 +64,39 @@ namespace SeleniumTests
         public void Logout(string emailText, string passwordText)
         {
             //Given
-            Login(emailText, passwordText);
+            Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
 
             //When
-            var main = new MainPage(driver);
-            Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
-            main.GoToMain();
-            Thread.Sleep(1000);
-            Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
+            Login(emailText, passwordText);
 
             //Then
+            var main = new MainPage(driver);
             main.Logout();
-            Thread.Sleep(1000);
 
             //And
-            Assert.IsTrue(main.successfulyLogout.Displayed);
+            Assert.IsTrue(main.SuccessfulyLogout());
         }
         [Test]
         [TestCase("qwerty@qwer.ru", "qwerty")]
         public void Login(string emailText, string passwordText)
         {
             //Given
-            DefaultWait<IWebDriver> fluentWait = new DefaultWait<IWebDriver>(driver);
-            fluentWait.Timeout = TimeSpan.FromSeconds(1);
-            //fluentWait.PollingInterval = TimeSpan.FromMilliseconds(250);
+            Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
 
             //When
             var main = new MainPage(driver);
-            var login = new LoginPage(driver);
-            Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
+
 
             //Then
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10)); 
-            main.GoToMain();
-            Thread.Sleep(1000);
-            //IWebElement firstResult = wait.Until(e => e.FindElement(By.XPath("//a/h3")));
             main.StartLogin();
-            Thread.Sleep(1000);
+            Thread.Sleep(1000);//ChromeFail
+
+
+            var login = new LoginPage(driver);
             login.Login(emailText, passwordText);
-            Thread.Sleep(1000);
 
             //And
-            Assert.IsTrue(login.successfulyLogin.Displayed);
+            Assert.IsTrue(login.SuccessfulyLogin());
         }
     }
 }

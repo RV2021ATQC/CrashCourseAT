@@ -10,22 +10,28 @@ using System.Diagnostics;
 
 namespace SeleniumTests
 {
-    public abstract class BasePage
+    public abstract class ABasePage
     {
+        public IWebElement Logo => driver.FindElement(By.XPath("//div[@id='logo']/h1/a"));
         protected readonly IWebDriver driver;
 
-        protected BasePage(IWebDriver driver)
+        protected ABasePage(IWebDriver driver)
         {
             this.driver = driver;
+            //VerifyWebElements();
         }
-        public void Wait()
+        private void VerifyWebElements()
         {
-            using (var driver = new FirefoxDriver())
-            {
-                var foo = new WebDriverWait(driver, TimeSpan.FromSeconds(3))
-                                .Until(drv => drv.FindElement(By.Name("q")));
-                Debug.Assert(foo.Text.Equals("Hello from JavaScript!"));
-            }
+            IWebElement temp = Logo;
         }
+        //public void Wait()
+        //{
+        //    using (var driver = new FirefoxDriver())
+        //    {
+        //        var foo = new WebDriverWait(driver, TimeSpan.FromSeconds(3))
+        //                        .Until(drv => drv.FindElement(By.Name("q")));
+        //        Debug.Assert(foo.Text.Equals("Hello from JavaScript!"));
+        //    }
+        //}
     }
 }
