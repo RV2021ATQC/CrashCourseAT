@@ -7,12 +7,14 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Support.UI;
 
 
 namespace SeleniumTests 
 {
     public class RegistrationPage : BasePage
     {
+        
         public IWebElement firstName => driver.FindElement(By.Id("input-firstname"));
         public IWebElement lastName => driver.FindElement(By.Id("input-lastname"));
         public IWebElement email => driver.FindElement(By.Id("input-email"));
@@ -43,11 +45,5 @@ namespace SeleniumTests
             privacyPolicyCheck.Click();
             submitRegistrationButton.Click();
         }
-        //public void Login()
-        //{
-        //    email.SendKeys(_email);
-        //    password.SendKeys(_password);
-        //    loginPageButton.Click();
-        //}
     }
 }

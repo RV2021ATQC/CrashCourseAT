@@ -26,7 +26,7 @@ namespace SeleniumTests
         public void BeforeAllMethods()
         {
             driver = new TWebDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         [TearDown]
@@ -36,7 +36,7 @@ namespace SeleniumTests
         }
 
         [Test]
-        [TestCase("qwerty","qwerty","qwertys@qwerty.qw","12345678","qwerty")]
+        [TestCase("qwerty", "qwerty", "qwertys@qwerty.qw", "12345678", "qwerty")]
         public void Registration(string firstNameText, string lastNameText, string emailText, string telephoneText, string passwordText)
         {
 
@@ -44,7 +44,7 @@ namespace SeleniumTests
             var main = new MainPage(driver);
             var registration = new RegistrationPage(driver);
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
-            emailText = (driver.GetType() == typeof(FirefoxDriver)) ? emailText + "a" : emailText;
+            emailText = driver.GetType().ToString() + emailText;
 
             //Then
             main.GoToMain();
@@ -97,8 +97,10 @@ namespace SeleniumTests
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
 
             //Then
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10)); 
             main.GoToMain();
             Thread.Sleep(1000);
+            //IWebElement firstResult = wait.Until(e => e.FindElement(By.XPath("//a/h3")));
             main.StartLogin();
             Thread.Sleep(1000);
             login.Login(emailText, passwordText);

@@ -18,10 +18,11 @@ namespace SeleniumTests
         public IWebElement logo => driver.FindElement(By.XPath("//div[@id='logo']/h1/a"));
         public IWebElement logoutButton => driver.FindElement(By.XPath("//ul[@class='dropdown-menu dropdown-menu-right']/li[5]/a"));
         public IWebElement successfulyLogout => driver.FindElement(By.XPath("//ul[@class='breadcrumb']/li[3]/a[contains(text(), 'Logout')]"));
-        public void StartRegistration()
+        public MainPage StartRegistration()
         {
             registrationDropdownMenu.Click();
             registrationPageButton.Click();
+            return this;
         }
         public void StartLogin()
         {
@@ -30,7 +31,7 @@ namespace SeleniumTests
         }
         public void Logout()
         {
-            
+
             registrationDropdownMenu.Click();
             logoutButton.Click();
         }
@@ -38,10 +39,5 @@ namespace SeleniumTests
         {
             logo.Click();
         }
-        //public void Waiter(By waitUntil)
-        //{
-        //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-        //    _ = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists((By)successfulyLogout));
-        //}
     }
 }
