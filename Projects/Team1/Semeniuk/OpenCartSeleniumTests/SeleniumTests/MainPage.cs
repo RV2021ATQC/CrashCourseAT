@@ -11,6 +11,7 @@ namespace SeleniumTests
     public class MainPage : ABasePage
     {
         public MainPage(IWebDriver driver) : base(driver){ GoToMain(); VerifyWebElements(); }
+        public IWebElement Logo => driver.FindElement(By.XPath("//div[@id='logo']/h1/a"));
         public void GoToMain() => driver.Navigate().GoToUrl("http://localhost/OpencartStore/index.php?route=common/home");
         public IWebElement registrationDropdownMenu => driver.FindElement(By.XPath("//a[@class='dropdown-toggle']/span[@class='caret']"));
         public IWebElement registrationPageButton => driver.FindElement(By.XPath("//ul[@class='dropdown-menu dropdown-menu-right']/li[1]/a"));
@@ -44,9 +45,10 @@ namespace SeleniumTests
         //    VerifyWebElements();
         //    return this;
         //}
-        private void VerifyWebElements()
+        protected override void VerifyWebElements()
         {
-            IWebElement temp = registrationDropdownMenu;
+            IWebElement temp = Logo;
+            temp = registrationDropdownMenu;
         }
     }
 }

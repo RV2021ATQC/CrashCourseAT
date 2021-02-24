@@ -34,7 +34,7 @@ namespace SeleniumTests
         {
             return successfulyLogin.Displayed;
         }
-        private void VerifyWebElements()
+        protected override void VerifyWebElements()
         {
             IWebElement temp = email;
             temp = password;

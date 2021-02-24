@@ -15,21 +15,17 @@ namespace SeleniumTests
         {
             try
             {
-                // Open the database
                 using (var databaseConnection = new MySqlConnection(_connectionString))
                 {
                     databaseConnection.Open();
                     using (var command = new MySqlCommand(queryString, databaseConnection))
                     {
-                        // Execute the query
                         command.ExecuteScalar();
-                        
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Show any error message.
                 Console.WriteLine(ex.Message);
                 //throw ex;
             }

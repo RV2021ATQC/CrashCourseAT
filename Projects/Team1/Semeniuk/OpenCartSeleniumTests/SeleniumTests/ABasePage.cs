@@ -12,18 +12,14 @@ namespace SeleniumTests
 {
     public abstract class ABasePage
     {
-        public IWebElement Logo => driver.FindElement(By.XPath("//div[@id='logo']/h1/a"));
+        
         protected readonly IWebDriver driver;
 
         protected ABasePage(IWebDriver driver)
         {
             this.driver = driver;
-            //VerifyWebElements();
         }
-        private void VerifyWebElements()
-        {
-            IWebElement temp = Logo;
-        }
+        abstract protected void VerifyWebElements();
         //public void Wait()
         //{
         //    using (var driver = new FirefoxDriver())

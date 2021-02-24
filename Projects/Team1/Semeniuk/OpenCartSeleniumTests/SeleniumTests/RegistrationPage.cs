@@ -46,7 +46,7 @@ namespace SeleniumTests
             privacyPolicyCheck.Click();
             submitRegistrationButton.Click();
         }
-        private void VerifyWebElements()
+        protected override void VerifyWebElements()
         {
             IWebElement temp = firstName;
             temp = lastName;
