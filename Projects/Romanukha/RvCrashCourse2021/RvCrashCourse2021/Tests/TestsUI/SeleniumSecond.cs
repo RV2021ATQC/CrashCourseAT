@@ -244,9 +244,12 @@ namespace taqc2018
         {
             // Steps
             //LoginPage loginPage = new LoginPage(driver)
+
             LoginPage loginPage = new LoginPage()
                 .SetLoginInputClear("work")
                 .SetPasswordInputClear("qwerty");
+
+
             driver.Navigate().Refresh();
             loginPage
                 .SetLoginInputClear("work")

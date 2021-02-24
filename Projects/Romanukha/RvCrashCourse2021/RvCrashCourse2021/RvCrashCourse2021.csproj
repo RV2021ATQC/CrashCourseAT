@@ -134,6 +134,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Pages\LoginPage.UImap.cs" />
     <Compile Include="Tests\Browsers.cs" />
     <Compile Include="Tools\DataBase.cs" />
     <Compile Include="Data\Application\ApplicationSource.cs" />

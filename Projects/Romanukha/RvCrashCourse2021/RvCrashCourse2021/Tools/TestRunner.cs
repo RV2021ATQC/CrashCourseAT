@@ -21,7 +21,7 @@ namespace crashCourse2021.Tools
     [TestFixture]
     public abstract class TestRunner
     {
-        public Logger log = LogManager.GetCurrentClassLogger(); // for NLog
+        public static Logger log = LogManager.GetCurrentClassLogger(); // for NLog
         //
         protected readonly double DOUBLE_PRECISE = 0.01;
         //
@@ -63,6 +63,15 @@ namespace crashCourse2021.Tools
         protected LoginPage StartApplication()
         {
             return Application.Get().LoadLoginPage();
+        }
+
+        public static T GetPage<T>(string url) where T : ATopComponent
+        {
+            log.Info($"Open page {typeof(T)}");
+
+            Application.Get().Browser.OpenUrl(url);
+
+            return Activator.CreateInstance<T>();
         }
     }
 }

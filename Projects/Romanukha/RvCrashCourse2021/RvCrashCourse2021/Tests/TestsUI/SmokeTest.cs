@@ -74,7 +74,7 @@ namespace taqc2018
             new object[] { ChangeLanguageFields.UKRAINIAN }
         };
 
-        //[Test, TestCaseSource("LocalizationData")]
+        [Test, TestCaseSource("LocalizationData")]
         public void LocalizationTest1(ChangeLanguageFields languageFields)
         {
             //

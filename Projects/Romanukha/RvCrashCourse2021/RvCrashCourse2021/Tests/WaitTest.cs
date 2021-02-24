@@ -60,12 +60,14 @@ namespace taqc2018
         {
             IWebDriver driver = new FirefoxDriver();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+
             driver.Navigate().GoToUrl("https://www.google.com.ua/");
             //
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             //
             //IWebElement searchElement = driver.FindElement(By.Name("q"));
             IWebElement searchElement = wait.Until((drv) => { return drv.FindElement(By.Name("q")); });
+
             Func<IWebDriver, IWebElement> waitForWebElement = new Func<IWebDriver, IWebElement>((IWebDriver drv) =>
             {
                 Console.WriteLine("Waiting ...");
@@ -93,6 +95,7 @@ namespace taqc2018
                 //return null;
                 return element;
             });
+
          //   IWebElement searchElement = wait.Until(waitForWebElement);
             searchElement.SendKeys("Selenium download");
             searchElement.Submit();

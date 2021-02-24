@@ -71,18 +71,10 @@ namespace crashCourse2021.Pages
         }
     }
 
-    public class LoginPage : ATopComponent
+    public partial class LoginPage : ATopComponent
     {
         public Logger log = LogManager.GetCurrentClassLogger(); // for NLog
 
-        public const string IMAGE_NAME = "ukraine_logo2.gif";
-
-        public IWebElement LoginLabel => Search.XPath("//label[contains(@for,'inputEmail')]");
-        public IWebElement LoginInput => Search.Id("login");
-        public IWebElement PasswordLabel => Search.XPath("//label[contains(@for,'inputPassword')]");
-        public IWebElement PasswordInput => Search.Id("password");
-        public IWebElement SigninButton => Search.CssSelector("button.btn.btn-primary");
-        public IWebElement LogoPicture => Search.CssSelector("img.login_logo.col-md-8.col-xs-12");
 
                 //public LoginPage(IWebDriver driver) : base(driver)
         public LoginPage() : base()
