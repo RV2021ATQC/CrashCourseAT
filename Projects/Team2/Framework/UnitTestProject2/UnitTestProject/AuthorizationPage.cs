@@ -16,8 +16,10 @@ namespace UnitTestProject
 		private static string OpenLoginFormCss = "#w1 > li:nth-child(2) > a";
 		private static string LoginFiledId = "studentloginform-login";
 		private static string PasswordFiledId = "studentloginform-password";
+ NlogAndFramework
 
 
+ main
 		public static void goToSite(IWebDriver driver, string site)
 		{
 			driver.Navigate().GoToUrl(site);
@@ -35,7 +37,10 @@ namespace UnitTestProject
 			this.Login = Login;
 			this.Password = Password;
 		}
+ NlogAndFramework
 
 
+
+ main
 	}
 }
