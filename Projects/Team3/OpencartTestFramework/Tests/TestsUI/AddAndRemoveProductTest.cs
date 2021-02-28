@@ -9,7 +9,7 @@ namespace OpencartTestFramework
     //[Parallelizable(ParallelScope.All)]
     [TestFixture(typeof(ChromeDriver))]
     [TestFixture(typeof(FirefoxDriver))]
-    public class SecondTest<T> where T : IWebDriver, new()
+    public class AddAndRemoveProductTest<T> where T : IWebDriver, new()
     {
         public const string URL = "https://demo.opencart.com/";
         private IWebDriver driver;

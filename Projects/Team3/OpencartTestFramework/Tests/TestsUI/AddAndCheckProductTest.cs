@@ -9,7 +9,7 @@ namespace OpencartTestFramework
     //[Parallelizable(ParallelScope.All)]
     [TestFixture(typeof(ChromeDriver))]
     [TestFixture(typeof(FirefoxDriver))]
-    public class FirstTests<T> where T : IWebDriver, new()
+    public class AddAndCheckProductTest<T> where T : IWebDriver, new()
     {
         private IWebDriver driver;
 
