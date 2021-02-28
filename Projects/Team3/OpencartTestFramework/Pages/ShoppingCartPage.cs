@@ -2,7 +2,7 @@
 using System;
 using NUnit.Framework;
 
-namespace UI_Tests
+namespace OpencartTestFramework
 {
     public class ShoppingCartPage : BasePage
     {

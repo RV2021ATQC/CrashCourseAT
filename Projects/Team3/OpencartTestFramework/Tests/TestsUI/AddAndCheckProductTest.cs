@@ -4,7 +4,7 @@ using OpenQA.Selenium.Chrome;
 using System;
 using OpenQA.Selenium.Firefox;
 
-namespace UI_Tests
+namespace OpencartTestFramework
 {
     //[Parallelizable(ParallelScope.All)]
     [TestFixture(typeof(ChromeDriver))]
