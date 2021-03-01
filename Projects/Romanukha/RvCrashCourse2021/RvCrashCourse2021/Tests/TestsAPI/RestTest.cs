@@ -12,16 +12,14 @@ using System.Globalization;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-
 using System.IO;
-
 using System.Xml.Serialization;
-using GradSnapp.UItests.Tools;
+using crashCourse2021.Tools;
 
-namespace taqc2018
+namespace RvCrashCourse2021
 {
     [TestFixture]
-    public class RestTest
+    public class RestTest : TestRunner
     {
         public Logger log = LogManager.GetCurrentClassLogger(); // for NLog
         private string JsonToken;

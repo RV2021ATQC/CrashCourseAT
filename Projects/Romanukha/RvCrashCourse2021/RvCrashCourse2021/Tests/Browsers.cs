@@ -11,13 +11,13 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Interactions;
 
-namespace taqc2018
+namespace RvCrashCourse2021
 {
     [TestFixture]
     class Browsers
     {
 
-       // [Test]
+        [Test]
         public void Firefox1()
         {
             IWebDriver driver = new FirefoxDriver();
@@ -31,7 +31,7 @@ namespace taqc2018
             driver.Quit();
         }
 
-        //[Test]
+        [Test]
         public void Firefox2()
         {
             FirefoxProfileManager profileManager = new FirefoxProfileManager();
@@ -50,7 +50,7 @@ namespace taqc2018
             driver.Quit();
         }
 
-        //[Test]
+        [Test]
         public void Firefox3()
         {
             FirefoxProfile profile = new FirefoxProfile();

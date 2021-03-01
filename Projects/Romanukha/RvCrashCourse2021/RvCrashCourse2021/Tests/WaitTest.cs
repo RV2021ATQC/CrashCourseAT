@@ -16,7 +16,7 @@ using crashCourse2021.Tools;
 using crashCourse2021.Tools.Find;
 //#pragma warning disable
 
-namespace taqc2018
+namespace RvCrashCourse2021
 {
 
     [TestFixture]
@@ -66,7 +66,7 @@ namespace taqc2018
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             //
             //IWebElement searchElement = driver.FindElement(By.Name("q"));
-            IWebElement searchElement = wait.Until((drv) => { return drv.FindElement(By.Name("q")); });
+            IWebElement searchElement = wait.Until(drv => { return drv.FindElement(By.Name("q")); });
 
             Func<IWebDriver, IWebElement> waitForWebElement = new Func<IWebDriver, IWebElement>((IWebDriver drv) =>
             {

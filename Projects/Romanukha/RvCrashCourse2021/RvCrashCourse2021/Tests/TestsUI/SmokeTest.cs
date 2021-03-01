@@ -13,7 +13,7 @@ using crashCourse2021.Pages;
 using crashCourse2021.Data.Users;
 using crashCourse2021.Tools;
 
-namespace taqc2018
+namespace RvCrashCourse2021
 {
     [TestFixture]
     //[Parallelizable(ParallelScope.All)]
@@ -44,6 +44,7 @@ namespace taqc2018
                 .successRegistratorLogin(validRegistrator);
             //
             // Check
+            log.Info("Check Invalid User Login");
             Assert.AreEqual(validRegistrator.GetLogin(), registratorHomePage.GetLoginNameText(),
                 "Assert Error. Invalid User Login.");
             //

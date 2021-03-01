@@ -389,10 +389,10 @@ namespace crashCourse2021.Data.Users
 
         // Static Factory
 
-        public static IList<IUser> GetAllUsers(AExternalReader externalData)
+        public static List<IUser> GetAllUsers(AExternalReader externalData)
         {
             //logger.Debug("Start GetAllUsers, path = " + path);
-            IList<IUser> users = new List<IUser>();
+            List<IUser> users = new List<IUser>();
             foreach (IList<string> row in externalData.GetAllCells())
             {
                 if (row[3].ToLower().Equals("email")

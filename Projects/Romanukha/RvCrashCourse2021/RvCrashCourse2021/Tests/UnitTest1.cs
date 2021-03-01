@@ -5,7 +5,7 @@ using NUnit.Framework;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace taqc2018
+namespace RvCrashCourse2021
 {
     //[TestClass]
     [TestFixture]

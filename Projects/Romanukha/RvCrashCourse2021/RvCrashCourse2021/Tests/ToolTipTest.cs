@@ -12,7 +12,7 @@ using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
-namespace taqc2018
+namespace RvCrashCourse2021
 {
     [TestFixture]
     public class ToolTipTest

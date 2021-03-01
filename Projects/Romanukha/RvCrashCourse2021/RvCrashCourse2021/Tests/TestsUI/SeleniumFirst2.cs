@@ -9,7 +9,7 @@ using OpenQA.Selenium.Chrome;
 using System.Threading;
 using OpenQA.Selenium.Firefox;
 
-namespace taqc2018
+namespace RvCrashCourse2021
 {
     //[TestFixture]
     //[Parallelizable(ParallelScope.All)]

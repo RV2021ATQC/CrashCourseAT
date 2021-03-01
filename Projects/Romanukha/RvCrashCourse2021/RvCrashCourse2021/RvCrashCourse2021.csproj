@@ -39,6 +39,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Allure.Commons, Version=2.3.64.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Allure.Commons.2.3.64.1\lib\net45\Allure.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="Allure.Fork.Commons, Version=0.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unickq.Allure.Commons.0.1.4\lib\net45\Allure.Fork.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="AllureCSharpCommons, Version=0.1.0.29896, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AllureCSharpCommons.0.2.0\lib\net40\AllureCSharpCommons.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -54,11 +63,17 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net45\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="MimeTypesMap, Version=1.0.3.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeTypesMap.1.0.3\lib\net45\MimeTypesMap.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.23\lib\net452\MySql.Data.dll</HintPath>
@@ -69,6 +84,9 @@
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.5.8\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="NUnit.Allure, Version=1.0.6.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.Allure.1.0.9\lib\net45\NUnit.Allure.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
@@ -153,16 +171,16 @@
     <Compile Include="Tests\TestsUI\SmokeTest.cs" />
     <Compile Include="Tools\Application.cs" />
     <Compile Include="Tools\BrowserWrapper.cs" />
-    <Compile Include="Tools\CSVReader.cs" />
-    <Compile Include="Tools\AExternalReader.cs" />
-    <Compile Include="Tools\ExcelReader.cs" />
+    <Compile Include="Tools\ExternalReader\CSVReader.cs" />
+    <Compile Include="Tools\ExternalReader\AExternalReader.cs" />
+    <Compile Include="Tools\ExternalReader\ExcelReader.cs" />
     <Compile Include="Tools\Find\ASearch.cs" />
     <Compile Include="Tools\Find\ISearch.cs" />
     <Compile Include="Tools\Find\ISearchStrategy.cs" />
     <Compile Include="Tools\Find\SearchElement.cs" />
     <Compile Include="Tools\Find\SearchExplicit.cs" />
     <Compile Include="Tools\Find\SearchImplicit.cs" />
-    <Compile Include="Tools\ListUtils.cs" />
+    <Compile Include="Tools\ExternalReader\ListUtils.cs" />
     <Compile Include="Tools\TestRunner.cs" />
     <Compile Include="Tests\ToolTipTest.cs" />
     <Compile Include="Tests\UnitTest1.cs" />
@@ -173,6 +191,9 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="allureConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>

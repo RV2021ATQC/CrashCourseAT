@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace GradSnapp.UItests.Tools
+namespace RvCrashCourse2021
 {
     public static class Database
     {

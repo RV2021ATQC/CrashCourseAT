@@ -43,10 +43,10 @@ namespace crashCourse2021.Data.Application
         //public string AdminLoginUrl { get; private set; }
         //public string AdminLogoutUrl { get; private set; }
         //
-        // Database Connection
-        //public string DatabaseUrl { get; private set; }
-        //public string DatabaseLogin { get; private set; }
-        //public string DatabasePassword { get; private set; }
+        //Database Connection
+        public string DatabaseUrl { get; private set; }
+        public string DatabaseLogin { get; private set; }
+        public string DatabasePassword { get; private set; }
 
         // TODO Develop Builder
         public ApplicationSource(string browserName,

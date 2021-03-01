@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using crashCourse2021.Data.Application;
+using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Opera;
 
 namespace crashCourse2021.Tools
 {
@@ -73,6 +75,85 @@ namespace crashCourse2021.Tools
         }
     }
 
+    #region SelenoidBrowsers
+    public class SelenoidChromeDriver : IBrowser
+    {
+        private const int CI_TIME_SPAN = 3;
+
+        public IWebDriver GetBrowser(ApplicationSource applicationSource)
+        {
+            var runName = GetType().Assembly.GetName().Name;
+            var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
+
+            var timespan = TimeSpan.FromMinutes(CI_TIME_SPAN);
+            ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+
+            ChromeOptions options = new ChromeOptions();
+            options.AddArguments("--start-maximized");
+            options.AddArguments("--no-proxy-server");
+            options.AddArguments("--ignore-certificate-errors");
+            options.AddAdditionalCapability("name", runName, true);
+            options.AddAdditionalCapability("videoName", $"{runName}.{timestamp}.mp4", true);
+            options.AddAdditionalCapability("logName", $"{runName}.{timestamp}.log", true);
+            options.AddAdditionalCapability("enableVNC", true, true);
+            options.AddAdditionalCapability("enableVideo", true, true);
+            options.AddAdditionalCapability("enableLog", true, true);
+            options.AddAdditionalCapability("screenResolution", "1920x1080x24", true);
+
+            var _driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), options);
+
+            return _driver;
+        }
+    }
+
+    public class SelenoidFireFoxWebDriver : IBrowser
+    {
+        public IWebDriver GetBrowser(ApplicationSource applicationSource)
+        {
+            var runName = GetType().Assembly.GetName().Name;
+            var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
+            var firefoxoptions = new FirefoxOptions();
+            firefoxoptions.AddArgument("start-maximized");
+            firefoxoptions.AddAdditionalCapability("name", runName, true);
+            firefoxoptions.AddAdditionalCapability("videoName", $"{runName}.{timestamp}.mp4", true);
+            firefoxoptions.AddAdditionalCapability("logName", $"{runName}.{timestamp}.log", true);
+            firefoxoptions.AddAdditionalCapability("enableVNC", true, true);
+            firefoxoptions.AddAdditionalCapability("enableVideo", true, true);
+            firefoxoptions.AddAdditionalCapability("enableLog", true, true);
+            firefoxoptions.AddAdditionalCapability("screenResolution", "1920x1080x24", true);
+
+            var driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), firefoxoptions);
+
+            return driver;
+        }
+    }
+
+    public class SelenoidOperaWebDriver : IBrowser
+    {
+        public IWebDriver GetBrowser(ApplicationSource applicationSource)
+        {
+            var runName = GetType().Assembly.GetName().Name;
+            var timestamp = $"{DateTime.Now:yyyyMMdd.HHmm}";
+
+            var firefoxoptions = new OperaOptions();
+            firefoxoptions.AddArgument("start-maximized");
+            firefoxoptions.AddAdditionalCapability("name", runName, true);
+            firefoxoptions.AddAdditionalCapability("videoName", $"{runName}.{timestamp}.mp4", true);
+            firefoxoptions.AddAdditionalCapability("logName", $"{runName}.{timestamp}.log", true);
+            firefoxoptions.AddAdditionalCapability("enableVNC", true, true);
+            firefoxoptions.AddAdditionalCapability("enableVideo", true, true);
+            firefoxoptions.AddAdditionalCapability("enableLog", true, true);
+            firefoxoptions.AddAdditionalCapability("screenResolution", "1920x1080x24", true);
+
+            var driver = new RemoteWebDriver(new Uri("http://127.0.0.1:4444/wd/hub"), firefoxoptions);
+
+            return driver;
+        }
+    }
+
+    #endregion
+
+
     public class BrowserWrapper
     {
         private const string TIME_TEMPLATE = "yyyy_MM_dd_HH_mm_ss";
@@ -101,6 +182,9 @@ namespace crashCourse2021.Tools
             Browsers.Add(ApplicationSourceRepository.FIREFOX_TEMPORARY_WHITH_UI, new FirefoxTemporaryWhithUI());
             Browsers.Add(ApplicationSourceRepository.CHROME_TEMPORARY_WHITH_UI, new ChromeTemporaryWhithUI());
             Browsers.Add(ApplicationSourceRepository.CHROME_TEMPORARY_MAXIMIZED_WHITH_UI, new ChromeTemporaryMaximizedWhithUI());
+            Browsers.Add(ApplicationSourceRepository.SELENOID_CHROME, new SelenoidChromeDriver());
+            Browsers.Add(ApplicationSourceRepository.SELENOID_FIREFOX, new SelenoidFireFoxWebDriver());
+            Browsers.Add(ApplicationSourceRepository.SELENOID_OPERA, new SelenoidOperaWebDriver());
             Browsers.Add(CONTINUES_INTEGRATION_BROWSER, new ChromeTemporaryWithoutUI());
         }
 

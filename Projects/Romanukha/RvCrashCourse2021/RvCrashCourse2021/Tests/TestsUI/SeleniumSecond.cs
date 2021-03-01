@@ -13,7 +13,7 @@ using crashCourse2021.Pages;
 using crashCourse2021.Data.Users;
 using crashCourse2021.Tools;
 
-namespace taqc2018
+namespace RvCrashCourse2021
 {
     //[TestFixture]
     public class SeleniumSecond
@@ -395,7 +395,7 @@ namespace taqc2018
             ListUtils.ToMultiArray(UserRepository.Get().FromExcel());
 
         //[Test, TestCaseSource(nameof(ValidUsers))]
-        [Test, TestCaseSource("ValidUsers")]
+        //[Test, TestCaseSource("ValidUsers")]
         //[Test, TestCaseSource("ExternalValidUsers")]
         public void LoginTest9(IUser validRegistrator)
         {

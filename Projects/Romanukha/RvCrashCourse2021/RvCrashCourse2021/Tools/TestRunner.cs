@@ -14,10 +14,14 @@ using crashCourse2021.Data.Users;
 using crashCourse2021.Tools;
 using crashCourse2021.Data.Application;
 using NUnit.Framework.Interfaces;
+using NUnit.Allure.Attributes;
 using NLog;
+using System.IO;
+using NUnit.Allure.Core;
 
 namespace crashCourse2021.Tools
 {
+    [AllureNUnit]
     [TestFixture]
     public abstract class TestRunner
     {
@@ -30,8 +34,14 @@ namespace crashCourse2021.Tools
         [OneTimeSetUp]
         public void BeforeAllMethods()
         {
-            //Application.Get(ApplicationSourceRepository.ChromeTemporaryHeroku());
-            Application.Get(); // Default
+            //Important for Allure!!!
+            Environment.CurrentDirectory = Path.GetDirectoryName(GetType().Assembly.Location);
+            
+
+            Application.Get(ApplicationSourceRepository.SelenoidChrome());
+           // Application.Get(ApplicationSourceRepository.ChromeTemporaryHeroku());
+           // Application.Get(ApplicationSourceRepository.ChromeWithoutUIHeroku());
+         //   Application.Get(); // Default
         }
 
         [OneTimeTearDown]
