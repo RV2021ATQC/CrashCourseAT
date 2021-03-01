@@ -12,15 +12,9 @@ using System.Xml.Serialization;
 
 namespace RestSharpAPI
 {
-    [TestFixture]
-    public class APIRestTest
-    {
-        public Logger log = LogManager.GetCurrentClassLogger();
-        private string JsonToken;
-        private int cartId;
-        private readonly string host = "127.0.0.1/OpencartStore";
-        private readonly string file = "index.php";
-        public static string RemoveSomeFromEnd(int count, string str)
+    public static class StringHelper
+    {   
+        public static string RemoveSomeFromEnd(this string str, int count)
         {
             if (str.Length > 0)
             {
@@ -30,6 +24,16 @@ namespace RestSharpAPI
                 Console.WriteLine("Not enough symbols");
             return str;
         }
+    }
+    [TestFixture]
+    public class APIRestTest
+    {
+        public Logger log = LogManager.GetCurrentClassLogger();
+        private string JsonToken;
+        private int cartId;
+        private readonly string host = "127.0.0.1/OpencartStore";
+        private readonly string file = "index.php";
+        
         [OneTimeSetUp]
         public void GetToken()
         {
@@ -63,7 +67,7 @@ namespace RestSharpAPI
             var command = DBTest.CheckSession(JsonToken);
 
             //Then
-            Assert.AreEqual(RemoveSomeFromEnd(3, command), RemoveSomeFromEnd(3, expectedResult));
+            Assert.AreEqual(command.RemoveSomeFromEnd(3), expectedResult.RemoveSomeFromEnd(3));
         }
         [Test]
         [Order(2)]
