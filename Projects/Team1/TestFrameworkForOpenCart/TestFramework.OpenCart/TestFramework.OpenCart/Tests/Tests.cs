@@ -40,11 +40,11 @@ namespace TestFramework.OpenCart
             main.StartRegistration();
             Thread.Sleep(1000);//ChromeFail
 
-            //Then
+            //And
             var registration = new RegistrationPage(driver);
             registration.Registration(firstNameText, lastNameText, emailText, telephoneText, passwordText);
 
-            //And
+            //Then
             if (registration.SuccessfulyRegistration())
             {
                 DBTest.DeleteCustomer(firstNameText, lastNameText, emailText, telephoneText);
@@ -61,11 +61,11 @@ namespace TestFramework.OpenCart
             //When
             Login(emailText, passwordText);
 
-            //Then
+            //And
             var main = new MainPage(driver);
             main.Logout();
 
-            //And
+            //Then
             Assert.IsTrue(main.SuccessfulyLogout());
         }
         [Test]
@@ -79,15 +79,15 @@ namespace TestFramework.OpenCart
             var main = new MainPage(driver);
 
 
-            //Then
+            
             main.StartLogin();
             Thread.Sleep(1000);//ChromeFail
 
-
+            //And
             var login = new LoginPage(driver);
             login.Login(emailText, passwordText);
 
-            //And
+            //Then
             Assert.IsTrue(login.SuccessfulyLogin());
         }
     }
