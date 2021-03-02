@@ -23,6 +23,20 @@ namespace TestFramework.OpenCart
     [TestFixture]
     public class APIRestTest
     {
+        public RestClient NewClient(string path)
+        {
+            var client = new RestClient(path);
+            return client;
+        }
+        public RestRequest NewRequest(Method method)
+        {
+            var newMethod = new RestRequest(method);
+            return newMethod;
+        }
+        public void ClienExecution()
+        {
+
+        }
         public Logger log = LogManager.GetCurrentClassLogger();
         private string JsonToken;
         private int cartId;
@@ -34,9 +48,9 @@ namespace TestFramework.OpenCart
         {
             //When
             log.Info("Start");
-            var client = new RestClient($"http://{host}/index.php?route=api/login");
+            var client = NewClient($"http://{host}/index.php?route=api/login");
             client.Timeout = -1;
-            var request = new RestRequest(Method.POST);
+            var request = NewRequest(Method.POST);
             request.AddParameter("username", "Default");
             request.AddParameter("key", "w5VWX4p5lex9kU7Nj2abyBHAV1fnaD1zTr58wN8eNXedhs1RbWaK7yx6QrMLk7RimooeWKS33OcuWpJ4ODVQXp1rHkS88o1pau1MHeNE1aSai4EVTqLPTK6kWoJ39Ybs8xl9VZ2WBKpW517fNczKFzUuvk12o4v8WreBLVSpWe50ES8omiM0UnwWKZqIWx9RtYSZ8k9PsvGOQpDpyjjCcQfdCh5KlTm5gGtxTOkIFBP5CA7KTHYZlrCvhwN6hbKl");
 
@@ -74,9 +88,9 @@ namespace TestFramework.OpenCart
             log.Info("Start ReadDatabase test");
 
             //When
-            var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
+            var client = NewClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
-            var request = new RestRequest(Method.POST);
+            var request = NewRequest(Method.POST);
             request.AddParameter("product_id", product_id);
             request.AddParameter("quantity", quantity);
             request.AddHeader("Cookie", "currency=USD; language=en-gb");
@@ -96,9 +110,9 @@ namespace TestFramework.OpenCart
         public void GetProducts(string path, string firstQuery, string secondQuery)
         {
             //When
-            var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
+            var client = NewClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
-            var request = new RestRequest(Method.GET);
+            var request = NewRequest(Method.GET);
             request.AddHeader("Cookie", "currency=USD; language=en-gb");
             request.AlwaysMultipartFormData = true;
             IRestResponse response = client.Execute(request);
@@ -127,9 +141,9 @@ namespace TestFramework.OpenCart
             log.Info("Start ReadDatabase test");
 
             //When
-            var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
+            var client = NewClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
-            var request = new RestRequest(Method.POST);
+            var request = NewRequest(Method.POST);
             request.AddParameter("key", cartId);
             request.AddParameter("quantity", quantity);
             request.AddHeader("Cookie", "currency=USD; language=en-gb");
@@ -153,9 +167,9 @@ namespace TestFramework.OpenCart
             log.Info("Start ReadDatabase test");
 
             //When
-            var client = new RestClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
+            var client = NewClient($"http://{host}/{file}?{firstQuery}{path}&{secondQuery}{JsonToken}");
             client.Timeout = -1;
-            var request = new RestRequest(Method.POST);
+            var request = NewRequest(Method.POST);
             request.AddParameter("key", cartId);
             request.AddHeader("Cookie", "currency=USD; language=en-gb");
             request.AlwaysMultipartFormData = true;

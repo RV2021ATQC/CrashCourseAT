@@ -8,5 +8,7 @@ namespace TestFramework.OpenCart.Tests
 {
     class BaseTest
     {
+
     }
+    
 }
