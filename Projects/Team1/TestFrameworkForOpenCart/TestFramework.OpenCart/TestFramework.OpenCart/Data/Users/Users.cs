@@ -148,5 +148,27 @@ namespace TestFramework.OpenCart
                 .SetSubscribe(false)
                 .Build();
         }
+        public IUser ValidForLoginV1()
+        {
+            return Users.Get()
+                .SetFirstname("qwerty")
+                .SetLastname("qwerty")
+                .SetEmail("seth@aegr.arg")
+                .SetPhone("12345678")
+                .SetPassword("qwerty")
+                .SetSubscribe(false)
+                .Build();
+        }
+        public IUser ValidForLoginV2()
+        {
+            return Users.Get()
+                .SetFirstname("qwerty")
+                .SetLastname("qwerty")
+                .SetEmail("qwerty@qwer.ru")
+                .SetPhone("12345678")
+                .SetPassword("qwerty")
+                .SetSubscribe(false)
+                .Build();
+        }
     }
 }

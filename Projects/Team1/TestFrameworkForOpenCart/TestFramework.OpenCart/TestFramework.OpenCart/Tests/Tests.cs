@@ -28,12 +28,12 @@ namespace TestFramework.OpenCart
         }
 
         [Test]
-        [TestCase("qwerty", "qwerty", "qwertys@qwerty.qw", "12345678", "qwerty")]
-        public void Registration(string firstNameText, string lastNameText, string emailText, string telephoneText, string passwordText)
+        public void Registration()
         {
             //Given
+            IUser ValidUser = new Users().Valid();
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
-            emailText = driver.GetType().ToString() + emailText;
+            string emailText = driver.GetType().ToString() + ValidUser.GetEmail();
 
             //When
             var main = new MainPage(driver);
@@ -42,24 +42,24 @@ namespace TestFramework.OpenCart
 
             //And
             var registration = new RegistrationPage(driver);
-            registration.Registration(firstNameText, lastNameText, emailText, telephoneText, passwordText);
+            registration.Registration(ValidUser.GetFirstname(), ValidUser.GetLastname(), emailText, ValidUser.GetPhone(), ValidUser.GetPassword());
 
             //Then
             if (registration.SuccessfulyRegistration())
             {
-                DBTest.DeleteCustomer(firstNameText, lastNameText, emailText, telephoneText);
+                DBTest.DeleteCustomer(ValidUser.GetFirstname(), ValidUser.GetLastname(), emailText, ValidUser.GetPhone());
             }
             Assert.Pass();
         }
         [Test]
-        [TestCase("seth@aegr.arg", "qwerty")]
-        public void Logout(string emailText, string passwordText)
+        public void Logout()
         {
             //Given
+            //IUser ValidUser = new Users().ValidForLoginV2();
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
 
             //When
-            Login(emailText, passwordText);
+            Login();
 
             //And
             var main = new MainPage(driver);
@@ -69,10 +69,10 @@ namespace TestFramework.OpenCart
             Assert.IsTrue(main.SuccessfulyLogout());
         }
         [Test]
-        [TestCase("qwerty@qwer.ru", "qwerty")]
-        public void Login(string emailText, string passwordText)
+        public void Login()
         {
             //Given
+            IUser ValidUser = new Users().ValidForLoginV1();
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
 
             //When
@@ -85,7 +85,7 @@ namespace TestFramework.OpenCart
 
             //And
             var login = new LoginPage(driver);
-            login.Login(emailText, passwordText);
+            login.Login(ValidUser.GetEmail(), ValidUser.GetPassword());
 
             //Then
             Assert.IsTrue(login.SuccessfulyLogin());
