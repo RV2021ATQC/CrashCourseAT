@@ -138,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DBTest.cs" />
-    <Compile Include="Data\DBWork.cs" />
     <Compile Include="Pages\ABasePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\MainPage.cs" />
