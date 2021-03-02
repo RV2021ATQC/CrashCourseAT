@@ -8,7 +8,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using System.Diagnostics;
 
-namespace SeleniumTests
+namespace TestFramework.OpenCart
 {
     public abstract class ABasePage
     {

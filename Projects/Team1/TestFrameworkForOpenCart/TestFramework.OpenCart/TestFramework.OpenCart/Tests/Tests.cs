@@ -5,19 +5,19 @@ using OpenQA.Selenium.Firefox;
 using System;
 using System.Threading;
 
-namespace SeleniumTests
+namespace TestFramework.OpenCart
 {
     [Parallelizable]
     [TestFixture(typeof(ChromeDriver))]
     [TestFixture(typeof(FirefoxDriver))]
-    class SeleniumFirst<TWebDriver> where TWebDriver : IWebDriver, new()
+    class SeleniumFirst<T> where T : IWebDriver, new()
     {
         [ThreadStatic]
         private IWebDriver driver;
         [SetUp]
         public void BeforeAllMethods()
         {
-            driver = new TWebDriver();
+            driver = new T();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 

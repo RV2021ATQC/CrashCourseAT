@@ -7,7 +7,7 @@ using System.Linq;
 using MySql.Data.MySqlClient;
 using NUnit.Framework;
 
-namespace RestSharpAPI
+namespace TestFramework.OpenCart
 {
     class DBTest
     {

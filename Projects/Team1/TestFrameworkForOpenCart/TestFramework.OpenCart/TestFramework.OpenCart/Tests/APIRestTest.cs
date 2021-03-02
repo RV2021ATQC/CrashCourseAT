@@ -5,7 +5,7 @@ using RestSharp;
 using System;
 
 
-namespace RestSharpAPI
+namespace TestFramework.OpenCart
 {
     public static class StringHelper
     {   

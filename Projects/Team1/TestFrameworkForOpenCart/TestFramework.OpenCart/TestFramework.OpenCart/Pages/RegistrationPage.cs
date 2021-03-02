@@ -10,7 +10,7 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 
 
-namespace SeleniumTests 
+namespace TestFramework.OpenCart
 {
     public class RegistrationPage : ABasePage
     {

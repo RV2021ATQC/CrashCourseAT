@@ -6,7 +6,7 @@ using OpenQA.Selenium;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 
-namespace SeleniumTests
+namespace TestFramework.OpenCart
 {
     public class MainPage : ABasePage
     {

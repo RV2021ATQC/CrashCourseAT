@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace SeleniumTests
+namespace TestFramework.OpenCart
 {
     class DBWork
     {
