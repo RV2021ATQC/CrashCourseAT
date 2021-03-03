@@ -10,9 +10,12 @@ using OpenQA.Selenium.Chrome;
 using Pages;
 using System.Threading;
 using Data;
+using NUnit.Allure.Core;
+using NUnit.Allure.Attributes;
 
 namespace Framework.Test
 {
+	[AllureNUnit]
 	class CheckPageItemsTest
 	{
 

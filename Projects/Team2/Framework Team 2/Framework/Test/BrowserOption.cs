@@ -16,7 +16,7 @@ namespace Framework.Test
 			ChromeOptions options = new ChromeOptions();
 			options.AddArgument("start-maximized");   
 			options.AddArgument("disable-infobars");
-			options.AddArgument("title = GG");
+			//options.AddArgument("title = GG");
 			//options.AddArgument("headless");
 			//options.AddArgument("user-data-dir=C:\\Users\\Vlad\\AppData\\Local\\Google\\Chrome\\User Data\\Default");
 			return options;

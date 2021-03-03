@@ -10,10 +10,14 @@ using OpenQA.Selenium.Support.UI;
 using Pages;
 using Data;
 using Framework.Data.User;
+using NUnit.Allure.Core;
+using NUnit.Allure.Attributes;
+using Selenoid;
 
 namespace Framework.Test
 {
-	[TestFixture]
+	//[TestFixture]
+	[AllureNUnit]
 	class AutorizationTest
 	{
 		public IWebDriver driver;
