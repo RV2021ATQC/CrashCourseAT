@@ -56,7 +56,6 @@ namespace TestFramework.OpenCart
         public void Logout()
         {
             //Given
-            //IUser ValidUser = new Users().ValidForLoginV2();
             Console.WriteLine("FirstTest1() ThreadID= " + Thread.CurrentThread.ManagedThreadId);
 
             //When

@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using NLog;
-using NUnit.Framework;
-using RestSharp;
+﻿using NUnit.Framework;
 using System;
 
 
