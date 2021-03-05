@@ -63,12 +63,6 @@ namespace TestFramework.OpenCart
             return new Users();
         }
 
-        public ISetPhone SetEmail(string email)
-        {
-            this.email = email;
-            return this;
-        }
-
         public ISetLastname SetFirstname(string firstname)
         {
             this.firstname = firstname;
@@ -80,19 +74,23 @@ namespace TestFramework.OpenCart
             this.lastname = lastname;
             return this;
         }
-
-        public ISetSubscribe SetPassword(string password)
+        public ISetPhone SetEmail(string email)
         {
-            this.password = password;
+            this.email = email;
             return this;
         }
-
         public ISetPassword SetPhone(string phone)
         {
             this.phone = phone;
             return this;
         }
 
+        public ISetSubscribe SetPassword(string password)
+        {
+            this.password = password;
+            return this;
+        }
+        
         public ISetSubscribe SetSubscribe(bool subscribe)
         {
             this.subscribe = subscribe;
@@ -154,17 +152,6 @@ namespace TestFramework.OpenCart
                 .SetFirstname("qwerty")
                 .SetLastname("qwerty")
                 .SetEmail("seth@aegr.arg")
-                .SetPhone("12345678")
-                .SetPassword("qwerty")
-                .SetSubscribe(false)
-                .Build();
-        }
-        public IUser ValidForLoginV2()
-        {
-            return Users.Get()
-                .SetFirstname("qwerty")
-                .SetLastname("qwerty")
-                .SetEmail("qwerty@qwer.ru")
                 .SetPhone("12345678")
                 .SetPassword("qwerty")
                 .SetSubscribe(false)
