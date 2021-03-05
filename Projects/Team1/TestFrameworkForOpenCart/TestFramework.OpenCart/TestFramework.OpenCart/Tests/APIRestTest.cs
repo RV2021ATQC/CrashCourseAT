@@ -21,7 +21,7 @@ namespace TestFramework.OpenCart
         }
     }
     [TestFixture]
-    public class APIRestTest
+    public class APIRestTest : ABaseTest
     {
         public RestClient NewClient(string path)
         {
@@ -42,7 +42,9 @@ namespace TestFramework.OpenCart
         private int cartId;
         private readonly string host = "127.0.0.1/OpencartStore";
         private readonly string file = "index.php";
-        
+        private readonly string key = "w5VWX4p5lex9kU7Nj2abyBHAV1fnaD1zTr58wN8eNXedhs1RbWaK7yx6QrMLk7RimooeWKS33OcuWpJ4ODVQXp1rHkS88o1pau1MHeNE1aSai4EVTqLPTK6kWoJ39Ybs8xl9VZ2WBKpW517fNczKFzUuvk12o4v8WreBLVSpWe50ES8omiM0UnwWKZqIWx9RtYSZ8k9PsvGOQpDpyjjCcQfdCh5KlTm5gGtxTOkIFBP5CA7KTHYZlrCvhwN6hbKl";
+        private readonly string username = "Default";
+
         [OneTimeSetUp]
         public void GetToken()
         {
@@ -51,8 +53,8 @@ namespace TestFramework.OpenCart
             var client = NewClient($"http://{host}/index.php?route=api/login");
             client.Timeout = -1;
             var request = NewRequest(Method.POST);
-            request.AddParameter("username", "Default");
-            request.AddParameter("key", "w5VWX4p5lex9kU7Nj2abyBHAV1fnaD1zTr58wN8eNXedhs1RbWaK7yx6QrMLk7RimooeWKS33OcuWpJ4ODVQXp1rHkS88o1pau1MHeNE1aSai4EVTqLPTK6kWoJ39Ybs8xl9VZ2WBKpW517fNczKFzUuvk12o4v8WreBLVSpWe50ES8omiM0UnwWKZqIWx9RtYSZ8k9PsvGOQpDpyjjCcQfdCh5KlTm5gGtxTOkIFBP5CA7KTHYZlrCvhwN6hbKl");
+            request.AddParameter("username", username);
+            request.AddParameter("key", key);
 
             //Then
             IRestResponse response = client.Execute(request);

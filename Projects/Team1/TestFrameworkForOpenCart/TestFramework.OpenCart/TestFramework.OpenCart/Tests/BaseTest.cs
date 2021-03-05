@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestFramework.OpenCart.Tests
+namespace TestFramework.OpenCart
 {
-    class BaseTest
+    public abstract class ABaseTest
     {
 
     }

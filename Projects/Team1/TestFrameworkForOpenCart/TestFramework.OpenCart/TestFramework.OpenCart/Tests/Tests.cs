@@ -10,7 +10,8 @@ namespace TestFramework.OpenCart
     [Parallelizable]
     [TestFixture(typeof(ChromeDriver))]
     [TestFixture(typeof(FirefoxDriver))]
-    class SeleniumFirst<T> where T : IWebDriver, new()
+    class SeleniumFirst<T> : ABaseTest 
+        where T : IWebDriver, new()
     {
         [ThreadStatic]
         private IWebDriver driver;
