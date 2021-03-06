@@ -1,6 +1,9 @@
 ﻿using NUnit.Framework;
 using System;
-
+using NUnit.Allure.Core;
+using Allure.Commons;
+using NUnit.Allure.Attributes;
+using System.IO;
 
 namespace TestFramework.OpenCart
 {
@@ -17,6 +20,7 @@ namespace TestFramework.OpenCart
             return str;
         }
     }
+    [AllureNUnit]
     [TestFixture]
     public class APIRestTest : ABaseTest
     {
@@ -28,9 +32,11 @@ namespace TestFramework.OpenCart
         [OneTimeSetUp]
         public void GetToken()
         {
+            Environment.CurrentDirectory = Path.GetDirectoryName(GetType().Assembly.Location);
             api = new Api().ApiData();
             JsonToken = api.GetToken();
         }
+        //[StartTestCase]
         [Test]
         [Order(1)]
         public void TokenValidation()

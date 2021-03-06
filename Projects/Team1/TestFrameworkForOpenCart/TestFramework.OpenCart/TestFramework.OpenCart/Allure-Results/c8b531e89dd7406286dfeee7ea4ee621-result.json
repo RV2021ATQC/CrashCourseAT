@@ -1,0 +1,72 @@
+{
+  "uuid": "554e3947-ef36-4a50-9b47-fdd66d8c1934-tr-0-1002",
+  "historyId": "TestFramework.OpenCart.APIRestTest.AddProduct(41,4)",
+  "fullName": "TestFramework.OpenCart.APIRestTest.AddProduct(41,4)",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ASUSROG"
+    },
+    {
+      "name": "testClass",
+      "value": "TestFramework.OpenCart.APIRestTest"
+    },
+    {
+      "name": "testMethod",
+      "value": "AddProduct"
+    },
+    {
+      "name": "package",
+      "value": "TestFramework.OpenCart.APIRestTest"
+    }
+  ],
+  "links": [],
+  "name": "AddProduct(41,4)",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "AddProduct(41,4)",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "81e0c2efa137459e95c61a46bd9a647c-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1615052462703,
+      "stop": 1615052463015
+    }
+  ],
+  "attachments": [],
+  "parameters": [
+    {
+      "name": "Param #0",
+      "value": "41"
+    },
+    {
+      "name": "Param #1",
+      "value": "4"
+    }
+  ],
+  "start": 1615052462702,
+  "stop": 1615052463019
+}

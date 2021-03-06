@@ -1,0 +1,67 @@
+{
+  "uuid": "5a7d9a21-5ed5-4193-b8e0-12d8a150df20-tr-0-1004",
+  "historyId": "TestFramework.OpenCart.APIRestTest.GetProducts",
+  "fullName": "TestFramework.OpenCart.APIRestTest.GetProducts",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ASUSROG"
+    },
+    {
+      "name": "testClass",
+      "value": "TestFramework.OpenCart.APIRestTest"
+    },
+    {
+      "name": "testMethod",
+      "value": "GetProducts"
+    },
+    {
+      "name": "package",
+      "value": "TestFramework.OpenCart.APIRestTest"
+    }
+  ],
+  "links": [],
+  "name": "GetProducts",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "",
+    "trace": "   at TestFramework.OpenCart.APIRestTest.GetProducts() in C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\TestFramework.OpenCart\\Tests\\APIRestTest.cs:line 92\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "GetProducts",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "",
+        "trace": "   at TestFramework.OpenCart.APIRestTest.GetProducts() in C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\TestFramework.OpenCart\\Tests\\APIRestTest.cs:line 92\r\n"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "751f90d1a3484f58959cfc2c00194bf0-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1615052631456,
+      "stop": 1615052631594
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1615052631456,
+  "stop": 1615052631594
+}

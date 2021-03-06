@@ -4,9 +4,13 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using System;
 using System.Threading;
+using NUnit.Allure.Core;
+using Allure.Commons;
+using NUnit.Allure.Attributes;
 
 namespace TestFramework.OpenCart
 {
+    [AllureNUnit]
     [Parallelizable]
     [TestFixture(typeof(ChromeDriver))]
     [TestFixture(typeof(FirefoxDriver))]
