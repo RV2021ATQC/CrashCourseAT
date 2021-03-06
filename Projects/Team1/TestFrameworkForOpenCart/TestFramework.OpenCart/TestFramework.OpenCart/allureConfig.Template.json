@@ -1,0 +1,12 @@
+﻿{
+  "allure": {
+    "directory": "C:\\Users\\Den25\\OneDrive\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\TestFramework.OpenCart\\Allure-Results", // optional, default value is "allure-results"
+    "title": "custom run title", // optional
+    "links": //optional 
+    [
+      "https://example.org/{link}",
+      "https://example.org/{issue}",
+      "https://example.org/{tms}"
+    ]
+  }
+}
