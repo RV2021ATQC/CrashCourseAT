@@ -8,8 +8,8 @@
     <ProjectGuid>{C62476F6-D43E-4D67-9EA6-0928F084297E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>taqc2018</RootNamespace>
-    <AssemblyName>taqc2018</AssemblyName>
+    <RootNamespace>RvCrashCourse2021</RootNamespace>
+    <AssemblyName>RvCrashCourse2021</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

@@ -33,6 +33,7 @@ namespace RvCrashCourse2021
 
         //[Test, TestCaseSource(nameof(ValidUsers))]
         ////[Test, TestCaseSource("ValidUsers")]
+        [Category("Smoke")]
         [Test, TestCaseSource("ExternalValidUsers")]
         public void LoginTest9(IUser validRegistrator)
         {
@@ -75,6 +76,7 @@ namespace RvCrashCourse2021
             new object[] { ChangeLanguageFields.UKRAINIAN }
         };
 
+        [Category("Smoke")]
         [Test, TestCaseSource("LocalizationData")]
         public void LocalizationTest1(ChangeLanguageFields languageFields)
         {
