@@ -13,6 +13,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace RvCrashCourse2021
 {
+    [AllureNUnit]
     [TestFixture]
     class Browsers
     {

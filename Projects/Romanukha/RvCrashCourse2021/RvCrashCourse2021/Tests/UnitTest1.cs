@@ -8,6 +8,7 @@ using System.Threading;
 namespace RvCrashCourse2021
 {
     //[TestClass]
+    [AllureNUnit]
     [TestFixture]
   // [Parallelizable(ParallelScope.All)]
     public class UnitTest1

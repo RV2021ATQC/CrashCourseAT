@@ -18,6 +18,7 @@ using crashCourse2021.Tools;
 
 namespace RvCrashCourse2021
 {
+    [AllureNUnit]
     [TestFixture]
     public class RestTest : TestRunner
     {
