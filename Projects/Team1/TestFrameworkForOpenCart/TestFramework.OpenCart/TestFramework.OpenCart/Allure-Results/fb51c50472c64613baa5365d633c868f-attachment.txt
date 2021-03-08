@@ -1,2 +1,0 @@
-FirstTest1() ThreadID= 17
-FirstTest1() ThreadID= 17

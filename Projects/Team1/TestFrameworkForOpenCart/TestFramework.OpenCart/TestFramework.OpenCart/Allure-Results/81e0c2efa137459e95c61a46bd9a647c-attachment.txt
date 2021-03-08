@@ -1,3 +1,0 @@
-{"success":"Success: You have modified your shopping cart!"}
-Result = 41
-Result = 4
