@@ -216,7 +216,7 @@ namespace crashCourse2021.Pages
 
         // Business Logic
         //public LoginPage ChangeLanguage(string language) // Invalid Solution
-        public LoginPage ChangeLanguage(ChangeLanguageFields languageFields)
+        public new LoginPage ChangeLanguage(ChangeLanguageFields languageFields)
         {
             SetChangeLanguage(languageFields);
             //return new LoginPage(driver);

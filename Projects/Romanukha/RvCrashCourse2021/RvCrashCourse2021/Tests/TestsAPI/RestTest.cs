@@ -15,6 +15,7 @@ using System.Net.Http.Headers;
 using System.IO;
 using System.Xml.Serialization;
 using crashCourse2021.Tools;
+using NUnit.Allure.Core;
 
 namespace RvCrashCourse2021
 {
@@ -22,7 +23,7 @@ namespace RvCrashCourse2021
     [TestFixture]
     public class RestTest : TestRunner
     {
-        public Logger log = LogManager.GetCurrentClassLogger(); // for NLog
+        public new Logger log = LogManager.GetCurrentClassLogger(); // for NLog
         private string JsonToken;
 
         [Test]

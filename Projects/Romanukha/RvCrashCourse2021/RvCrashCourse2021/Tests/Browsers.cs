@@ -10,6 +10,7 @@ using System.Threading;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Interactions;
+using NUnit.Allure.Core;
 
 namespace RvCrashCourse2021
 {

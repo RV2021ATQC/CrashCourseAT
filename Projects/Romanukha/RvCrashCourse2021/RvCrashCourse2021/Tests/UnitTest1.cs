@@ -4,6 +4,7 @@ using System.Windows;
 using NUnit.Framework;
 using System.Windows.Forms;
 using System.Threading;
+using NUnit.Allure.Core;
 
 namespace RvCrashCourse2021
 {
