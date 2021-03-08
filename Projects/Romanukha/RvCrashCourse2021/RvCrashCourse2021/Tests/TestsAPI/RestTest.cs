@@ -26,7 +26,7 @@ namespace RvCrashCourse2021
         public new Logger log = LogManager.GetCurrentClassLogger(); // for NLog
         private string JsonToken;
 
-        [Test]
+  //      [Test]
         public void VerifyItems()
         {
             log.Info("Start");
@@ -42,7 +42,7 @@ namespace RvCrashCourse2021
             log.Info("content: " + content);
         }
 
-        [Test]
+  //      [Test]
         public void VerifyLogin()
         {
             log.Info("Start");
