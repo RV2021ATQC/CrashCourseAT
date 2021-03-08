@@ -20,8 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
-    <Folder Include="Tests\TestsAPI\" />
     <Folder Include="Tools\" />
   </ItemGroup>
 
