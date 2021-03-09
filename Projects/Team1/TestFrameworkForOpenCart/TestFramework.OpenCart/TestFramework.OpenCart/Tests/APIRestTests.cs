@@ -47,7 +47,7 @@ namespace TestFramework.OpenCart
             log.Info("Start ReadDatabase test");
 
             //When
-            var command = DBTest.CheckSession(JsonToken);
+            var command = DBReader.CheckSession(JsonToken);
 
             //Then
             Assert.AreEqual(command.RemoveSomeFromEnd(3), expectedResult.RemoveSomeFromEnd(3));
@@ -65,7 +65,7 @@ namespace TestFramework.OpenCart
             api.AddToCart(JsonToken, product_id, quantity);
 
             //And
-            var command = DBTest.CheckAddingToCart(JsonToken);
+            var command = DBReader.CheckAddingToCart(JsonToken);
 
             //Then
             Assert.AreEqual(expectedResult, command);
@@ -104,7 +104,7 @@ namespace TestFramework.OpenCart
             api.ChangeProduct(JsonToken, cartId, quantity);
 
             //And
-            var command = DBTest.CheckCartChange(JsonToken);
+            var command = DBReader.CheckCartChange(JsonToken);
 
             //Then
             Assert.AreEqual(command, expectedResult);
@@ -121,7 +121,7 @@ namespace TestFramework.OpenCart
             api.RemoveProduct(JsonToken, cartId);
 
             //And
-            var command = DBTest.CheckCartEmpty(JsonToken);
+            var command = DBReader.CheckCartEmpty(JsonToken);
 
             //Then
             Assert.AreEqual(command, expectedResult);
