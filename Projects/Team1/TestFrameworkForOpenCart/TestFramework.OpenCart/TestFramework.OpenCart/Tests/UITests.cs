@@ -43,7 +43,7 @@ namespace TestFramework.OpenCart
             //When
             var main = new MainPage(driver);
             main.StartRegistration();
-            Thread.Sleep(1000);//ChromeFail
+            
 
             //And
             var registration = new RegistrationPage(driver);
@@ -81,11 +81,8 @@ namespace TestFramework.OpenCart
 
             //When
             var main = new MainPage(driver);
-
-
-            
             main.StartLogin();
-            Thread.Sleep(1000);//ChromeFail
+            
 
             //And
             var login = new LoginPage(driver);

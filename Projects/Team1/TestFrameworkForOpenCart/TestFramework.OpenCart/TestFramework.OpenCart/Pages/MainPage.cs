@@ -5,6 +5,7 @@ using System.Text;
 using OpenQA.Selenium;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace TestFramework.OpenCart
 {
@@ -22,12 +23,14 @@ namespace TestFramework.OpenCart
         {
             registrationDropdownMenu.Click();
             registrationPageButton.Click();
+            Thread.Sleep(1000);//ChromeFail
             return this;
         }
         public void StartLogin()
         {
             registrationDropdownMenu.Click();
             loginPageButton.Click();
+            Thread.Sleep(1000);//ChromeFail
         }
         public void Logout()
         {
