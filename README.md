@@ -4,3 +4,4 @@ Selenium
 RestSharp
 Allure
 Seleniod
+Jenkins
