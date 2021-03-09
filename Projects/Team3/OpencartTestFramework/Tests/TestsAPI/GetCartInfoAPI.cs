@@ -4,12 +4,12 @@ using System;
 
 namespace OpencartTestFramework.Tests.TestsAPI
 {
-    public class GetCartInfoAPI:RestTests
+    public class GetCartInfoAPI:LogIn
     {
         [Test]
-        public void GetInfo()
+        public static void GetInfo()
         {
-            var client = new RestClient("http://127.0.0.1/opencart/index.php?route=api/cart/products/&api_token=ff7e87b179375856d3c691872a");
+            var client = new RestClient(LogIn.INFO_API_URL+LogIn.JsonToken);
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);          
             IRestResponse response = client.Execute(request);

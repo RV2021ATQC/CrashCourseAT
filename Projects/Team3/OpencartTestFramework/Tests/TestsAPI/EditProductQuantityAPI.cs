@@ -5,28 +5,27 @@ using System;
 
 namespace OpencartTestFramework.Tests.TestsAPI
 {
-   public  class EditProductQuantityAPI:RestTests
-       
+   public  class EditProductQuantityAPI:LogIn    
     {
-        [Test,Order(1)]
-        public static void EditQuantity()
+        private static string Key = "key";
+        private static string Quantity = "quantity";
+        public static void EditQuantity(int cartId,int quantity)
         {
-            var client = new RestClient("http://127.0.0.1/opencart/index.php?route=api/cart/edit&api_token=ff7e87b179375856d3c691872a");
+            var client = new RestClient(LogIn.EDIT_API_URL+LogIn.JsonToken);
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
             //key=cart_Id
-            request.AddParameter("key", "34");
-            request.AddParameter("quantity", "2");
+            request.AddParameter(Key, cartId);
+            request.AddParameter(Quantity, quantity);
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
-        }
-        [Test,Order(2)]
+        }     
         public static void CheckQuantiny()
         {
             try
             {                     
-                var cartId = "34";
-                var productQuantity = "2";              
+                var cartId = "51";
+                var productQuantity = "1";              
                 var command = DbContext.GetQuantityByCartId(cartId);
 
                 Assert.AreEqual(command, productQuantity);

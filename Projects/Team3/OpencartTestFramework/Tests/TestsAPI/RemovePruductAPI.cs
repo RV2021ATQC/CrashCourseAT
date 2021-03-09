@@ -5,26 +5,25 @@ using System;
 
 namespace OpencartTestFramework.Tests.TestsAPI
 {
-    public class RemovePruductAPI:RestTests
+    public class RemovePruductAPI:LogIn
     {
-        [Test,Order(1)]
-        public void RemoveCart()
+        private static string Key = "key";
+        public static void RemoveCart(int cartId)
         {
-            var client = new RestClient("http://127.0.0.1/opencart/index.php?route=api/cart/remove&api_token=ff7e87b179375856d3c691872a");
+            var client = new RestClient(LogIn.REMOVE_API_URL+LogIn.JsonToken);
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);         
             request.AlwaysMultipartFormData = true;
             //key=cart_id
-            request.AddParameter("key", "33");
+            request.AddParameter(Key, cartId);
             IRestResponse response = client.Execute(request);
             Console.WriteLine(response.Content);
-        }
-        [Test,Order(2)]
-        public void CheckRemoveCartByCartId()
+        }      
+        public static void CheckRemoveCartByCartId()
         {
             try
             {               
-                var cartId = "33";                              
+                var cartId = "51";                              
                 var command = DbContext.GetCartByCartId(cartId);
                 Assert.IsNull(command);              
             }
