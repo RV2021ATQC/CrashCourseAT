@@ -5,13 +5,13 @@ using System;
 
 namespace OpencartTestFramework.Tests.TestsAPI
 {
-   public  class EditProductQuantityAPI:LogIn    
+   public  class EditProductQuantityAPI: TestRunner
     {
         private static string Key = "key";
         private static string Quantity = "quantity";
         public static void EditQuantity(int cartId,int quantity)
         {
-            var client = new RestClient(LogIn.EDIT_API_URL+LogIn.JsonToken);
+            var client = new RestClient(TestRunner.EDIT_API_URL+ TestRunner.JsonToken);
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);
             //key=cart_Id

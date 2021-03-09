@@ -5,13 +5,13 @@ using System;
 
 namespace OpencartTestFramework.Tests.TestsAPI
 {
-    public class AddProductAPI:LogIn
+    public class AddProductAPI: TestRunner
     {
         private static string ProductId = "product_id";
         private static string Quantity = "quantity";
         public static void AddProduct(int productId,int quantity)
         {
-            var client = new RestClient(LogIn.ADD_API_URL+LogIn.JsonToken);
+            var client = new RestClient(TestRunner.ADD_API_URL+ TestRunner.JsonToken);
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);      
             request.AlwaysMultipartFormData = true;

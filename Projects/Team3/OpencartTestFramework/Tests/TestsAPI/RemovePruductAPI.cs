@@ -5,12 +5,12 @@ using System;
 
 namespace OpencartTestFramework.Tests.TestsAPI
 {
-    public class RemovePruductAPI:LogIn
+    public class RemovePruductAPI: TestRunner
     {
         private static string Key = "key";
         public static void RemoveCart(int cartId)
         {
-            var client = new RestClient(LogIn.REMOVE_API_URL+LogIn.JsonToken);
+            var client = new RestClient(TestRunner.REMOVE_API_URL+ TestRunner.JsonToken);
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);         
             request.AlwaysMultipartFormData = true;

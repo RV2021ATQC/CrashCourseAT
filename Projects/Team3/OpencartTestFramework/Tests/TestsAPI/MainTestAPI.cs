@@ -10,7 +10,7 @@ namespace OpencartTestFramework.Tests.TestsAPI
         {
             //first argument - productId , second - quantiny
             AddProductAPI.Login();
-            AddProductAPI.AddProduct(44, 2);
+            AddProductAPI.AddProduct(41, 1);
             AddProductAPI.CheckAddProductByProductId();
         }
         [Test]
@@ -18,7 +18,7 @@ namespace OpencartTestFramework.Tests.TestsAPI
         {
             EditProductQuantityAPI.Login();
             //first argument - cartId , second - quantity
-            EditProductQuantityAPI.EditQuantity(51, 1);
+            EditProductQuantityAPI.EditQuantity(41, 1);
             EditProductQuantityAPI.CheckQuantiny();
         }
         [Test]
@@ -26,7 +26,7 @@ namespace OpencartTestFramework.Tests.TestsAPI
         {
             RemovePruductAPI.Login();
             //argument - cartId
-            RemovePruductAPI.RemoveCart(51);
+            RemovePruductAPI.RemoveCart(53);
             RemovePruductAPI.CheckRemoveCartByCartId();
         }
         [Test]

@@ -8,7 +8,7 @@ using System;
 namespace OpencartTestFramework
 {
     [TestFixture]
-    public class LogIn
+    public class TestRunner
     {
         public static Logger logger = LogManager.GetCurrentClassLogger();
         public static  string JsonToken;
