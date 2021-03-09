@@ -52,7 +52,7 @@ namespace TestFramework.OpenCart
             //Then
             if (registration.SuccessfulyRegistration())
             {
-                DBTest.DeleteCustomer(ValidUser.GetFirstname(), ValidUser.GetLastname(), emailText, ValidUser.GetPhone());
+                DBReader.DeleteCustomer(ValidUser.GetFirstname(), ValidUser.GetLastname(), emailText, ValidUser.GetPhone());
             }
             Assert.Pass();
         }

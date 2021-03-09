@@ -158,16 +158,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\API\ApiClass.cs" />
-    <Compile Include="Data\Database\DBTest.cs" />
+    <Compile Include="Data\Database\DBReader.cs" />
     <Compile Include="Data\Reader.cs" />
     <Compile Include="Pages\ABasePage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\MainPage.cs" />
     <Compile Include="Pages\RegistrationPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\APIRestTest.cs" />
+    <Compile Include="Tests\APIRestTests.cs" />
     <Compile Include="Tests\BaseTest.cs" />
-    <Compile Include="Tests\Tests.cs" />
+    <Compile Include="Tests\UITests.cs" />
     <Compile Include="Data\Users\Users.cs" />
     <Compile Include="Tools\AllurePluginHelper.cs" />
   </ItemGroup>
