@@ -31,8 +31,7 @@ namespace TestFramework.OpenCart
         {
             driver.Quit();
         }
-
-        [Test]
+        [Test, Category("UI")]
         public void Registration()
         {
             //Given
@@ -56,7 +55,7 @@ namespace TestFramework.OpenCart
             }
             Assert.Pass();
         }
-        [Test]
+        [Test, Category("UI")]
         public void Logout()
         {
             //Given
@@ -72,7 +71,7 @@ namespace TestFramework.OpenCart
             //Then
             Assert.IsTrue(main.SuccessfulyLogout());
         }
-        [Test]
+        [Test, Category("UI")]
         public void Login()
         {
             //Given

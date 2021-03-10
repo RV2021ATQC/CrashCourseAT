@@ -36,9 +36,8 @@ namespace TestFramework.OpenCart
             api = new Api().ApiData();
             JsonToken = api.GetToken();
         }
-        //[StartTestCase]
-        [Test]
         [Order(1)]
+        [Test, Category("API")]
         public void TokenValidation()
         {
             Console.WriteLine(JsonToken);
@@ -52,8 +51,8 @@ namespace TestFramework.OpenCart
             //Then
             Assert.AreEqual(command.RemoveSomeFromEnd(3), expectedResult.RemoveSomeFromEnd(3));
         }
-        [Test]
         [Order(2)]
+        [Test, Category("API")]
         [TestCase(41, 4)]
         public void AddProduct(int product_id, int quantity)
         {
@@ -71,7 +70,7 @@ namespace TestFramework.OpenCart
             Assert.AreEqual(expectedResult, command);
         }
         [Order(3)]
-        [Test]
+        [Test, Category("API")]
         public void GetProducts()
         {
             //When
@@ -92,7 +91,7 @@ namespace TestFramework.OpenCart
             Assert.Pass();
         }
         [Order(4)]
-        [Test]
+        [Test, Category("API")]
         [TestCase(6)]
         public void ChangeProduct(int quantity)
         {
@@ -110,7 +109,7 @@ namespace TestFramework.OpenCart
             Assert.AreEqual(command, expectedResult);
         }
         [Order(5)]
-        [Test]
+        [Test, Category("API")]
         public void RemoveProduct()
         {
             //Given
