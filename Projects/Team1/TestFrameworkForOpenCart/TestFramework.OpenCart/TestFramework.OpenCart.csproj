@@ -181,7 +181,6 @@
     <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="Tests\UITests.cs" />
     <Compile Include="Data\Users\Users.cs" />
-    <Compile Include="Tools\AllurePluginHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="allureConfig.Template.json" />
@@ -199,6 +198,7 @@
   <ItemGroup>
     <Folder Include="Allure-Report\" />
     <Folder Include="Allure-Results\" />
+    <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
