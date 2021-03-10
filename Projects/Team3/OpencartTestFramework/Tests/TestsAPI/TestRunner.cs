@@ -1,14 +1,17 @@
 using Newtonsoft.Json;
 using NLog;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 using OpencartTestFramework.Data;
 using RestSharp;
 using System;
+using System.IO;
 
 namespace OpencartTestFramework
 {
     [TestFixture]
-    public class TestRunner
+    [AllureNUnit]
+    public  class TestRunner
     {
         public static Logger logger = LogManager.GetCurrentClassLogger();
         public static  string JsonToken;
@@ -22,7 +25,12 @@ namespace OpencartTestFramework
         private static string userName = "username";
         private static string key = "key";
 
-        [OneTimeSetUp]      
+        [OneTimeSetUp]
+        public void BeforeAllMethods()
+        {
+            Environment.CurrentDirectory = Path.GetDirectoryName(GetType().Assembly.Location);    
+        }
+       
         public static void Login()
         {
             UserData user = new UserData();
@@ -36,7 +44,8 @@ namespace OpencartTestFramework
             Console.WriteLine(response.Content);
             string source = response.Content;
             dynamic data = JsonConvert.DeserializeObject(source);
-            JsonToken = data.api_token;         
+            JsonToken = data.api_token;
+            logger.Info("Api token is : " + data.api_token);
             Console.WriteLine($"Api token is  : {data.api_token}");
         }
     }
