@@ -53,6 +53,7 @@ namespace TestFramework.OpenCart
         private string phone;
         private string password;
         private bool subscribe;
+        private string FULL_PATH_TO_FILE = "C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Data\\Users.csv";
 
         public IUser Build()
         {
@@ -137,23 +138,25 @@ namespace TestFramework.OpenCart
         }
         public IUser Valid()
         {
+            var userCollection = new Reader(FULL_PATH_TO_FILE).ReadUsers();
             return Users.Get()
-                .SetFirstname("qwerty")
-                .SetLastname("qwerty")
-                .SetEmail("qwertys@qwerty.qw")
-                .SetPhone("12345678")
-                .SetPassword("qwerty")
+                .SetFirstname(userCollection[0].FName)
+                .SetLastname(userCollection[0].SName)
+                .SetEmail(userCollection[0].Email)
+                .SetPhone(userCollection[0].Phone)
+                .SetPassword(userCollection[0].Password)
                 .SetSubscribe(false)
                 .Build();
         }
         public IUser ValidForLoginV1()
         {
+            var userCollection = new Reader(FULL_PATH_TO_FILE).ReadUsers();
             return Users.Get()
-                .SetFirstname("qwerty")
-                .SetLastname("qwerty")
-                .SetEmail("seth@aegr.arg")
-                .SetPhone("12345678")
-                .SetPassword("qwerty")
+                .SetFirstname(userCollection[1].FName)
+                .SetLastname(userCollection[1].SName)
+                .SetEmail(userCollection[1].Email)
+                .SetPhone(userCollection[1].Phone)
+                .SetPassword(userCollection[1].Password)
                 .SetSubscribe(false)
                 .Build();
         }

@@ -1,6 +1,9 @@
 ﻿using NUnit.Framework;
 using System;
-
+using NUnit.Allure.Core;
+using Allure.Commons;
+using NUnit.Allure.Attributes;
+using System.IO;
 
 namespace TestFramework.OpenCart
 {
@@ -17,6 +20,7 @@ namespace TestFramework.OpenCart
             return str;
         }
     }
+    [AllureNUnit]
     [TestFixture]
     public class APIRestTest : ABaseTest
     {
@@ -28,11 +32,12 @@ namespace TestFramework.OpenCart
         [OneTimeSetUp]
         public void GetToken()
         {
+            Environment.CurrentDirectory = Path.GetDirectoryName(GetType().Assembly.Location);
             api = new Api().ApiData();
             JsonToken = api.GetToken();
         }
-        [Test]
         [Order(1)]
+        [Test, Category("API")]
         public void TokenValidation()
         {
             Console.WriteLine(JsonToken);
@@ -41,13 +46,13 @@ namespace TestFramework.OpenCart
             log.Info("Start ReadDatabase test");
 
             //When
-            var command = DBTest.CheckSession(JsonToken);
+            var command = DBReader.CheckSession(JsonToken);
 
             //Then
             Assert.AreEqual(command.RemoveSomeFromEnd(3), expectedResult.RemoveSomeFromEnd(3));
         }
-        [Test]
         [Order(2)]
+        [Test, Category("API")]
         [TestCase(41, 4)]
         public void AddProduct(int product_id, int quantity)
         {
@@ -59,13 +64,13 @@ namespace TestFramework.OpenCart
             api.AddToCart(JsonToken, product_id, quantity);
 
             //And
-            var command = DBTest.CheckAddingToCart(JsonToken);
+            var command = DBReader.CheckAddingToCart(JsonToken);
 
             //Then
             Assert.AreEqual(expectedResult, command);
         }
         [Order(3)]
-        [Test]
+        [Test, Category("API")]
         public void GetProducts()
         {
             //When
@@ -86,7 +91,7 @@ namespace TestFramework.OpenCart
             Assert.Pass();
         }
         [Order(4)]
-        [Test]
+        [Test, Category("API")]
         [TestCase(6)]
         public void ChangeProduct(int quantity)
         {
@@ -98,13 +103,13 @@ namespace TestFramework.OpenCart
             api.ChangeProduct(JsonToken, cartId, quantity);
 
             //And
-            var command = DBTest.CheckCartChange(JsonToken);
+            var command = DBReader.CheckCartChange(JsonToken);
 
             //Then
             Assert.AreEqual(command, expectedResult);
         }
         [Order(5)]
-        [Test]
+        [Test, Category("API")]
         public void RemoveProduct()
         {
             //Given
@@ -115,7 +120,7 @@ namespace TestFramework.OpenCart
             api.RemoveProduct(JsonToken, cartId);
 
             //And
-            var command = DBTest.CheckCartEmpty(JsonToken);
+            var command = DBReader.CheckCartEmpty(JsonToken);
 
             //Then
             Assert.AreEqual(command, expectedResult);

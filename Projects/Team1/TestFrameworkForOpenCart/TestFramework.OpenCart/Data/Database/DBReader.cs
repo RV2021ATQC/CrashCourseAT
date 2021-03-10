@@ -9,7 +9,7 @@ using NUnit.Framework;
 
 namespace TestFramework.OpenCart
 {
-    class DBTest
+    class DBReader
     {
         private static readonly string _connectionString = @"Data Source=127.0.0.1;port=3309;username=admin;password=admin;Initial Catalog=storedb;Integrated Security=True";
         public static void ExecuteQuery(string queryString)

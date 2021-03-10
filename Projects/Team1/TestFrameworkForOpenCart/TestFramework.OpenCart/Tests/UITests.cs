@@ -4,9 +4,13 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using System;
 using System.Threading;
+using NUnit.Allure.Core;
+using Allure.Commons;
+using NUnit.Allure.Attributes;
 
 namespace TestFramework.OpenCart
 {
+    [AllureNUnit]
     [Parallelizable]
     [TestFixture(typeof(ChromeDriver))]
     [TestFixture(typeof(FirefoxDriver))]
@@ -27,8 +31,7 @@ namespace TestFramework.OpenCart
         {
             driver.Quit();
         }
-
-        [Test]
+        [Test, Category("UI")]
         public void Registration()
         {
             //Given
@@ -39,7 +42,7 @@ namespace TestFramework.OpenCart
             //When
             var main = new MainPage(driver);
             main.StartRegistration();
-            Thread.Sleep(1000);//ChromeFail
+            
 
             //And
             var registration = new RegistrationPage(driver);
@@ -48,11 +51,11 @@ namespace TestFramework.OpenCart
             //Then
             if (registration.SuccessfulyRegistration())
             {
-                DBTest.DeleteCustomer(ValidUser.GetFirstname(), ValidUser.GetLastname(), emailText, ValidUser.GetPhone());
+                DBReader.DeleteCustomer(ValidUser.GetFirstname(), ValidUser.GetLastname(), emailText, ValidUser.GetPhone());
             }
             Assert.Pass();
         }
-        [Test]
+        [Test, Category("UI")]
         public void Logout()
         {
             //Given
@@ -68,7 +71,7 @@ namespace TestFramework.OpenCart
             //Then
             Assert.IsTrue(main.SuccessfulyLogout());
         }
-        [Test]
+        [Test, Category("UI")]
         public void Login()
         {
             //Given
@@ -77,11 +80,8 @@ namespace TestFramework.OpenCart
 
             //When
             var main = new MainPage(driver);
-
-
-            
             main.StartLogin();
-            Thread.Sleep(1000);//ChromeFail
+            
 
             //And
             var login = new LoginPage(driver);
