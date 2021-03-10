@@ -1,78 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using CsvHelper.Configuration;
 
 namespace TestFramework.OpenCart
 {
-    //class Reader
-    //{
-    //    public const int PATH_PREFIX = 6;
-    //    public const string PATH_SEPARATOR = "\\";
-    //    protected const string FOLDER_DATA = "Data";
-    //    protected const string FOLDER_RESOURCES = "Resources";
-    //    protected const string FOLDER_BIN = "bin";
+    public class ApiView
+    {
+        public string Host { get; set; }
+        public string File { get; set; }
+        public string Key { get; set; }
+        public string Username{ get; set; }
 
-    //    public string Filename { get; private set; }
-    //    public string Path { get; protected set; }
+    }
+    public class UserView
+    {
+        public string FName { get; set; }
+        public string SName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Password { get; set; }
+        public bool Subscribe { get; set; }
 
-    //    protected Reader(string filename)
-    //    {
-    //        Filename = filename;
-    //        Path = System.IO.Path.GetDirectoryName(Assembly.GetAssembly(typeof(Reader)).CodeBase)
-    //                .Substring(PATH_PREFIX);
-    //        Path = Path.Remove(Path.IndexOf(FOLDER_BIN)) + PATH_SEPARATOR + FOLDER_DATA + PATH_SEPARATOR + FOLDER_RESOURCES + PATH_SEPARATOR + filename;
-    //        //MessageBox.Show("Path.GetDirectoryName(Assembly.GetAssembly(typeof(AExternalReader)).CodeBase):\n"
-    //        //    + System.IO.Path.GetDirectoryName(Assembly.GetAssembly(typeof(AExternalReader)).CodeBase),
-    //        //    "Full PATH ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    //    }
-
-    //    public abstract IList<IList<string>> GetAllCells();
-
-    //    public abstract IList<IList<string>> GetAllCells(string path);
-
-    //    public abstract string GetConnection();
-    //    private const char CSV_SPLIT_BY = ';';
-    //    //public string Filename { get; private set; }
-    //    //public string Path { get; private set; }
-
-    //    public CSVReader(string filename) : base(filename)
-    //    {
-    //        //Filename = filename;
-    //        //Path = System.IO.Path.GetDirectoryName(Assembly.GetAssembly(typeof(CSVReader)).CodeBase)
-    //        //        .Substring(PATH_PREFIX);
-    //        //Path = Path.Remove(Path.IndexOf(FOLDER_BIN)) + FOLDER_DATA + PATH_SEPARATOR + filename;
-    //        //MessageBox.Show("Path.GetDirectoryName(Assembly.GetAssembly(typeof(CSVReader)).CodeBase): "
-    //        //    + System.IO.Path.GetDirectoryName(Assembly.GetAssembly(typeof(CSVReader)).CodeBase),
-    //        //    "Full PATH ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    //    }
-
-    //    public override IList<IList<string>> GetAllCells()
-    //    {
-    //        return GetAllCells(Path);
-    //    }
-
-    //    public override IList<IList<string>> GetAllCells(string path)
-    //    {
-    //        Path = path;
-    //        IList<IList<string>> allCells = new List<IList<string>>();
-    //        string row;
-    //        //
-    //        using (StreamReader streamReader = new StreamReader(path))
-    //        {
-    //            while ((row = streamReader.ReadLine()) != null)
-    //            {
-    //                allCells.Add(row.Split(CSV_SPLIT_BY).ToList());
-    //            }
-    //        }
-    //        return allCells;
-    //    }
-
-    //    public override string GetConnection()
-    //    {
-    //        return Path;
-    //    }
-    //}
+    }
+    class Reader
+    {
+        private readonly string FULL_PATH_TO_FILE;
+        
+        public Reader(string path)
+        {
+            FULL_PATH_TO_FILE = path;
+        }
+        public List<UserView> ReadUsers()
+        {
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                HasHeaderRecord = false,
+            };
+            using (var reader = new StreamReader(FULL_PATH_TO_FILE))
+            using (var csv = new CsvReader(reader, config))
+            {
+                var records = csv.GetRecords<UserView>();
+                return records.ToList();
+            }
+        }
+        public List<ApiView> ReadApis()
+        {
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                HasHeaderRecord = false,
+            };
+            using (var reader = new StreamReader(FULL_PATH_TO_FILE))
+            using (var csv = new CsvReader(reader, config))
+            {
+                var records = csv.GetRecords<ApiView>();
+                return records.ToList();
+            }
+        }
+    }
 }

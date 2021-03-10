@@ -45,6 +45,7 @@ namespace TestFramework.OpenCart
     class Api : IHost, ISetFile, ISetKey,
         ISetUsername, IOpencartAPI
     {
+        private string FULL_PATH_TO_FILE = "C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Data\\Api.csv";
         private Method method;
         private IRestClient client;
         private string host;
@@ -103,11 +104,12 @@ namespace TestFramework.OpenCart
         }
         public IOpencartAPI ApiData()
         {
+            var apiCollection = new Reader(FULL_PATH_TO_FILE).ReadApis();
             return Api.Get()
-                .SetHost("http://127.0.0.1/OpencartStore")
-                .SetFile("index.php")
-                .SetKey("w5VWX4p5lex9kU7Nj2abyBHAV1fnaD1zTr58wN8eNXedhs1RbWaK7yx6QrMLk7RimooeWKS33OcuWpJ4ODVQXp1rHkS88o1pau1MHeNE1aSai4EVTqLPTK6kWoJ39Ybs8xl9VZ2WBKpW517fNczKFzUuvk12o4v8WreBLVSpWe50ES8omiM0UnwWKZqIWx9RtYSZ8k9PsvGOQpDpyjjCcQfdCh5KlTm5gGtxTOkIFBP5CA7KTHYZlrCvhwN6hbKl")
-                .SetUsername("Default")
+                .SetHost(apiCollection[0].Host)
+                .SetFile(apiCollection[0].File)
+                .SetKey(apiCollection[0].Key)
+                .SetUsername(apiCollection[0].Username)
                 .Build();
         }
         public string GetToken()
