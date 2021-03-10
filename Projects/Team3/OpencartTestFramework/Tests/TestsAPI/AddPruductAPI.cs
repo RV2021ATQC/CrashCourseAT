@@ -11,6 +11,7 @@ namespace OpencartTestFramework.Tests.TestsAPI
         private static string Quantity = "quantity";
         public static void AddProduct(int productId,int quantity)
         {
+            logger.Info("Starting Add product Test");
             var client = new RestClient(TestRunner.ADD_API_URL+ TestRunner.JsonToken);
             client.Timeout = -1;
             var request = new RestRequest(Method.POST);      
@@ -18,14 +19,15 @@ namespace OpencartTestFramework.Tests.TestsAPI
             request.AddParameter(ProductId, productId);
             request.AddParameter(Quantity, quantity);
             IRestResponse response = client.Execute(request);
-            Console.WriteLine(response.Content);            
+            Console.WriteLine(response.Content);
+            logger.Info("Done");
         }   
         public static void CheckAddProductByProductId()
         {
             try
             {               
-                var expectedId = "41";
-                var productId = "41";              
+                var expectedId = "44";
+                var productId = "44";              
                 var command = DbContext.GetPruductById(productId);
 
                 Assert.AreEqual(command, expectedId);
