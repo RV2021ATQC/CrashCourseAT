@@ -7,11 +7,10 @@ using NUnit.Allure.Core;
 
 namespace OpencartTestFramework
 {
-    //[Parallelizable(ParallelScope.All)]
     [TestFixture(typeof(ChromeDriver))]
     [TestFixture(typeof(FirefoxDriver))]
     [AllureNUnit]
-    public class AddAndRemoveProductTest<T> where T : IWebDriver, new()
+    public class AddAndRemoveProductTest <T> where T : IWebDriver, new()
     {
         public const string URL = "https://demo.opencart.com/";
         private IWebDriver driver;
@@ -20,7 +19,7 @@ namespace OpencartTestFramework
         public void BeforeAllMethods()
         {
             driver = new T();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
         }
         [OneTimeTearDown]
         public void AfterAllMethods()
@@ -32,20 +31,17 @@ namespace OpencartTestFramework
         {
             //Given
             var Home = new HomePage(driver);
-            driver.Navigate().GoToUrl(URL); //for "demo.opencart" session
-            Home.Waiter();
+            driver.Navigate().GoToUrl(URL);
 
             //When
             var Shoppingcart = new ShoppingCartPage(driver);
             Home.SeachProductInField();
             Shoppingcart.AddSearchProduct();
-            Shoppingcart.Waiter();
 
             //Then
             Home.GoBackToHome();
             Shoppingcart.CheckProductInShopingCart();
-            Home.CheckTextInTheEnd();
-            Home.Waiter();
+            Home.CheckAvailableProduct();
 
             //And
             Shoppingcart.DeleteProductFromShoppingCart();

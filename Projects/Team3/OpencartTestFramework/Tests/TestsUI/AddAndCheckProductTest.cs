@@ -7,7 +7,6 @@ using NUnit.Allure.Core;
 
 namespace OpencartTestFramework
 {
-    //[Parallelizable(ParallelScope.All)]
     [TestFixture(typeof(ChromeDriver))]
     [TestFixture(typeof(FirefoxDriver))]
     [AllureNUnit]
@@ -31,23 +30,19 @@ namespace OpencartTestFramework
         {
             //Given
             var Home = new HomePage(driver);
-            Home.GoToSite();
-            Home.Waiter();
+            Home.GoToOpencartPage();
             Home.OpenTheMonitors();
 
             //When
             var Shoppingcart = new ShoppingCartPage(driver);
-            Home.WantedProduct();
+            Home.ChooseWantedProduct();
             Shoppingcart.AddProductToCart();
-            Shoppingcart.Waiter();
 
             //Then
-            Home.GoBackToHome();
             Shoppingcart.CheckProductInShopingCart();
-            Shoppingcart.Waiter();
 
             //And
-            Home.CheckTextInTheEnd();
+            Home.CheckAvailableProduct();
         }
     }
 }

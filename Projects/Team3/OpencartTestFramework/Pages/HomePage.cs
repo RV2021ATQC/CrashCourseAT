@@ -7,6 +7,7 @@ namespace OpencartTestFramework
     public class HomePage : BasePage
     {
         public const string URLSITE = "http://127.0.0.1:81/opencart/";
+        public const string NAMEOFPRODUCT = "Samsung SyncMaster 941BW";
         public HomePage(IWebDriver driver) : base(driver) { }
         public IWebElement ComponentsDropDown => driver.FindElement(By.XPath("/html/body/div[1]/nav/div[2]/ul/li[3]/a"));
         public IWebElement MonitorsButton => driver.FindElement(By.XPath("/html/body/div[1]/nav/div[2]/ul/li[3]/div/div/ul/li[2]/a"));
@@ -14,12 +15,8 @@ namespace OpencartTestFramework
         public IWebElement SearchField => driver.FindElement(By.XPath("/html/body/header/div/div/div[2]/div/input"));
         public IWebElement SearchElement => driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div/table/tbody/tr/td[2]/a"));
         public IWebElement BackToHome => driver.FindElement(By.XPath("/html/body/header/div/div/div[1]/div/h1/a"));
-        public void Waiter()
-        {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
-        }
-
-        public void GoToSite()
+        
+        public void GoToOpencartPage()
         {
             driver.Navigate().GoToUrl(URLSITE);
         }
@@ -30,7 +27,7 @@ namespace OpencartTestFramework
             MonitorsButton.Click();
         }
 
-        public void WantedProduct()
+        public void ChooseWantedProduct()
         {
             ProductName.Click();
         }
@@ -40,9 +37,9 @@ namespace OpencartTestFramework
             BackToHome.Click();
         }
 
-        public void CheckTextInTheEnd()
+        public void CheckAvailableProduct()
         {
-            Assert.True(SearchElement.Text.Contains("Samsung SyncMaster 941BW"));
+            Assert.True(SearchElement.Text.Contains(NAMEOFPRODUCT));
         }
 
         public void SeachProductInField()
