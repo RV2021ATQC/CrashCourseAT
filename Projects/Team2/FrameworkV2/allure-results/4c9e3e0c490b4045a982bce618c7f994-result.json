@@ -1,0 +1,63 @@
+{
+  "uuid": "e8eec4ef-255c-43ce-8179-ab27e191e2c8-tr-0-1004",
+  "historyId": "Framework.Test.CheckPageItemsTest.CheckNotebook",
+  "fullName": "Framework.Test.CheckPageItemsTest.CheckNotebook",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "PC1NCHXD"
+    },
+    {
+      "name": "testClass",
+      "value": "Framework.Test.CheckPageItemsTest"
+    },
+    {
+      "name": "testMethod",
+      "value": "CheckNotebook"
+    },
+    {
+      "name": "package",
+      "value": "Framework.Test.CheckPageItemsTest"
+    }
+  ],
+  "links": [],
+  "name": "CheckNotebook",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "CheckNotebook",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "281e0cd9611d4dcd83058b6ffb7da9dc-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1615464349459,
+      "stop": 1615464350671
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1615464349459,
+  "stop": 1615464350672
+}

@@ -1,0 +1,63 @@
+{
+  "uuid": "313fafd0-c811-4b86-acc9-9f42ff21891d-tr-0-1001",
+  "historyId": "Framework.Test.AutorizationTest.AutorizationPageTest",
+  "fullName": "Framework.Test.AutorizationTest.AutorizationPageTest",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "PC1NCHXD"
+    },
+    {
+      "name": "testClass",
+      "value": "Framework.Test.AutorizationTest"
+    },
+    {
+      "name": "testMethod",
+      "value": "AutorizationPageTest"
+    },
+    {
+      "name": "package",
+      "value": "Framework.Test.AutorizationTest"
+    }
+  ],
+  "links": [],
+  "name": "AutorizationPageTest",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "AutorizationPageTest",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "a0e89d8665674f159c12e992a9f0164d-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1615464322711,
+      "stop": 1615464328560
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1615464322710,
+  "stop": 1615464328566
+}

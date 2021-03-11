@@ -1,0 +1,46 @@
+{
+  "uuid": "775fb7cb-8015-477e-8c15-c4b9946310a2-tc-0-1002",
+  "name": "Framework.Test.CheckPageItemsTest.CheckDesktops",
+  "children": [
+    "8f8da7ca-064e-4a16-842e-14e8e0905515-tr-0-1003"
+  ],
+  "befores": [
+    {
+      "name": "StartTest",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1615464349347,
+      "stop": 1615464349347
+    }
+  ],
+  "afters": [
+    {
+      "name": "EndTest",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1615464349349,
+      "stop": 1615464349349
+    }
+  ],
+  "links": [],
+  "start": 1615464347519,
+  "stop": 1615464349434
+}
