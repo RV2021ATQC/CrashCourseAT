@@ -191,7 +191,9 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="allureConfig.Template.json" />
+    <EmbeddedResource Include="allureConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
