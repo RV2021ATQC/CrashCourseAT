@@ -49,7 +49,7 @@ namespace TestFramework.OpenCart
             var command = DBReader.CheckSession(JsonToken);
 
             //Then
-            Assert.AreEqual(command.RemoveSomeFromEnd(3), expectedResult.RemoveSomeFromEnd(3));
+            Assert.AreEqual(expectedResult.RemoveSomeFromEnd(3), command.RemoveSomeFromEnd(3));
         }
         [Order(2)]
         [Test, Category("API")]
@@ -106,7 +106,7 @@ namespace TestFramework.OpenCart
             var command = DBReader.CheckCartChange(JsonToken);
 
             //Then
-            Assert.AreEqual(command, expectedResult);
+            Assert.AreEqual(expectedResult, command);
         }
         [Order(5)]
         [Test, Category("API")]
@@ -123,7 +123,7 @@ namespace TestFramework.OpenCart
             var command = DBReader.CheckCartEmpty(JsonToken);
 
             //Then
-            Assert.AreEqual(command, expectedResult);
+            Assert.AreEqual(expectedResult, command);
         }
     }
 }

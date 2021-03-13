@@ -52,8 +52,10 @@ namespace TestFramework.OpenCart
             if (registration.SuccessfulyRegistration())
             {
                 DBReader.DeleteCustomer(ValidUser.GetFirstname(), ValidUser.GetLastname(), emailText, ValidUser.GetPhone());
+                Assert.Pass();
             }
-            Assert.Pass();
+            else
+                Assert.Fail();
         }
         [Test, Category("UI")]
         public void Logout()
