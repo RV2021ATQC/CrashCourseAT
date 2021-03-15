@@ -1,0 +1,67 @@
+{
+  "uuid": "de39d90b-b161-4a00-9af2-d82224e6f4d1-tr-0-1001",
+  "historyId": "TestFramework.OpenCart.APIRestTest.TokenValidation",
+  "fullName": "TestFramework.OpenCart.APIRestTest.TokenValidation",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ASUSROG"
+    },
+    {
+      "name": "testClass",
+      "value": "TestFramework.OpenCart.APIRestTest"
+    },
+    {
+      "name": "testMethod",
+      "value": "TokenValidation"
+    },
+    {
+      "name": "package",
+      "value": "TestFramework.OpenCart.APIRestTest"
+    },
+    {
+      "name": "tag",
+      "value": "API"
+    }
+  ],
+  "links": [],
+  "name": "TokenValidation",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "TokenValidation",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "1362776e6f454302b61c7351e8124000-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1615464581503,
+      "stop": 1615464581950
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1615464581502,
+  "stop": 1615464581954
+}

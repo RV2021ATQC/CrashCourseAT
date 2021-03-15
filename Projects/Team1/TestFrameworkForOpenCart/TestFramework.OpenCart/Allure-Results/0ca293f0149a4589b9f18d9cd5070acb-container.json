@@ -1,0 +1,28 @@
+{
+  "uuid": "ff6dc27d-21a5-4bbd-ba52-7b0380056fa9-tc-0-1000",
+  "name": "TestFramework.OpenCart.APIRestTest.RemoveProduct",
+  "children": [
+    "0d343e6e-95c2-4180-996b-9b7632f141fe-tr-0-1007"
+  ],
+  "befores": [
+    {
+      "name": "GetToken",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1615489736294,
+      "stop": 1615489736294
+    }
+  ],
+  "afters": [],
+  "links": [],
+  "start": 1615489736245,
+  "stop": 1615489736301
+}

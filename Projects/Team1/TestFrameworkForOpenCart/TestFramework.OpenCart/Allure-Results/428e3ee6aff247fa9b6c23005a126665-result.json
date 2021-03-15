@@ -1,0 +1,71 @@
+{
+  "uuid": "3bec60ff-0594-4b37-9208-591b9ecaaaa8-tr-0-1012",
+  "historyId": "TestFramework.OpenCart.SeleniumFirst<FirefoxDriver>.Registration",
+  "fullName": "TestFramework.OpenCart.SeleniumFirst<FirefoxDriver>.Registration",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#9"
+    },
+    {
+      "name": "host",
+      "value": "ASUSROG"
+    },
+    {
+      "name": "testClass",
+      "value": "TestFramework.OpenCart.SeleniumFirst`1"
+    },
+    {
+      "name": "testMethod",
+      "value": "Registration"
+    },
+    {
+      "name": "package",
+      "value": "TestFramework.OpenCart.SeleniumFirst`1"
+    },
+    {
+      "name": "tag",
+      "value": "UI"
+    }
+  ],
+  "links": [],
+  "name": "Registration",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "",
+    "trace": "   at TestFramework.OpenCart.SeleniumFirst`1.Registration() in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Tests\\UITests.cs:line 56\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Registration",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "",
+        "trace": "   at TestFramework.OpenCart.SeleniumFirst`1.Registration() in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Tests\\UITests.cs:line 56\r\n"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "68f1ec2c16fe4d2a821cd453fc4c1f7a-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1615464591182,
+      "stop": 1615464601435
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1615464591182,
+  "stop": 1615464601435
+}

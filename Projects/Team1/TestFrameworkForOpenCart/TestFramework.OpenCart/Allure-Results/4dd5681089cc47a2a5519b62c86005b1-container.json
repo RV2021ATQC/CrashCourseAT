@@ -1,0 +1,44 @@
+{
+  "uuid": "fa0b841a-f8ed-4756-ae22-90cb125fb7a5-tc-0-1012",
+  "name": "TestFramework.OpenCart.SeleniumFirst<FirefoxDriver>.Logout",
+  "children": [
+    "ba5c82b9-fdd1-4a3f-b0c8-5c8a750c6d27-tr-0-1014"
+  ],
+  "befores": [
+    {
+      "name": "BeforeAllMethods",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1615487351813,
+      "stop": 1615487351813
+    }
+  ],
+  "afters": [
+    {
+      "name": "AfterAllMethods",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1615487351813,
+      "stop": 1615487351813
+    }
+  ],
+  "links": [],
+  "start": 1615487340291,
+  "stop": 1615487351827
+}

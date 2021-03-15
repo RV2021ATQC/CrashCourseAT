@@ -1,0 +1,46 @@
+{
+  "uuid": "f960822c-b6ec-453b-9647-eeb6527fb9bd-tc-0-1008",
+  "name": "TestFramework.OpenCart.SeleniumFirst<ChromeDriver>.Login",
+  "children": [
+    "71fac6d3-03e7-402a-bb48-fe0e73a9c8b3-tr-0-1011"
+  ],
+  "befores": [
+    {
+      "name": "BeforeAllMethods",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1615489799424,
+      "stop": 1615489799424
+    }
+  ],
+  "afters": [
+    {
+      "name": "AfterAllMethods",
+      "status": "none",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "It's not possible to get status of OneTimeTearDown",
+        "trace": "See Allure.NUnit wiki"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1615489799424,
+      "stop": 1615489799424
+    }
+  ],
+  "links": [],
+  "start": 1615489796242,
+  "stop": 1615489799437
+}

@@ -1,0 +1,71 @@
+{
+  "uuid": "03161161-734c-4acb-8e7e-65e8e4dd7da6-tr-0-1009",
+  "historyId": "TestFramework.OpenCart.SeleniumFirst<ChromeDriver>.Registration",
+  "fullName": "TestFramework.OpenCart.SeleniumFirst<ChromeDriver>.Registration",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#2"
+    },
+    {
+      "name": "host",
+      "value": "ASUSROG"
+    },
+    {
+      "name": "testClass",
+      "value": "TestFramework.OpenCart.SeleniumFirst`1"
+    },
+    {
+      "name": "testMethod",
+      "value": "Registration"
+    },
+    {
+      "name": "package",
+      "value": "TestFramework.OpenCart.SeleniumFirst`1"
+    },
+    {
+      "name": "tag",
+      "value": "UI"
+    }
+  ],
+  "links": [],
+  "name": "Registration",
+  "status": "failed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=89.0.4389.82)",
+    "trace": "   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.set_Url(String value)\r\n   at OpenQA.Selenium.Remote.RemoteNavigator.GoToUrl(String url)\r\n   at TestFramework.OpenCart.MainPage.GoToMain() in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Pages\\MainPage.cs:line 16\r\n   at TestFramework.OpenCart.MainPage..ctor(IWebDriver driver) in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Pages\\MainPage.cs:line 14\r\n   at TestFramework.OpenCart.SeleniumFirst`1.Registration() in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Tests\\UITests.cs:line 43"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Registration",
+      "status": "failed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "OpenQA.Selenium.NoSuchWindowException : no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=89.0.4389.82)",
+        "trace": "   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)\r\n   at OpenQA.Selenium.Remote.RemoteWebDriver.set_Url(String value)\r\n   at OpenQA.Selenium.Remote.RemoteNavigator.GoToUrl(String url)\r\n   at TestFramework.OpenCart.MainPage.GoToMain() in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Pages\\MainPage.cs:line 16\r\n   at TestFramework.OpenCart.MainPage..ctor(IWebDriver driver) in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Pages\\MainPage.cs:line 14\r\n   at TestFramework.OpenCart.SeleniumFirst`1.Registration() in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Tests\\UITests.cs:line 43"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "c364002a02d94d03a2a7e1af85b9c01b-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1615489809172,
+      "stop": 1615489809177
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1615489809172,
+  "stop": 1615489809177
+}

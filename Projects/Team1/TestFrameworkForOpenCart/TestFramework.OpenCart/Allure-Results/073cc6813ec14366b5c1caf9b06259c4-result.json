@@ -1,0 +1,71 @@
+{
+  "uuid": "9ebdec4d-3b49-4e3a-9cda-9f92062089c1-tr-0-1009",
+  "historyId": "TestFramework.OpenCart.SeleniumFirst<ChromeDriver>.Registration",
+  "fullName": "TestFramework.OpenCart.SeleniumFirst<ChromeDriver>.Registration",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#1"
+    },
+    {
+      "name": "host",
+      "value": "ASUSROG"
+    },
+    {
+      "name": "testClass",
+      "value": "TestFramework.OpenCart.SeleniumFirst`1"
+    },
+    {
+      "name": "testMethod",
+      "value": "Registration"
+    },
+    {
+      "name": "package",
+      "value": "TestFramework.OpenCart.SeleniumFirst`1"
+    },
+    {
+      "name": "tag",
+      "value": "UI"
+    }
+  ],
+  "links": [],
+  "name": "Registration",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false,
+    "message": "",
+    "trace": "   at TestFramework.OpenCart.SeleniumFirst`1.Registration() in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Tests\\UITests.cs:line 55\r\n"
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Registration",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false,
+        "message": "",
+        "trace": "   at TestFramework.OpenCart.SeleniumFirst`1.Registration() in C:\\Users\\Den25\\Documents\\GitHub\\CrashCourseAT\\Projects\\Team1\\TestFrameworkForOpenCart\\TestFramework.OpenCart\\Tests\\UITests.cs:line 55\r\n"
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "b007f620087144b0bc25467139d091a6-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1615802188287,
+      "stop": 1615802197475
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1615802188287,
+  "stop": 1615802197475
+}

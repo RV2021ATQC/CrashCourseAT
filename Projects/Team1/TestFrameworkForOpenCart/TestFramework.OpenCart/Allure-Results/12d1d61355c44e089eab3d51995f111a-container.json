@@ -1,0 +1,44 @@
+{
+  "uuid": "45231440-6aae-4e9d-98e5-02f8f52659e1-tc-0-1008",
+  "name": "TestFramework.OpenCart.SeleniumFirst<ChromeDriver>.Login",
+  "children": [
+    "b4b5e177-fa99-4056-8bd2-94ac80720555-tr-0-1011"
+  ],
+  "befores": [
+    {
+      "name": "BeforeAllMethods",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1615489740609,
+      "stop": 1615489740609
+    }
+  ],
+  "afters": [
+    {
+      "name": "AfterAllMethods",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1615489740609,
+      "stop": 1615489740609
+    }
+  ],
+  "links": [],
+  "start": 1615489737489,
+  "stop": 1615489740620
+}

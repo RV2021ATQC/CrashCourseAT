@@ -1,0 +1,67 @@
+{
+  "uuid": "3e6d1aa2-7d24-4d35-a26e-53812f35599a-tr-0-1010",
+  "historyId": "TestFramework.OpenCart.SeleniumFirst<ChromeDriver>.Logout",
+  "fullName": "TestFramework.OpenCart.SeleniumFirst<ChromeDriver>.Logout",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "ParallelWorker#3"
+    },
+    {
+      "name": "host",
+      "value": "ASUSROG"
+    },
+    {
+      "name": "testClass",
+      "value": "TestFramework.OpenCart.SeleniumFirst`1"
+    },
+    {
+      "name": "testMethod",
+      "value": "Logout"
+    },
+    {
+      "name": "package",
+      "value": "TestFramework.OpenCart.SeleniumFirst`1"
+    },
+    {
+      "name": "tag",
+      "value": "UI"
+    }
+  ],
+  "links": [],
+  "name": "Logout",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Logout",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [
+        {
+          "name": "Console Output",
+          "source": "8cd0856c8cc94418b060c037fa43fa19-attachment.txt",
+          "type": "text/plain"
+        }
+      ],
+      "parameters": [],
+      "start": 1615487339542,
+      "stop": 1615487345353
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1615487339542,
+  "stop": 1615487345353
+}
