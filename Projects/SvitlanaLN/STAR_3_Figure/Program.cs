@@ -35,86 +35,86 @@ namespace Star_3_Figure
         public static void Main()
         {
             var figure = new List<Figure>();
-              
-              //figure0
-              Console.WriteLine("\nUnvisible creating new figure0...\n");        
-              Figure figure0 = new ("circle", DateTime.Parse("19/02/2000"));
-              figure.Add(figure0);
+                
+                //figure0
+                Console.WriteLine("\nUnvisible creating new figure0...\n");        
+                Figure figure0 = new ("circle", DateTime.Parse("19/02/2030"));
+                figure.Add(figure0);
 
-              //rectangle1
-              Console.WriteLine("Initializing new rectangle1:");
-              Rectangle rectangle1 = new ();
-              rectangle1.SetNewInfo();
-              figure.Add(rectangle1);
+               //rectangle1
+                Console.WriteLine("Initializing new rectangle1:");
+                Rectangle rectangle1 = new ();
+                rectangle1.SetNewInfo();
+                figure.Add(rectangle1);
 
-              //figure2
-              Console.WriteLine("\nUnvisible creating new figure2...\n");
-              Figure figure2 = new();
-              figure.Add(figure2);
+                //figure2
+                Console.WriteLine("\nUnvisible creating new figure2...\n");
+                Figure figure2 = new();
+                figure.Add(figure2);
 
-              //rectangle3 (from figure2)
-              Console.WriteLine("\nConverting existing figure2 to a rectangle3:");
-              Rectangle rectangle3 = Rectangle.ConvertToRectangle(figure2);
-              rectangle3.SetNewInfo(false);
-              figure.Add(rectangle3);
+                //rectangle3 (from figure2)
+                Console.WriteLine("\nConverting existing figure2 to a rectangle3:");
+                Rectangle rectangle3 = Rectangle.ConvertToRectangle(figure2);
+                rectangle3.SetNewInfo(false);
+                figure.Add(rectangle3);
 
-            var name = new string("_");
-            var date = DateTime.Parse("02/02/2011");
+              var name = new string("_");
+              var date = DateTime.Parse("02/02/2011");
 
-            //random figures 
-            foreach (int k in Enumerable.Range(0, 3))
-            {
-                figure.Add(new Figure(name + k + "f", new DateTime(DateTime.Today.Year, DateTime.Today.Month, new Random().Next(1, DateTime.Today.Day))));
-            }
-
-            //random rectangles
-            foreach (int k in Enumerable.Range(0, 3))
-            {
-                figure.Add(new Rectangle(name + k + "r", new DateTime(DateTime.Today.Year, DateTime.Today.Month, new Random().Next(1, DateTime.Today.Day)), 20, new Random().Next(1, 20)));
-            }
-
-              Console.WriteLine("\n----------Original Collection----------");
-              foreach (var it in figure.Select((x, i) => new { item = x, index = i }))
+              //random figures 
+              foreach (int k in Enumerable.Range(0, 3))
               {
-                  Console.Write($"\n{it.item.GetType().Name} № {it.index}");
-                  it.item.Display();
-              } 
+                  figure.Add(new Figure(name + k + "f", new DateTime(DateTime.Today.Year, DateTime.Today.Month, new Random().Next(1, DateTime.Today.Day))));
+              }
 
-              Console.WriteLine("\n----------Restored JSON Collection----------");
-              foreach (var it in JSONSerializer(figure).Select((x, i) => new { item = x, index = i }))
+              //random rectangles
+              foreach (int k in Enumerable.Range(0, 3))
+              {
+                  figure.Add(new Rectangle(name + k + "r", new DateTime(DateTime.Today.Year, DateTime.Today.Month, new Random().Next(1, DateTime.Today.Day)), 20, new Random().Next(1, 20)));
+              }
+
+                Console.WriteLine("\n----------Original Collection----------");
+                foreach (var it in figure.Select((x, i) => new { item = x, index = i }))
+                {
+                    Console.Write($"\n{it.item.GetType().Name} № {it.index}");
+                    it.item.Display();
+                } 
+
+                Console.WriteLine("\n----------Restored JSON Collection----------");
+                foreach (var it in JSONSerializer(figure).Select((x, i) => new { item = x, index = i }))
+                {
+                    Console.Write($"\n{it.item.GetType().Name} № {it.index}");
+                    it.item.Display();
+                }
+
+
+              Console.WriteLine("\n----------Restored XML Collection----------");
+              foreach (var it in XmlSerializer(figure).Select((x, i) => new { item = x, index = i }))
               {
                   Console.Write($"\n{it.item.GetType().Name} № {it.index}");
                   it.item.Display();
               }
-            
 
-            Console.WriteLine("\n----------Restored XML Collection----------");
-            foreach (var it in XmlSerializer(figure).Select((x, i) => new { item = x, index = i }))
-            {
-                Console.Write($"\n{it.item.GetType().Name} № {it.index}");
-                it.item.Display();
-            }
-               
-               //List of figures which date creation are less then 7 days
-               Console.WriteLine("\n\n" +
-               "----------List of figures which date creation are less then 7 days----------\n");
-               foreach (var it in new List<Figure>(from it in figure
-               where it.GetCreatedDate() < 7
-               select it).Select((x, i) => new { item = x, index = i }))
-               {
-                   Console.Write($"\n{it.item.GetType().Name} № {it.index}");
-                   it.item.Display();
-               }
-/*
-               //Rectangles sorted by heights
-               var RectanglesByHeights = figure.OfType<Rectangle>().OrderBy(it => Rectangle.Correct_Double(it.Height)).ToList();
-               Console.WriteLine("\n\n" +
-               "----------Rectangles sorted by heights----------\n");
-               foreach (var it in RectanglesByHeights.Select((x, i) => new { item = x, index = i }))
-               {
-                    Console.Write($"\n{it.item.GetType().Name} № {it.index}");
-                    it.item.Display();
-               }*/
+                 //List of figures which date creation are less then 7 days
+                 Console.WriteLine("\n\n" +
+                 "----------List of figures which date creation are less then 7 days----------\n");
+                 foreach (var it in new List<Figure>(from it in figure
+                 where it.GetCreatedDate(DateTime.Today) < 7
+                 select it).Select((x, i) => new { item = x, index = i }))
+                 {
+                     Console.Write($"\n{it.item.GetType().Name} № {it.index}");
+                     it.item.Display();
+                 }
+
+                 //Rectangles sorted by heights
+                 var RectanglesByHeights = figure.OfType<Rectangle>().OrderBy(it => Rectangle.Correct_Double(it.Height)).ToList();
+                 Console.WriteLine("\n\n" +
+                 "----------Rectangles sorted by heights----------\n");
+                 foreach (var it in RectanglesByHeights.Select((x, i) => new { item = x, index = i }))
+                 {
+                      Console.Write($"\n{it.item.GetType().Name} № {it.index}");
+                      it.item.Display();
+                 }
             Console.WriteLine(SortByHeight(figure));
 
             Console.ReadKey();

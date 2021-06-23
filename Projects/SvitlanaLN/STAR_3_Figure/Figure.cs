@@ -1,22 +1,41 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Star_3_Figure
 {
     [Serializable]
     public class Figure
     {
+        //перевіряю, чи дата коректна 
+        public static void Correct_Parse_DateTime(string inputString)
+        {
+            if (!DateTime.TryParse(inputString, out DateTime _1))
+                throw new ArgumentException();
+            else if ((DateTime.TryParse(inputString, out DateTime _2))&(_2 >DateTime.Today.Date))
+                throw new ArgumentOutOfRangeException();
+        }
+
+        //зчитуємо дані, поки дата не буде коректною
         public static DateTime Correct_Date(string inputString)
         {
-            DateTime _1;
-            while ((!DateTime.TryParse(inputString, out _1)) | ((DateTime.TryParse(inputString, out _1)) & (_1 > DateTime.Today.Date)))
+            try
             {
-                if (!DateTime.TryParse(inputString, out _1))
-                    Console.WriteLine("Could not convert '{0}' to a datetime. Input date again: ", inputString);
-                else if ((DateTime.TryParse(inputString, out _1)) & (_1 > DateTime.Today))
-                    Console.WriteLine($"!!Create date {_1.ToShortDateString()} can not be more then today date {DateTime.Today.ToShortDateString()}! \nInput date again:");
-                inputString = Console.ReadLine();
+                Correct_Parse_DateTime(inputString);
             }
-            return _1;
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine($"Create date {inputString} can not be more then today date {DateTime.Today.ToShortDateString()}! \nInput date again:");
+                inputString = Console.ReadLine();
+                return Correct_Date(inputString);
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine($"Could not convert '{inputString}' to a datetime! \nInput date again: ");
+                inputString = Console.ReadLine();
+                return Correct_Date(inputString);
+            }
+            DateTime.TryParse(inputString, out DateTime _3);
+            return _3;
         }
         public static double Correct_Double(string inputString)
         {
@@ -45,7 +64,7 @@ namespace Star_3_Figure
             set
             {
                 create_date = Correct_Date(value);
-                GetCreatedDate();
+                GetCreatedDate(DateTime.Today);
             }
         }
         public string Color { get; set; }
@@ -72,16 +91,23 @@ namespace Star_3_Figure
             {
                 Name = name;
                 Color = color;
-                GetCreatedDate();
+                GetCreatedDate(DateTime.Today);
             }
         }
         public Figure(string name, DateTime create_date) : this(name, create_date, "red", 100) { }
 
         public Figure() : this("Default name", DateTime.Parse("01/01/2021")) { }
-        public int GetCreatedDate() => DateTime.Today.Subtract(Correct_Date(Create_date)).Days;
+        public int GetCreatedDate(DateTime date1)
+        {
+            if (Correct_Date(Create_date) < date1)
+                return date1.Subtract(Correct_Date(Create_date)).Days;
+            else if (Correct_Date(Create_date) > date1)
+                return -Correct_Date(Create_date).Subtract(date1).Days;
+            else return 0;
 
+        }
         public override string ToString() => string.Join("", "\nShape: ", GetShape(), "\nName: ", Name,
-                                                             "\nCreation date: ", Create_date, "\nDays from creations: ", GetCreatedDate(),
+                                                             "\nCreation date: ", Create_date, "\nDays from creations: ", GetCreatedDate(DateTime.Today),
                                                              "\nColor: ", Color, "\nArea: ", Area, " sm.kv.");
         public virtual void Display() => Console.WriteLine(this);
 
