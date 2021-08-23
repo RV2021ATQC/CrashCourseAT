@@ -2,7 +2,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
-
 namespace Star_3_Figure
 {
     [TestFixture]
@@ -57,7 +56,7 @@ namespace Star_3_Figure
             public int TestGetCreatedDate(string date_1)
             {
                Figure figure = new Figure("test_figure", DateTime.Parse(date_1));
-               return figure.GetCreatedDate(DateTime.Parse("19/06/2021"));
+               return figure.GetCreatedDays(DateTime.Parse("19/06/2021"));
             }
 
             [Test]
@@ -68,8 +67,8 @@ namespace Star_3_Figure
         public void TestCorrect_Parse_DateTime(string date_1, Type expectedException)
                  {
                if (expectedException is not null)
-                  Assert.Throws(expectedException, () => Figure.Correct_Parse_DateTime(date_1)); 
-               else Assert.DoesNotThrow(() => Figure.Correct_Parse_DateTime(date_1));
+                  Assert.Throws(expectedException, () => Figure.Check_Valid_Date(date_1)); 
+               else Assert.DoesNotThrow(() => Figure.Check_Valid_Date(date_1));
         }
 
 

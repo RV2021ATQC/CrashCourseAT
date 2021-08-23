@@ -1,6 +1,4 @@
 ﻿using System;
-
-
 namespace Star_3_Figure
 {
     [Serializable]
@@ -8,18 +6,19 @@ namespace Star_3_Figure
     {
         private double width;
         private double height;
+        public string Width { get => width.ToString(); set => width = Convert_Double(value); }
 
-        public string Width { get => width.ToString(); set => width = Correct_Double(value); }
-        public string Height { get => height.ToString(); set => height = Correct_Double(value); }
-
+        public string Height { get => height.ToString(); set => height = Convert_Double(value); }
 
         public Rectangle() : base() => Width = Height = "10";
+        
         public Rectangle(string name, DateTime create_date, double W, double H) : base(name, create_date)
         {
             Width = W.ToString();
             Height = H.ToString();
             Area = (width * height).ToString();
         }
+        
         public override string ToString() => string.Join("", base.ToString(), "\nWirth: ", Width, " sm", "\nHeight: ", Height, " sm");
 
         public override void Display() => Console.WriteLine(this);
@@ -31,15 +30,16 @@ namespace Star_3_Figure
             try
             {
                 Console.Write("Enter properties of a rectangle:\nWidth: ");
-                Width = Correct_Double(Console.ReadLine()).ToString();
+                Width = Convert_Double(Console.ReadLine()).ToString();
                 Console.Write("Height: ");
-                Height = Correct_Double(Console.ReadLine()).ToString();
+                Height = Convert_Double(Console.ReadLine()).ToString();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
             Area = (width * height).ToString();
         }
 
         public override string GetShape() => "rectangle";
+        
         public static Rectangle ConvertToRectangle(Figure figure)
         {
             Rectangle r = new()
@@ -49,5 +49,6 @@ namespace Star_3_Figure
             };
             return r;
         }
+
     }
 }
