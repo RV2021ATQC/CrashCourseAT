@@ -1,0 +1,26 @@
+"Try to pass the test
+https://softserve.academy/mod/quiz/view.php?id=2557
+
+
+
+Install all utilites and envs
+(Visual Studio Community Edition, Postman
+XAMPP(Apache, MySQL) + Bitnami + OpenCart
+https://www.youtube.com/watch?v=QggYaQOqHjQ
+
+ 192.168.1.123
+
+SourceTree\GitHubDesctop
+OBS studio, Bandicam, LightShot)
+
+
+
+Push your CV to git repo
+https://github.com/RV2021ATQC/CrashCourseAT
+about CV
+https://www.youtube.com/watch?v=lCVg7IwSlEU
+
+
+
+Read matherials for the next lesson
+https://dou.ua/forums/topic/13389/"
