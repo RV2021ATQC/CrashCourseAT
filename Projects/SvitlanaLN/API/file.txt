@@ -1,0 +1,14 @@
+2021-09-14 23:57:05.5760|Info|---------Setup----------
+2021-09-14 23:57:08.4702|Info|---------Start Test_GetToken----------
+2021-09-14 23:57:08.5632|Info|--------Start Test_CartProducts--------
+2021-09-14 23:57:08.5632|Info|content: {"products":[],"vouchers":[],"totals":[{"title":"Sub-Total","text":"$0.00"},{"title":"Total","text":"$0.00"}]}
+2021-09-14 23:57:08.5632|Info|------Start Test_CartProducts_Add---------
+2021-09-14 23:57:08.8332|Info|product_id = 40, cart_id_before = -1, cart_id_after = 254, quantity = 1
+2021-09-14 23:57:08.8332|Info|------Start Test_CartProducts_Add---------
+2021-09-14 23:57:09.0402|Info|product_id = 41, cart_id_before = -1, cart_id_after = 255, quantity = 1
+2021-09-14 23:57:09.0402|Info|------Start Test_CartProducts_Remove---------
+2021-09-14 23:57:09.0402|Info|cart_id_remove = 255
+2021-09-14 23:57:09.1452|Info|------Start Test_Database_Add-------
+2021-09-14 23:57:09.4283|Info|------Start Test_Database_Remove---------
+2021-09-14 23:57:09.4283|Info|cart_id_remove = 254
+2021-09-14 23:57:09.4973|Info|Test_Database_Remove was successful.
