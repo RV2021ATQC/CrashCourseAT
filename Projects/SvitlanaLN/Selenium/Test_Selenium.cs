@@ -9,30 +9,29 @@ using System.Collections.Generic;
 
 namespace Selenium
 {
-    [TestFixture(typeof(ChromeDriver))]
-    [TestFixture(typeof(FirefoxDriver))]
-    public class Test_Selenium<TWebDriver> where TWebDriver : IWebDriver, new()
+    [TestFixture]
+    public class Test_Selenium
     {
-        [ThreadStatic]
-        private IWebDriver driver;  
-        [SetUp]
-        public void BeforeAllMethods()
-        {
-            driver = new TWebDriver();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
-        }
+        private IWebDriver driver;
+        public enum BrowserType { Chrome, FireFox }
 
         [TearDown]
         public void AfterAllMethods()
         {
             driver.Quit();
-        }
 
+        }
         [Test]
-        [TestCase("sv_lugan@ukr.net", "!Qwerty123")]      // must be true   
-        [TestCase("sv_lugan@ukr.net", "Wrong_password")]  // must be false
-        public void Test_method(string usrn, string passw)
+        [Parallelizable]
+        [TestCase("sv_lugan@ukr.net", "!Qwerty123", BrowserType.Chrome)]      // must be true   
+        [TestCase("sv_lugan@ukr.net", "Wrong_password", BrowserType.Chrome)]  // must be false
+        [TestCase("sv_lugan@ukr.net", "!Qwerty123", BrowserType.FireFox)]      // must be true   
+        [TestCase("sv_lugan@ukr.net", "Wrong_password", BrowserType.FireFox)]  // must be false
+        public void Test_method(string usrn, string passw, BrowserType brow)
         {
+            if (brow == BrowserType.Chrome) driver = new ChromeDriver();
+            else driver = new FirefoxDriver();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             Page_Selenium obj = new Page_Selenium (driver);
             obj.Login(usrn, passw);
             Assert.AreEqual("Здравствуйте, Qwerty Qwerty", obj.Mes);
